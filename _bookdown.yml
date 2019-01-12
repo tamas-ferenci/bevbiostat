@@ -1,0 +1,6 @@
+book_filename: "bevbiostat"
+language:
+  ui:
+    chapter_name: !expr function(i) paste( i, ". fejezet")
+delete_merged_file: true
+output_dir: "docs"

@@ -1,0 +1,24 @@
+--- 
+title: "Bevezetés a biostatisztikába"
+author: "Ferenci Tamás"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+github-repo: tamas-ferenci/bevbiostat
+description: "Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba."
+---
+
+# Előszó
+
+Előszó.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+options(digits = 1, OutDec = ",")
+knitr::opts_chunk$set( tidy = TRUE, fig.height = 4 )
+```
