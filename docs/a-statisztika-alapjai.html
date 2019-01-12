@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>2 . fejezet A statisztika alapjai | Bevezetés a biostatisztikába</title>
+  <meta name="description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="2 . fejezet A statisztika alapjai | Bevezetés a biostatisztikába" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
+  <meta name="github-repo" content="tamas-ferenci/bevbiostat" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 . fejezet A statisztika alapjai | Bevezetés a biostatisztikába" />
+  
+  <meta name="twitter:description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
+  
+
+<meta name="author" content="Ferenci Tamás">
+
+
+<meta name="date" content="2019-01-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="deskriptiv.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ferenci Tamás: Bevezetés a biostatisztikába.</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Előszó</a></li>
+<li class="chapter" data-level="2" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html"><i class="fa fa-check"></i><b>2</b> A statisztika alapjai</a><ul>
+<li class="chapter" data-level="2.1" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#a-statisztika-alapfogalmai-es-agai"><i class="fa fa-check"></i><b>2.1</b> A statisztika alapfogalmai és ágai</a></li>
+<li class="chapter" data-level="2.2" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokvaltozok"><i class="fa fa-check"></i><b>2.2</b> Változók és mérési skálák</a></li>
+<li class="chapter" data-level="2.3" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokvelhatarolas"><i class="fa fa-check"></i><b>2.3</b> A biostatisztika kapcsolódó tudományai és elhatárolása</a></li>
+<li class="chapter" data-level="2.4" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokszamtech"><i class="fa fa-check"></i><b>2.4</b> A biostatisztika számítástechnikai háttere</a></li>
+<li class="chapter" data-level="2.5" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokfutopelda"><i class="fa fa-check"></i><b>2.5</b> Futó példa</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deskriptiv.html"><a href="deskriptiv.html"><i class="fa fa-check"></i><b>3</b> Deskriptív statisztika</a><ul>
+<li class="chapter" data-level="3.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivaltalaban"><i class="fa fa-check"></i><b>3.1</b> A deskriptív statisztikáról általában</a></li>
+<li class="chapter" data-level="3.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositas"><i class="fa fa-check"></i><b>3.2</b> A deskriptív statisztika módszereinek csoportosításáról</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositasgrafanal"><i class="fa fa-check"></i><b>3.2.1</b> Grafikus és analitikus módszerek</a></li>
+<li class="chapter" data-level="3.2.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositasegytobbvalt"><i class="fa fa-check"></i><b>3.2.2</b> Egy- és többváltozós módszerek</a></li>
+<li class="chapter" data-level="3.2.3" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositasmeresiskala"><i class="fa fa-check"></i><b>3.2.3</b> A vizsgált változó(k) mérési skálája</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminegyvalt"><i class="fa fa-check"></i><b>3.3</b> Minőségi változó egyváltozós elemzése</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmonegyvaltanalitikus"><i class="fa fa-check"></i><b>3.3.1</b> Analitikus eszközök</a></li>
+<li class="chapter" data-level="3.3.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminegyvaltgrafikus"><i class="fa fa-check"></i><b>3.3.2</b> Grafikus eszközök</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyegyvalt"><i class="fa fa-check"></i><b>3.4</b> Mennyiségi változó egyváltozós elemzése</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyegyvaltanalitikus"><i class="fa fa-check"></i><b>3.4.1</b> Analitikus eszközök</a></li>
+<li class="chapter" data-level="3.4.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyegyvaltgrafikus"><i class="fa fa-check"></i><b>3.4.2</b> Grafikus eszközök</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminketvalt"><i class="fa fa-check"></i><b>3.5</b> Minőségi változók kétváltozós elemzése</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminketvaltanalitikus"><i class="fa fa-check"></i><b>3.5.1</b> Analitikus eszközök</a></li>
+<li class="chapter" data-level="3.5.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminketvaltgrafikus"><i class="fa fa-check"></i><b>3.5.2</b> Grafikus eszközök</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyketvalt"><i class="fa fa-check"></i><b>3.6</b> Mennyiségi változók kétváltozós elemzése</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyketvaltanalitikus"><i class="fa fa-check"></i><b>3.6.1</b> Analitikus eszközök</a></li>
+<li class="chapter" data-level="3.6.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyketvaltvaltgrafikus"><i class="fa fa-check"></i><b>3.6.2</b> Grafikus eszközök</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivtovabbitobbvalt"><i class="fa fa-check"></i><b>3.7</b> További többváltozós elemzések</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="induktiv.html"><a href="induktiv.html"><i class="fa fa-check"></i><b>4</b> Induktív statisztika</a><ul>
+<li class="chapter" data-level="4.1" data-path="induktiv.html"><a href="induktiv.html#induktivmintavetelihelyzet"><i class="fa fa-check"></i><b>4.1</b> A mintavételi helyzet és következményei</a></li>
+<li class="chapter" data-level="4.2" data-path="induktiv.html"><a href="induktiv.html#induktivbecsleselmelet"><i class="fa fa-check"></i><b>4.2</b> Becsléselmélet</a></li>
+<li class="chapter" data-level="4.3" data-path="induktiv.html"><a href="induktiv.html#induktivhipotezisvizsgalat"><i class="fa fa-check"></i><b>4.3</b> Hipotézisvizsgálat</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bevezetés a biostatisztikába</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="a-statisztika-alapjai" class="section level1">
+<h1><span class="header-section-number">2 . fejezet</span> A statisztika alapjai</h1>
+<p>Alapfogalmak.</p>
+<!-- A biostatisztika a \emph{statisztika} egyik alkalmazott ága, mely az orvosbiológiai területen felmerülő, empirikus adatokkal leírt kérdések kvantitatív vizsgálatával foglalkozik. Egy új vérnyomáscsökkentő gyógyszer-jelölt valóban csökkenti a vérnyomást? Nagyfeszültségű vezeték közelében tartózkodás növeli a rák-kockázatot? Van-e összefüggés egy gyermek táplálkozási energiabevitele és magasságának növekedése között? Ez csak pár példa olyan kérdésekre, melyek megválaszolásának egyik lehetősége az \emph{empirikus adatok} alkalmazása: összegyűjtjük gyógyszert szedő és nem szedő emberek vérnyomását; emberek lakhelyének távolságát a nagyfeszültségű vezetékektől, és azt, hogy kialakult-e náluk rák; gyermekek táplálási adatait és magasságuk alakulását. Ezen adatok birtokában van remény a problémák vizsgálatára, orvosilag releváns kérdések megválaszolására. Továbbmenve az is látható, hogy végeredményben mind számszerű adatra vezet (vérnyomásalakulás, rákkockázat, magasságváltozás stb.), így adhatunk \emph{kvantitatív} válaszokat is a kérdésekre (pontosan mekkora vérnyomás-csökkenést okoz várhatóan a gyógyszer-jelölt, ha egyáltalán okoz, hány százalékkal változtatja a rákkockázatot adott nagyfeszültségű vezeték, ha egyáltalán változtatja, nagyobb energiabevitel mennyiben módosítja a növekedés ütemét, ha egyáltalán módosítja stb.). Ehhez természetesen megfelelő elemzéseket kell végrehajtanunk, megfelelő modelleket kell alkotnunk. Ezzel foglalkozik a biostatisztika. -->
+<!-- A fejezetben elsőként röviden összefoglaljuk a biostatisztika történelmi fejlődését, és kidomborítjuk mai jelentőségét (\ref{sec:jelentoseg}. alfejezet). Ezt követően, \aref{sec:alapok}. alfejezetben a statisztika alapfogalmaival és feladataival ismerkedünk meg, illetve foglalkozunk a biostatisztika pár specialitásával is. -->
+<!-- A fejezet hátralevő része már konkrét biostatisztikai módszereket és eszközöket mutat be. \Aref{sec:deskriptiv}. alfejezetben részletesebb bevezetőt adunk az ún. deskriptív (leíró) statisztikába, \aref{sec:induktiv}. alfejezetben pedig röviden bemutatjuk az ún. induktív (következtető) statisztika alapfogalmait. Ezek során mindenhol a biostatisztikai alkalmazásokra fogjuk helyezni a hangsúlyt. -->
+<!-- Noha a biostatisztika alapja a matematikai statisztika, törekedtünk a közérthető bevezetés adására, így specifikusabb matematikai (valószínűségszámítási) ismeretek egyedül az induktív statisztikával foglalkozó \ref{sec:induktiv}. alfejezetben lesznek szükségesek. -->
+<!-- \section{A biostatisztika fejlődése és jelentősége} -->
+<!-- \label{sec:jelentoseg} -->
+<!-- Napjaink orvostudományi kutatásai a legtöbb esetben elképzelhetetlenek statisztikai módszerek (ha más nem, támogató szerepű) alkalmazása nélkül. -->
+<!-- Ez nem meglepő kijelentés, ha áttekintjük az orvoslás fejlődési tendenciáit. Ezek közül is kettőt emelnénk ki most. Az egyik az egyre erősebb \emph{empirikus orientáció}. Noha nyomokban már régebbről is vannak ilyen emlékeink, empirikus gondolkodásról érdemben csak a XVIII. századtól kezdődően beszélhetünk. (James Lind 1747-ben hajtotta végre nevezetes klinikai kísérletét, melyben empirikusan demonstrálta, hogy a skorbut citrusfélékkel gyógyítható.) -->
+<!-- Mindez nem független attól, hogy mind az egészséges ember működéséről, mind a betegségek mechanizmusáról ekkortól kezdtek el mai szemmel nézve is tartható ismeretek összegyűlni. Ami az előbbit illeti, nyilvánvaló a boncolásos eredmények hatása (és persze az is, hogy az emberiség egész történetét tekintve ez milyen későn következett be -- mellbevágó példaként hozhatnánk, hogy még egy olyan abszolút alapvető jelenségnek, mint a vérkeringés is csak 1628-ban adták meg (William Harvey a De Motu Cordis-ban) az első, lényegileg helyes leírását). A betegségek kapcsán ekkor kezdték a korábbi, mai szemmel nézve megmosolyogtató teóriákat (rossz levegő, isteni bosszú, testnedvek egyensúlyának felborulása stb.) természettudományosabb alapokon álló magyarázatokkal felváltani. -->
+<!-- Az empirikus orientáció innen kezdve folyamatosan csak erősödött az évszázadok alatt, és talán nem túlzás azt mondani, hogy ez torkollott -- a XX. század második felében -- a \emph{bizonyítékokon alapuló orvoslás} (\selectlanguage{english}Evidence Based Medicine\selectlanguage{magyar}, EBM) kialakulásába. (Aminek lényege, hogy a klinikai döntéshozatalt a rendelkezésre álló legjobb tudományos bizonyítékok (azaz jórészt empirikus vizsgálatok eredményeinek!) gyűjtése és kritikus értékelése alapján kell végrehajtani.) -->
+<!-- Külön megjegyzendő, hogy nem csak egyszerűen az empirikus eredmények szerepe nőtt, de ezen belül a \emph{kvantitatív} eredményeké is. A XX. század (különösen a vége) ráadásul elhozta a nagy volumenű adatgyűjtés műszaki lehetőségeit is. -->
+<!-- Ennek kapcsán -- szintén jellemzően XX. század második felére eső fejleményként -- érdemes megemlíteni a gyógyszerengedélyezési folyamatok hihetetlen elbonyolódását és megnehezedését, melyek egyre jobb empirikus bizonyítékokat (is) megkövetelnek a törzskönyvezéshez. -->
+<!-- A másik tényező az orvostudomány egyre erősebb átmenete \emph{modellalapúba}. Hogy egy klasszikus kérdéssel világítsunk erre rá: mi a lényegi különbség egy elromlott autó és egy ,,elromlott'' ember diagnosztizálása között? (A kérdés jogos, gépjárműveknél is tényleg sokszor használják a diagnosztika szót a hibakeresésre.) Bár vannak apróbb, inkább formai különbségek (az autót jobban szét lehet szedni mint az embert stb.), az érdemi különbség, hogy az autónál \emph{tudjuk}, hogy jó állapotában elvileg hogy \emph{kéne} működnie -- embernél ezzel szemben sokszor nem. A XX. században azonban ezt egyre több területen sikerült megdönteni (vagy legalábbis csökkenteni): egyre több területen és egyre jobb modelljeink vannak arról is, hogy az emberi szervezetnek elvileg hogyan kéne működnie ,,jó'' állapotában. -->
+<!-- Azt, hogy mindezek a fejlődési tendenciák szinte exponenciálisan gyorsuló jelleget mutatnak, talán említenünk sem kell\dots{} -->
+<!-- Ezek voltak a biostatisztika ,,orvosi oldalán'' az előzmények. Van azonban az éremnek egy másik fele is: a ,,matematikai oldal''. -->
+<!-- A valószínűségszámítás szintén a XVIII. században indult fejlődésnek (elsősorban Jacob Bernoulli és Abraham de Moivre, majd később Pierre-Simon de Laplace tevékenysége nyomán). Ezzel szemben a statisztika matematikai ága\footnote{Természetesen a ,,procedurális'' része, például a népszámlálások, ókorig visszanyúló hagyományokkal bírnak.}, és különösen a mai értelemben vett induktív statisztika csak a XIX. század végén, XX. század elején szökkent szárba. -->
+<!-- Érdekes, hogy már ennek is igen komoly alkalmazott tudományos motivációja volt (bár jórészt például az agrometria révén -- igaz, nagyon hamar bekapcsolódott az alkalmazók közé az orvostudomány is). Az úttörők Ronald Aylmer Fisher, Jerzy Neyman és a két Pearson, Karl és Egon voltak. -->
+<!-- A két fejlődési tendencia a XX. században ért össze. Az említett matematikai statisztikai eredmények megteremtették a módszertani bázist, az orvosi fejlődés pedig az igényt azon módszerek és eljárások alkalmazására, melyeket ma már \emph{biostatisztika} összefoglaló néven említünk. -->
+<!-- Ebben az alfejezetben a statisztika, illetve a biostatisztika néhány fundamentális kérdésével fogunk foglalkozni. -->
+<!-- Először, motiváció gyanánt is, mutatunk pár demonstratív kérdést, melyek megválaszolását a biostatisztikától várhatjuk (természetesen megfelelő adatok birtokában). Ezt azért is tartjuk fontosnak, mert a későbbiekben konkrétan is látni fogjuk, hogy e kérdések hogyan válnak szabatosan megválaszolhatóvá a megfelelő biostatisztikai apparátus alkalmazásával. Ezt követően megadjuk a statisztika fő feladatait, és definiáljuk a statisztika legfontosabb alapfogalmait, melyek lépten-nyomon előkerülnek a statisztikai szóhasználatban; ezen belül is külön kitérünk a változókkal kapcsolatos kérdésekre (mint amilyen a mérési skálák témája). -->
+<!-- Ezt követően -- immár rátérve a biostatisztikára -- foglalkozunk azzal, hogy milyen tudományágak alapozzák meg a biostatisztikát, illetve elhatároljuk a biostatisztikát pár rokon területtől. Beszélünk arról is, hogy mi a számítástechnika jelentősége a modern biostatisztikában, és röviden ismertetjük a legfontosabb (bio)statisztikai programcsomagokat. -->
+<!-- Az alfejezet zárásaként bemutatjuk azt az adatbázist, mely majd futó példaként fog szolgálni a későbbi módszertani mondanivaló illusztrálására. -->
+<!-- \subsection{Pár demonstratív kérdés} -->
+<!-- \label{subsec:alapokparkerdes} -->
+<!-- Hogy \emph{motiváljuk} a biostatisztikai fejezet elolvasását, összegyűjtöttünk néhány olyan orvostudomány területéről származó kérdést, melyek szabatos megválaszolásához elengedhetetlen a biostatisztika eszköztárának alkalmazása: -->
+<!-- \begin{enumerate} -->
+<!--    \item Egy új vérnyomáscsökkentő gyógyszer-jelölt valóban csökkenti a vérnyomást? -->
+<!--    \item Egy új vérnyomáscsökkentő gyógyszer-jelölt nem okoz megnövekedett epilepszia kockázatot? -->
+<!--    \item Nagyfeszültségű vezeték közelében tartózkodás növeli a rák-kockázatot? -->
+<!--    \item Mennyi egy adott kurzus hallgatóinak átlagos testtömege? -->
+<!--    \item Mennyi az I. éves fiú egyetemisták átlagos testtömege? -->
+<!--    \item Igaz-e, hogy az I. éves fiú egyetemisták átlagos testtömege 70 kg? -->
+<!--    \item Van-e összefüggés egy gyermek táplálkozási energiabevitele és magasságának növekedése között? -->
+<!-- \end{enumerate} -->
+<!-- E kérdéseket ráadásul úgy választottuk meg, hogy a jó részük terítékre kerüljön a fejezetben, így bátorítjuk az olvasót, hogy újra és újra lapozzon ide vissza, ellenőrizve, hogy tényleg egyre több kérdésre tudna-e választ adni. -->
+<div id="a-statisztika-alapfogalmai-es-agai" class="section level2">
+<h2><span class="header-section-number">2.1</span> A statisztika alapfogalmai és ágai</h2>
+<!-- A statisztika fogalmát nem definiáljuk túl precízen, \aref{sec:jelentoseg}.  alfejezetben mondottak fényében feltesszük, hogy érthető a statisztika szerepe és hozzávetőleges feladata. Ha mégis formálisabb definíciót kéne adnunk, akkor azt mondhatnánk, hogy a statisztika a valóság, azon belül is elsősorban a tömeges jelenségek számszerűsíthető tényeinek szisztematikus összegyűjtésével és elemzésével foglalkozó tudományos módszer és gyakorlat. -->
+<!-- Már ennyiből is látszik, hogy a statisztika egyik fontos feladata lesz bizonyos \emph{kérdések szabatos megválaszolása empirikus adatok alapján} (ahogy arra ez előbbi pont is hozott példákat). Ennek kapcsán be kell vezetnünk pár alapfogalmat, mely a statisztikusok beszédében lépten-nyomon előkerül. -->
+<p>Azt a halmazt, melyre a statisztikai eszközökkel megvizsgálandó kérdésünk vonatkozik (cél)populációnak, vagy <em>sokaságnak</em> szokás nevezni. A sokaság elemeit szokás <em>megfigyelési egységnek</em> is nevezni. Ha azt kérdezzük, hogy ,,Mennyi egy adott kurzus hallgatóinak átlagos testtömege?’’, akkor a sokaság az adott kurzus hallgatóiból álló halmaz; a megfigyelési egységek az egyes hallgatók.</p>
+<p>Azt a szempontot, amely szerint a sokaság elemeit vizsgálat alá vonjuk, <em>ismérvnek</em>, vagy más szóval <em>változónak</em> hívjuk. Az előbbi példa esetében a változó a testtömeg; más esetekben persze több változót is használunk. Azt a lépést, amikor adott változó értékét meghatározzák egy adott sokasági elemre, általában <em>megfigyelésnek</em> nevezik a statisztikában.</p>
+<p>Nagyon sokszor nem tudunk a sokaság valamennyi egyedéről információt szerezni (azaz: nem tudjuk mindegyiket megfigyelni). Ilyenkor a sokaság azon részhalmazát, amelyet meg tudunk figyelni (tehát amelyről információnk van), <em>mintának</em> nevezzük, és ezt a helyzetet magát <em>mintavételi helyzetnek</em> hívjuk. Ennek egyrészt technikai okai lehetnek: sok esetben a sokaság valamennyi egységéről való adatgyűjtés (az ún. teljes körű megfigyelés) technikai okok miatt nehézkes vagy egyenesen lehetetlen (túl költséges, túl bonyolult a megszervezése, túl időigényes stb.) A biostatisztikában azonban ennél is fontosabb egy másik ok: az, hogy sok kérdés nem egy kézzelfogható, véges nagyságú sokaságra (mint egy adott kurzus hallgatói), hanem egy ún. fiktív sokaságra vonatkoznak. A kurzus hallgatóit fel lehet sorolni, felírhatjuk a neveiket egymás alá egy lapra. Egy ország lakosainál ugyan ez nehezebb a gyakorlatban, de elvileg minden további nélkül megtehető. De vessük ezt össze azzal a kérdéssel, hogy egy új vérnyomáscsökkentő gyógyszer-jelölt valóban csökkenti-e a vérnyomást – mi itt a sokaság? Itt valami alapvető különbség van: ennek a sokaságnak az elemeit nem tudjuk felsorolni egy lapra! Soha nem mondhatjuk azt, hogy itt a névsor, <em>konkrétan őket</em> kell gyógyítania a gyógyszernek. E kérdés nem emberek egy konkrét, összeszedhető csoportjára vonatkozik, hanem egy képzeletbeli, megfoghatóan nem létező, absztrakt csoportra (,,aki megfelel a gyógyszer alkalmazási feltételeinek’’). Ez nem egy konkrét sokaság, hanem egy fiktív csoport; sokszor hasznos ha úgy gondolunk rá, mintha ebben végtelen sok elem lenne. Ebből az is következik, hogy akármennyi embert is vizsgálunk meg ebből a sokaságból, az szükségképp csak része lesz annak, azaz szükségképp csak mintát fog jelenteni a sokaságból. Ilyenkor tehát <em>mindenképp</em> mintavételi helyzettel lesz dolgunk. Mivel ez a helyzet tipikus a biostatisztikában, így máris érthető, hogy miért mondtuk, hogy a mintavételi helyzetnek – illetve kezelésének – kiemelt jelentősége van a biostatisztikában.</p>
+<p>A statisztika azon ágát, mely sokaságról szerzett adatokkal foglalkozik, vagy mintabeliekkel de úgy, hogy elhanyagolja, hogy csak mintáról van szó (mintha a minta lenne a sokaság) <em>deskriptív (vagy leíró) statisztikának</em> nevezik; erről később bővebben lesz szó (<a href="deskriptiv.html#deskriptiv">3</a>. fejezet). Ide tartoznak olyan kérdések, mint az információtömörítés, lényegkiemelés, adatvizualizáció. A statisztika azon ága, mely figyelembe veszi a mintavételi helyzetet, azaz mintabeli adatokkal foglalkozik, de úgy, hogy szem előtt tartja, hogy a kérdések valójában a sokaságra irányulnak, <em>induktív (vagy következtető) statisztikának</em> nevezik, szintén részletesen lesz róla szó később (<a href="induktiv.html#induktiv">4</a> . fejezet).</p>
+<!-- A statisztika azonban nem csak meghatározott kérdések precíz megválaszolásával foglalkozik. A statisztika feladata ezen felül, hogy segítsége \emph{új ismeretek megszerzését}, például az adatbázisok struktúrájának feltárásával és alkalmas megjelenítésével, a változók közti kapcsolatok felderítésével, információtömörítéssel, lényegkiemeléssel stb. (Ebben hatalmas motivációt jelent a számítástechnikai (és orvosi) lehetőségek fejlődése miatt létrejövő egyre nagyobb és nagyobb adatbázisok léte.) -->
+<!-- Ezen felül a statisztika megtanít arra is minket, hogy hogyan kerüljünk el bizonyos gondolkodási csapdákat, és hogyan legyünk képesek \emph{empirikus kérdésekben racionálisan dönteni}. -->
+</div>
+<div id="alapokvaltozok" class="section level2">
+<h2><span class="header-section-number">2.2</span> Változók és mérési skálák</h2>
+<p>Az előbbi pontban kissé nagyvonalúan csak annyit írtunk, hogy a változó (vagy ismérv) az a szempont, ami alapján a megfigyelési egységeket vizsgálat alá vonjuk. (Természetesen több ilyen is szerepelhet egy vizsgálatban.) Ez meglehetősen kézenfekvő akkor, ha mondjuk az emberek testtömege a vizsgálati szempont – ekkor mondhatjuk egyszerűen, hogy lemérjük őket alkalmas módszerrel, és az e tulajdonságot leíró ,,testtömeg’’ változó legyen a lemért tömeg mondjuk kilogrammban kifejezett értéke. Más esetekben azonban közel nem ilyen egyértelmű a változók megválasztásának a kérdése.</p>
+<p>A statisztika alapvetően számszerű információk feldolgozásával foglalkozó tudomány, így ahhoz, hogy egy szempontot statisztikai úton tudjunk vizsgálni, előbb <em>számszerűen mérhetővé</em> kell tenni. Ez természetesen olyan információkkal is végrehajtható, melyek eredetileg nem számszerűek. Ezt nevezzük <em>operacionalizálásnak</em>. Néha ez valóban szinte triviális feladat (a testtömeget mérjük az adott módon lemért és kilogrammban kifejezett testtömeggel), máskor viszont egyáltalán nem az. Gondoljunk arra, hogy hogyan lehet számszerűen mérhetővé tenni egy olyan jellemzőt, mint hogy milyen súlyos egy alany depressziója – szinte külön tudományág, hogy ehhez milyen kérdőívek, egyéb vizsgálatok kellenek, mellyel ,,lemérhető’’ ez.</p>
+<p>A változók kapcsán a másik probléma, hogy egy sor tulajdonság nem mérhető közvetlenül – akár technikai akadályok miatt, akár az operacionalizálás nehézségei miatt. Ez esetben gyakran kényszerülünk arra, hogy az eredetileg megcélzott változó helyett más, immár mérhető, és az eredetivel – lehetőleg minél szorosabb – kapcsolatban lévő változót vagy változókat mérjünk le. Az ilyen célból használt változót nevezzük <em>proxy változónak</em>. Például komoly gondban lennénk, ha az alany szocioökonómiai státuszát kéne lemérnünk egyetlen változóval – ezt ilyen formában aligha tehetjük meg, így a gyakorlatban proxykat próbálnánk hozzá keresni, például iskolai végzettséget mérnénk, jövedelmet, munkahelyi beosztást stb.</p>
+<p>A következő kérdéskör, amiről a változók kapcsán beszélni kell, az a <em>mérési skála</em> fogalma. Mivel a statisztika végeredményben számszerű információkat dolgoz fel, így a változóinkat is tipikusan számokkal fogjuk leírni. Észre kell azonban venni, hogy vannak jellemzői a változóknak, amik <em>önmagukban</em> e számokból nem olvashatóak ki. Példának okáért tekintsük azt az adatot, hogy mi az alany szemszíne, és azt, hogy mennyi a CRP-je (ez egy laboreredmény). Tételezzük most fel, hogy a szemszínt úgy számszerűsítettük, hogy a barnához 1-et, a feketéhez 2-t, az egyébhez 3-at rendelünk; a CRP-nél pedig a koncentrációja számértékét adjuk meg mg/l-ben. Mármost ekkor mindkét adat (a szemszín és a CRP) is lehet történetesen 1, 2 és 3 értékű – ám ettől még hatalmas különbség van köztük: a CRP-nél van értelme átlagról beszélni, ,,átlagos szemszínről’’ nyilván nincs. E mögött az húzódik meg, hogy a CRP-k számértékeit van értelme összeadni egymással, a szemszínek számértékeit nem. Tehát: az, hogy milyen műveletek végezhetőek el az adott változóval, nem olvasható ki a változó által felvett értékekből. Ezeket a különbségeket a mérési skála fogalma ragadja meg, mely azt írja le, hogy hogyan viselkednek, viselkedhetnek az adataink. A leghíresebb Stanley Smith Stevens mérési skála modellje, mely négy lépcsőfokot különböztet meg. (Azért is beszélünk lépcsőfokokról, mert ez egy egymásra épülő, folyamatosan bővülő felosztás: a későbbi, magasabb skálák bírnak az összes többi korábbi, alacsonyabb skála tulajdonságaival, és még persze valamilyen többlettel is.) Stevens skálái a következőek:</p>
+<ol style="list-style-type: decimal">
+<li><em>Névleges (nominális) skála</em> Ilyen skálán mért adatok esetén az adat számértékének valójában nincs semmi jelentősége, kizárólag az számít, hogy a számérték ugyanaz-e két alanynál vagy sem: ha ugyanaz, akkor a változójuk is ugyanolyan értékű, ha nem akkor nem – de ennél többet nem mondhatunk! Erre jó példa a beteg lakóhelye megye szerint; 1-től 20-ig kódolva. Ha az egyik betegnél ez 3, a másiknál 6, akkor kizárólag annyit mondhatunk, hogy különböző megyében laknak, semmi többet. Olyan kijelentéseknek, hogy a második ,,hárommal nagyobb megyében’‘, ,,kétszer akkora megyében’‘, vagy akár csak annak, hogy ,,nagyobb megyében lakik’’ nyilvánvalóan nincs értelmük. További tipikus példa nominális ismérvre a beteg neme, rassza, szemszíne stb.</li>
+<li><em>Sorrendi (ordinális) skála</em> Ilyen skála esetében már valamennyi jelentősége van a számértékeknek: számít ugyanis, hogy melyik  – ám ezen kívül semmi más. Ezzel tehát a lehetséges kimeneteket sorba rendeztük (innen a skála neve), ám egyebet nem mondhatunk. Tipikusan ide tartozik a különféle betegségek staging adata. Ha ez egyik beteg I, a másik II stádiumban van, akkor mondhatjuk azt, hogy ez utóbbi állapota súlyosabb (figyelem, ha ez nominális skálán mért ismérv lenne, akkor már ennyit sem mondhatnánk, csak annyit, hogy  a súlyosság!), ám olyan kijelentéseknek, hogy ,,eggyel súlyosabb’‘, vagy ,,kétszer olyan súlyos’’ állapotban van, nincs értelme. Vegyük észre, hogy ez valóban tartalmazza a nominális skála jellemzőit (hiszen ha a kimenetek sorbarendezhetőek, akkor természetesen meg is különböztethetőek), azaz tényleg kibővítése annak.</li>
+<li><em>Valódi skálán mért ismérvek</em> Ide tartoznak azok az ismérvek, amelyek kimeneteivel már egyéb műveletek (nem csak az összehasonlítás és a sorbarendezés) is értelmezettek. Például ha egy beteg CRP-je 1 mg/l, egy másiké 2 mg/l, akkor mondhatjuk, hogy a kettő különbözik (nominális tulajdonság), mondhatjuk, hogy az utóbbi nagyobb (ordinális tulajdonság), <em>de</em> nyugodtan tehetünk olyan kijelentést is, hogy az utóbbi ,,eggyel nagyobb’‘, vagy hogy ,,kétszer akkora’’ mint az előbbi! Ezek a skálán mért ismérvek, ide tartozik például a legtöbb laboreredmény. A statisztikai irodalomban ezen a kategórián belül két további csoportot szokás megkülönböztetni: a különbségi – vagy intervallum – skálán mért ismérveket, és az arányskálán mért ismérveket. Az eltérés a kettő között, hogy az előzőben csak az összeadás, míg az utóbbiban az összeadás  a szorzás is értelmezett. Például a CRP arányskálán mért, hiszen két érték vonatkozásában beszélhetünk arról, hogy az egyik mennyivel több, illetve hányszorosa a másiknak. A beteg testhőmérsékleténél, ha azt Celsius-fokban mérjük, már nem ez a helyzet! Annak van értelme, hogy az egyik beteg maghőmérséklete 5 <span class="math inline">\(^\circ\)</span>C-kal több, de olyat nem mondhatunk, hogy 10%-kal magasabb.</li>
+</ol>
+<p>Megjegyezzük, hogy az első két skálán mért változót nagyon gyakran <em>minőségi</em> (vagy kvalitatív) változónak nevezik közös néven, míg a valódi skálán mért változókat sokszor <em>mennyiségi</em> (vagy kvantitatív) változónak hívják.</p>
+<p>Itt érdemes megemlíteni, hogy a változókat csoportosíthatjuk aszerint is, hogy hány lehetséges kimenetet vehetnek fel. Ha véges sokat vagy legfeljebb megszámlálhatóan végtelen sokat, akkor <em>diszkrét</em> változóról beszélünk, különben <em>folytonosról</em>. Folytonos változóra tipikus példa az olyan változó, melynek értékei a valós számok közül, vagy a valós számok valamilyen intervallumából (pl. pozitív valós számok) kerülnek ki. Természetesen a gyakorlatban a korlátos mérési pontosság miatt elvileg minden változó diszkrét, de ha nagyon nagy a lehetséges kimenetek száma, és ezek egymáshoz sűrűn helyezkednek el, akkor általában nyugodtan alkalmazható a folytonos közelítés.</p>
+<p>Nagyon sokszor a diszkrét változó fogalmat azonosítják a minőségi, a folytonosat pedig a mennyiségi változóval. Tisztán elméleti szempontból ez nem helyes (hiszen két különböző szempontról van szó), bár tény, hogy a legtöbb esetben valóban fennállnak ezek a megfeleltetések. Egy nevezetes kivétel ez alól a különféle darabszámokat, események számát stb. tartalmazó adatok, melyek a 0, 1, 2, 3 stb. értékeket vehetik fel (tehát diszkrétek), mégis skálán mértek, sőt, azon belül is arányskálán (tehát pont hogy a legmagasabb mérési skálán), hiszen általában van értelme nem csak különbségükről, de akár a hányadosukról is beszélni.</p>
+<!-- A változók jellege mellett az adatbázis jellege is fontos kérdés; illetve, pontosabban megfogalmazva, inkább a vizsgálat jellegéről kéne beszélnünk (az adatbázis ennek csak következménye). Beszélhetünk kísérletekről és megfigyeléses vizsgálatokról, ez utóbbiak adatbázisain belül beszélhetünk \emph{keresztmetszeti} adatbázisról (ha több megfigyelési egység ugyanazon időpontra vonatkozó adait tartalmazza), \emph{longitudinális} adatbázisról (ha több időszakot fog át), a vizsgálatok lehetséges konkrét elrendezéseiről pedig egyenesen könyveket lehet írni; de ezzel most nem foglalkozunk. -->
+</div>
+<div id="alapokvelhatarolas" class="section level2">
+<h2><span class="header-section-number">2.3</span> A biostatisztika kapcsolódó tudományai és elhatárolása</h2>
+<p>A biostatisztika az alkalmazott statisztika egyik ága, hasonlóan a pszichometriához, agrometriához stb. Látni kell, hogy a statisztika többé-kevésbé egységes tudomány, így végső soron hasonló módszereket alkalmaz az összes felsorolt ág, különbség inkább a részletekben (partikuláris problémákhoz testreszabott vagy kifejlesztett módszerek) és a az eljárások prezentációjában van.</p>
+<p>Mint minden alkalmazott ágnak, a biostatisztikának is a statisztika, matematikai statisztika adja az alapját. Az e fejezetben bemutatott módszerek jó részéhez ugyan nincs szükség mélyebb matematikai statisztikai ismeretekre, de a manapság kifejlesztett új módszerek egyre komolyabb matematikai eszköztárat használnak.</p>
+<p>A matematikai statisztika a matematika több ágára is épít, de ezek közül természetesen a valószínűségszámítás a kiemelkedően legfontosabb. (Ezt több más terület is kiegészíti természetesen, például a lineáris algebra.) Nem túlzás azt mondani, hogy a valószínűségszámítás a statisztika mögötti ,,alaptudomány’’, melynek alapos ismerete elengedhetetlen a matematikai statisztika magas szintű műveléséhez. Mostani jegyzetünkben azonban egyedül az induktív statisztikai rész fog valószínűségszámítási alapismereteket feltételezni, a többi rész minden speciális matematikai ismeret nélkül is követhető lesz.</p>
+<p>A valószínűségszámításon, matematikai statisztikán kívül természetesen orvosi ismeretekre is szükség van a biostatisztika műveléséhez. Ha nem is feltétlenül létkérdés, de a biostatisztikus munkáját megkönnyíti, ha legalább érti az orvosok szóhasználatát, valamint tisztában van az emberi test működésének élettani és a betegségek kórélettani alapjaival.</p>
+<p>Ezt a szakaszt azzal zárjuk, hogy kísérletet teszünk a biostatisztika elhatárolására két olyan területtől, amellyel gyakran keveredik a fogalma. Az egyik a <em>bioinformatika</em>: ez a manapság rendkívül népszerű terület azonban inkább számítástechnikai, algoritmikus kérdésekkel foglalkozik (melyekkel nagy orvosbiológiai adatbázisokon is hatékonyan végezhetőek bizonyos műveletek, megválaszolhatóvá válnak bizonyos orvosilag releváns kérdések). A másik a <em>biomatematika</em>, ez alatt azonban inkább olyan területet értünk, mely jellemzően nem statisztikai, hanem más matematikai (elsősorban analízisbeli) eszközöket, például differenciálegyenleteket használ, és a modellek adatokból történő becslése csak másodlagos kérdés.</p>
+</div>
+<div id="alapokszamtech" class="section level2">
+<h2><span class="header-section-number">2.4</span> A biostatisztika számítástechnikai háttere</h2>
+<p>Modern biostatisztika szinte elképzelhetetlen számítógépek, számítástechnikai támogatás nélkül. Ennek legalább három konkrét aspektusa van.</p>
+<p>Először is, a leginkább ,,mechanikus’’ támogatás, amit a gépek adhatnak, hogy a szokásos számítási műveleteket (például egy átlag meghatározása vagy egy statisztikai próba kiszámítása) végrehajtják helyettünk. Bár sok statisztika kurzuson még ma is megtanítják a hallgatókat a kézi számításra (elsősorban azért, hogy jobban rögzüljenek a számítások részletei is), valójában már minden gyakorlati alkalmazásban számítógépek végzik a mechanikus kalkulációkat, érthető okokból kifolyólag.</p>
+<p>A számítógépek ennél kicsit általánosabb módon is tudják támogatni a statisztikus munkáját. Azáltal, hogy segítik a nagy adatbázisok kezelését (szűrés, rendezés, keresés stb.), az adattranszformációkat (változók átkódolása, függvény szerint transzformálása stb.), lehetővé teszik, hogy könnyen kiszámoljunk mutatókat, vizualizáljunk adatokat és így tovább, a hatékonyabb, kreatívabb munkavégzést is segítik. (Részint azáltal, hogy csökkentik vagy szinte megszüntetik a rutinfeladatok időigényét, és így segítik, hogy a statisztikus a lényegre tudjon koncentrálni, részint azáltal, hogy számítógépek nélkül nem, vagy csak nagyon nehezen kivitelezhető segítségeket – pl. háromdimenziós ábrák – is tudnak adni a helyzet jobb megértéséhez.)</p>
+<p>Végül pedig, vannak bizonyos módszerek, melyek nem csak nehézkesek lennének, de egyenesen elképzelhetetlenek számítástechnikai támogatás nélkül. Ezek az ún. <em>számításintenzív módszerek</em> (például az újramintavételezésen alapuló eljárások, a különféle algoritmikus modellek) mind rendkívüli számításigénnyel bírnak, így lényegében a számítógépekkel egyidősek, hiszen a nélkül kifejlesztésük, és különösen az érdemi használatuk nem volt elképzelhető.</p>
+<p>Zárásként nagyon rövid ismertetőkkel megemlítjük a talán legfontosabb programokat, melyeket a (bio)statisztikusok használnak: * <em>SAS</em> A SAS egy igen komplex, nagyméretű és drága programcsomag. Legfőbb előnye, hogy jól standardizált, bejáratott, és a gyógyszeriparban – épp emiatt – előszeretettel alkalmazzák. * <em>SPSS</em> Az  egy általános célú statisztikai programcsomag (eredetileg szociológusoknak fejlesztették ki), funkcionalitása számos – egyenként megvásárolható – modullal állítható be a kívánt szintre. Grafikus kezelőfelülete rendkívül egyszerű és kényelmes (ráadásul nagyon sokan eleve ezt szokták meg), mellyel a beépített funkciók néhány kattintással végrehajthatóak. Cserében a bonyolultabb statisztikai problémák megoldása – noha van saját szkript-nyelve – nagyon nehézkes lehet. Összességében véve az alap dolgokat könnyű megcsinálni – a komplexebbeket viszont nagyon nehéz. Didaktikai hibái, gyatra adatvizualizációs lehetőségei, korlátozott bővíthetősége miatt nem ajánlható a használata. * <em>R</em> Az  a klasszikus ,,akadémiai’’ programcsomag. Alapváltozatában még csak érdemi grafikus felület sincs hozzá, minden utasítást parancsként kell beírnunk; cserébe hihetetlen mennyiségű kiegészítő érhető el hozzá a legkülönfélébb alkalmazásokhoz, a legkönnyebből a legbonyolultabbig, továbbá egy sor szakterülethez célirányosan is. (2018 elején több mint 13 ezer csomag érhető el, nem ritka, hogy napi 5-10 új jelenik meg!) Egy sor újonnan kifejlesztett statisztikai módszert elsőként  alatt implementálnak. Összességében elmondható, hogy itt az alap dolgokat sem könnyű megcsinálni – a komplexebbeket cserébe viszont lehet. Az  ingyenes és nyílt forráskódú, a  címről indulva tölthető le. Használatához feltétlenül ajánlott az  (szintén ingyenes és nyílt forráskódú) integrált fejlesztőkörnyezet () alkalmazása. E kiegészítő csomagokkal az R ereje hatalmas: rendkívül komplex feladat is végre hajthatóak egysoros hívásokkal (néha szó szerint).</p>
+</div>
+<div id="alapokfutopelda" class="section level2">
+<h2><span class="header-section-number">2.5</span> Futó példa</h2>
+<p>A jegyzet hátralevő részében szereplő példák didaktikai okokból mind ugyanarra az adatbázisra vonatkoznak; ebben a szakaszban ezt mutatjuk be.</p>
+<p>Az adatbázis egy klasszikus demonstrációs adatbázis, általánosan használt neve Low Infant Birth Weight (LOWBWT vagy BIRTHWT); a Baystate Medical Center (Springfield, Massachusetts, Egyesült Államok) kórházban végrehajtott kutatásból (1986) származik. A kutatás célja annak vizsgálata volt, hogy milyen tényezők befolyásolják, hogy egy világra jövő újszülött kis születési tömegű lesz-e.</p>
+<!-- Az adatbázis 189, Baystate Medical Center-ben lezajlott szülésről tartalmaz adatokat, egyrészt azt, hogy kis születési tömegű volt-e a világra jött újszülött, másrészt egy sor tényezőt, ami összefügghet a kis születési súllyal. (Vegyük észre, hogy ez egy minta egy fiktív, végtelen sokaságból!) A változók rövidítését, jelentését és mérési skáláját \aref{tab:peldavaltozok}. táblázat mutatja. -->
+<!-- \begin{table}[h!] -->
+<!--   \caption{A futó példa Low Infant Birth Weight adatbázisának változói főbb jellemzőikkel} -->
+<!--    \label{tab:peldavaltozok} -->
+<!--   \centering\small -->
+<!--    \begin{tabular}{+c^c^c} -->
+<!--    \toprule\rowstyle{\bfseries}%% -->
+<!--    Rövidítés&Tartalom&Mérési skála \\\otoprule% -->
+<!--    low&Születési tömeg < 2,5 kg? [0:nem, 1:igen]&Nominális\\\midrule -->
+<!--    age&Anya életkora [év]&Arányskála\\\midrule -->
+<!--    lwt&Anya testtömege (UM) [font]&Arányskála\\\midrule -->
+<!--    race&Rassz [1: kaukázusi, 2: afroamerikai, 3: egyéb]&Nominális\\\midrule -->
+<!--    smoke&Anya dohányzik? [0:nem, 1:igen]&Nominális\\\midrule -->
+<!--    ptl&Korábbi koraszülések száma [darab]&Arányskála\\\midrule -->
+<!--    ht&Anyai hipertónia? [0:nem, 1:igen]&Nominális\\\midrule -->
+<!--    ui&Irritábilis méh? [0:nem, 1:igen]&Nominális\\\midrule -->
+<!--    ftv&Vizitek száma (1. trimeszter) [darab]&Arányskála\\\midrule -->
+<!--    bwt&Születési tömeg [g]&Arányskála\\\bottomrule -->
+<!--    \end{tabular} -->
+<!-- \end{table} -->
+<p>Szemléltetésként az adatbázis első néhány megfigyelési egysége (az adatbázis megtalálható az  statisztikai környezet  nevű könyvtárában  néven):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(birthwt, <span class="dt">package =</span> <span class="st">&quot;MASS&quot;</span>)
+<span class="kw">head</span>(birthwt, <span class="dv">10</span>)</code></pre></div>
+<pre><code>##    low age lwt race smoke ptl ht ui ftv  bwt
+## 85   0  19 182    2     0   0  0  1   0 2523
+## 86   0  33 155    3     0   0  0  0   3 2551
+## 87   0  20 105    1     1   0  0  0   1 2557
+## 88   0  21 108    1     1   0  0  1   2 2594
+## 89   0  18 107    1     1   0  0  1   0 2600
+## 91   0  21 124    3     0   0  0  0   0 2622
+## 92   0  22 118    1     0   0  0  0   1 2637
+## 93   0  17 103    3     0   0  0  0   1 2637
+## 94   0  29 123    1     1   0  0  0   1 2663
+## 95   0  26 113    1     1   0  0  0   0 2665</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="deskriptiv.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-bevezetes.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bevbiostat.pdf", "bevbiostat.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
