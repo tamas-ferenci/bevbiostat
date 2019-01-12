@@ -798,7 +798,7 @@ nem más, mint a
 leggyakoribb\footnote{Vö. mode (angol), die Mode (német) a.m. divat; a szó egyébként a hasonló értelmű francia kifejezésből jön.}
 kimenet (tehát az a kimenet, melyhez tartozó gyakoriság a legnagyobb az
 adatbázisban). Nagyon formalizálva ezt írhatnánk: \[
-    \mathrm{Mo}=\operatorname**{arg\,max}_i f_i.
+    \mathrm{Mo}=\mathop{\mathrm{arg\,max}}_i f_i.
 \]
 
 A példánkban tehát a rassz módusza a kaukázusi.
@@ -842,7 +842,7 @@ Oszlopdiagramot használtunk a következő ábrán (\ref{fig:oszlopdiagram}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{barplot}\NormalTok{(}\KeywordTok{table}\NormalTok{(birthwt}\OperatorTok{$}\NormalTok{race))}
+\KeywordTok{barplot}\NormalTok{(}\KeywordTok{table}\NormalTok{(birthwt}\OperatorTok{$}\NormalTok{race), }\DataTypeTok{xlab =} \StringTok{"Rassz"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Gyakoriság [fő]"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -902,22 +902,21 @@ megválasztásától is), a következő:
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{tab <-}\StringTok{ }\KeywordTok{table}\NormalTok{(}\KeywordTok{cut}\NormalTok{(birthwt}\OperatorTok{$}\NormalTok{bwt, }\KeywordTok{seq}\NormalTok{(}\DecValTok{500}\NormalTok{, }\DecValTok{5000}\NormalTok{, }\DecValTok{500}\NormalTok{)))}
-\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Ci0 =} \KeywordTok{seq}\NormalTok{(}\DecValTok{500}\NormalTok{, }\DecValTok{4500}\NormalTok{, }\DecValTok{500}\NormalTok{), }\DataTypeTok{Ci1 =} \KeywordTok{seq}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{5000}\NormalTok{, }\DecValTok{500}\NormalTok{), }\DataTypeTok{fi =}\NormalTok{ tab, }
-    \DataTypeTok{gi =} \KeywordTok{prop.table}\NormalTok{(tab))}
+\KeywordTok{cbind}\NormalTok{(}\DataTypeTok{Ci0 =} \KeywordTok{seq}\NormalTok{(}\DecValTok{500}\NormalTok{, }\DecValTok{4500}\NormalTok{, }\DecValTok{500}\NormalTok{), }\DataTypeTok{Ci1 =} \KeywordTok{seq}\NormalTok{(}\DecValTok{1000}\NormalTok{, }\DecValTok{5000}\NormalTok{, }\DecValTok{500}\NormalTok{), }\DataTypeTok{fi =}\NormalTok{ tab, }\DataTypeTok{gi =} \KeywordTok{prop.table}\NormalTok{(tab))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##    Ci0  Ci1         fi.Var1 fi.Freq         gi.Var1 gi.Freq
-## 1  500 1000     (500,1e+03]       1     (500,1e+03]   0,005
-## 2 1000 1500 (1e+03,1,5e+03]       4 (1e+03,1,5e+03]   0,021
-## 3 1500 2000 (1,5e+03,2e+03]      14 (1,5e+03,2e+03]   0,074
-## 4 2000 2500 (2e+03,2,5e+03]      40 (2e+03,2,5e+03]   0,212
-## 5 2500 3000 (2,5e+03,3e+03]      38 (2,5e+03,3e+03]   0,201
-## 6 3000 3500 (3e+03,3,5e+03]      45 (3e+03,3,5e+03]   0,238
-## 7 3500 4000 (3,5e+03,4e+03]      38 (3,5e+03,4e+03]   0,201
-## 8 4000 4500 (4e+03,4,5e+03]       7 (4e+03,4,5e+03]   0,037
-## 9 4500 5000 (4,5e+03,5e+03]       2 (4,5e+03,5e+03]   0,011
+##                  Ci0  Ci1 fi    gi
+## (500,1e+03]      500 1000  1 0,005
+## (1e+03,1,5e+03] 1000 1500  4 0,021
+## (1,5e+03,2e+03] 1500 2000 14 0,074
+## (2e+03,2,5e+03] 2000 2500 40 0,212
+## (2,5e+03,3e+03] 2500 3000 38 0,201
+## (3e+03,3,5e+03] 3000 3500 45 0,238
+## (3,5e+03,4e+03] 3500 4000 38 0,201
+## (4e+03,4,5e+03] 4000 4500  7 0,037
+## (4,5e+03,5e+03] 4500 5000  2 0,011
 \end{verbatim}
 
 Itt \(C_{i0}\) és \(C_{i1}\) az \(i\)-edik osztályköz alsó és felső
@@ -1222,11 +1221,9 @@ azt a mutatót is, ahol csak az első javítást csinálják meg, tehát
 abszolútértéket vesznek, de azokat továbbra is csak átlagolják, és az
 eltéréseket is az átlagtól veszik.)
 
-A születési tömegek medián abszolút eltérése 834,7 gramm, tehát az
+A születési tömegek medián abszolút eltérése 563 gramm, tehát az
 újszülöttek testtömegeinek mediánjuk körül vett (abszolút) ingadozásának
-mediánja 834,7 gramm. (Pontosabban szólva ezek az értékek a fent
-definiált \(MAD\) 1,4826-szorosai, a konstans szorzó értelme, hogy így a
-normális eloszlás \(MAD\)-ja épp a szórás lesz.)
+mediánja 563 gramm.
 
 \paragraph{Alakmutatók}\label{deskriptivmennyegyvaltanalitikusmutatoszamokalakmutatok}
 
@@ -1258,7 +1255,7 @@ közvetlenül egymás mellé rajzoljuk, hely kihagyása nélkül
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{hist}\NormalTok{(birthwt}\OperatorTok{$}\NormalTok{bwt, }\DataTypeTok{xlab =} \StringTok{"Születési tömeg [g]"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Gyakoriság"}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{)}
+\KeywordTok{hist}\NormalTok{(birthwt}\OperatorTok{$}\NormalTok{bwt, }\DataTypeTok{xlab =} \StringTok{"Születési tömeg [g]"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Gyakoriság [fő]"}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{)}
 \KeywordTok{rug}\NormalTok{(birthwt}\OperatorTok{$}\NormalTok{bwt)}
 \end{Highlighting}
 \end{Shaded}
@@ -1327,6 +1324,25 @@ itt a sok más helyen is megjelenő torzítás-variancia trade-off egy
 példája.) Ahogy sokszor elmondtuk: valamiféle optimumot kell találni a
 kettő között. Ennek módszereiről az osztályközös gyakorisági sornál már
 írtunk.
+
+Az osztályközöket többféleképp is megadhatjuk R-ben:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Explicite megadjuk az osztályközök határait:
+  \texttt{hist(\ birthwt\$bwt,\ breaks\ =\ c(\ 500,\ 1500,\ 2000,\ 2500,\ 2750,\ 3000,\ 3250,\ 3500,\ 5000\ )\ )}.
+\item
+  Megadjuk az osztályközök számát:
+  \texttt{hist(\ birthwt\$bwt,\ breaks\ =\ 10\ )}.
+\item
+  Megadjuk a szabály nevét, amivel kérjük az osztályközök számának
+  kiszámolását: \texttt{hist(\ birthwt\$bwt,\ breaks\ =\ "Sturges"\ )}.
+\item
+  Saját függvényt adunk meg, mely vagy az osztályközök számát, vagy a
+  határait kiszámolja az adatok alapján.
+\end{enumerate}
 
 \subsubsection{Magfüggvényes
 sűrűségbecslő}\label{deskriptivmennyegyvaltgrafikuskde}
@@ -2108,36 +2124,118 @@ szerint arra jó becslő lesz az \[
 dologtól fog függeni: a \(\mu\) értékétől (a valódi sokasági
 jellemzőtől), és attól, hogy konkrétan milyen mintát vettünk. Ez utóbbi
 hatás miatt természetesen a becslőfüggvény eredménye minden egyes mintán
-más és más lesz.
+más és más lesz, mintáról-mintára ingadozik. Visszatérve az egyszerű
+példánkra az 1000 elemű, véges sokaságból történő átlagbecslésre:
+kaphatjuk, mintavételtől függően, a legkönnyebb 30 ember átlagát is
+becslésként, és a legnehezebb 30 átlagát is. (És természetesen egy sor
+értéket a kettő között.) De, amint már ott is megállapítottuk, ezen
+extrémumok valószínűsége kisebb, a közbülső (és ilyen módon a valósághoz
+közelebb álló) értékeké pedig -- szerencsére -- nagyobb. Más szóval arra
+jutottunk, hogy a becslőfüggvény értékeinek is van egy eloszlása: meg
+lehet adni, hogy adott tartományba eső becslést mekkora valószínűséggel
+adnak. Ezt nevezzük \textbf{mintavételi eloszlásnak}.
+
+Érdemes ezt egy szimulációval is megnézni! Vegyünk ugyanabból a
+sokaságból, melyet itt eloszlásával adtunk meg
+(\(\mathcal{N}\left(30,70\right)\)), 10 darab 30 elemű mintát, majd
+mindegyiknek számoljuk ki az átlagát:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{replicate}\NormalTok{(}\DecValTok{10}\NormalTok{, }\KeywordTok{mean}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{30}\NormalTok{, }\DecValTok{70}\NormalTok{, }\DecValTok{10}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 69 68 69 71 70 70 71 71 69 71
+\end{verbatim}
+
+Látszik, hogy -- noha a sokaság állandó, és így a várható értéke is
+állandó, fixen 10 -- a minták átlaga, tehát a sokaság várható értékének
+mintából \emph{becsült} értéke ingadozik.
+
+Elég sok ilyen szimulációt végezve, ez az ingadozás jól feltérképezhető
+(\ref{fig:sampsim}. ábra).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res <-}\StringTok{ }\KeywordTok{replicate}\NormalTok{(}\FloatTok{1e+05}\NormalTok{, }\KeywordTok{mean}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{30}\NormalTok{, }\DecValTok{70}\NormalTok{, }\DecValTok{10}\NormalTok{)))}
+\KeywordTok{mean}\NormalTok{(res)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 70
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{hist}\NormalTok{(res, }\DataTypeTok{main =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"Mintaátlag"}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \DecValTok{70}\NormalTok{, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{bevbiostat_files/figure-latex/sampsim-1.pdf}
+\caption{\label{fig:sampsim}A mintaátlag mintavételi eloszlásának
+meghatározása szimulációval, normális háttéreloszlás mellett.}
+\end{figure}
+
+Ilyen módon további fontos kérdések is vizsgálhatóak, például
+megnézhetjük, hogy a becsült érték ingadozása hogyan függ a
+mintanagyságtól (\ref{fig:sampsimn}. ábra).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res <-}\StringTok{ }\KeywordTok{replicate}\NormalTok{(}\FloatTok{1e+05}\NormalTok{, }\KeywordTok{mean}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{30}\NormalTok{, }\DecValTok{70}\NormalTok{, }\DecValTok{10}\NormalTok{)))}
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{density}\NormalTok{(res), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.7}\NormalTok{), }\DataTypeTok{main =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"Mintaátlag"}\NormalTok{)}
+\NormalTok{res50 <-}\StringTok{ }\KeywordTok{replicate}\NormalTok{(}\FloatTok{1e+05}\NormalTok{, }\KeywordTok{mean}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{50}\NormalTok{, }\DecValTok{70}\NormalTok{, }\DecValTok{10}\NormalTok{)))}
+\KeywordTok{lines}\NormalTok{(}\KeywordTok{density}\NormalTok{(res50), }\DataTypeTok{col =} \StringTok{"blue"}\NormalTok{)}
+\NormalTok{res300 <-}\StringTok{ }\KeywordTok{replicate}\NormalTok{(}\FloatTok{1e+05}\NormalTok{, }\KeywordTok{mean}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{300}\NormalTok{, }\DecValTok{70}\NormalTok{, }\DecValTok{10}\NormalTok{)))}
+\KeywordTok{lines}\NormalTok{(}\KeywordTok{density}\NormalTok{(res300), }\DataTypeTok{col =} \StringTok{"orange"}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \DecValTok{70}\NormalTok{, }\DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{bevbiostat_files/figure-latex/sampsimn-1.pdf}
+\caption{\label{fig:sampsimn}A mintavételi eloszlás függése a
+mintanagyságtól.}
+\end{figure}
+
+Az ilyen vizsgálatok (szokták ezt Monte Carlo szimulációnak is nevezni)
+könnyen kivitelezhetőek, és megfelelő számítási kapacitás mellett
+bonyolult problémák kezelésére is alkalmas. Hátránya viszont, hogy nem
+kapunk analitikus eredményt (tehát a mintavételi eloszlást nem kapjuk
+meg matematikai képlettel felírt függvényként); ebben az egyszerű
+példában ez sem jelent problémát, nemsokára vissza is fogunk rá térni.
 
 Felmerül a kérdés, hogy mit értünk precízen ,,jó'' becslőfüggvény alatt.
-A gyakorlatban két tulajdonság különösen fontos: 1. Elfogadjuk, hogy a
-becslőfüggvény által szolgáltatott becslés mintáról-mintára ingadozik,
-de legalább az teljesüljön, hogy az ingadozás centrumában a valódi
-(sokasági) jellemző legyen, olyan értelemben, hogy \emph{átlagosan} jó
-legyen a becsült érté. E tulajdonság neve: \textbf{torzítatlanság}. 2.
-Ennek az ingadozásnak a mértéke lehetőleg minél kisebb legyen, e
-tulajdonság neve: \textbf{hatásosság}.
+A gyakorlatban három tulajdonság különösen fontos:
 
-Amint említettük is, a becslőfüggvény értéke (tehát az adott mintából
-számolt becslés) nem állandó, hanem mintáról-mintára ingadozik.
-Visszatérve az egyszerű példánkra az 1000 elemű, véges sokaságból
-történő átlagbecslésre: kaphatjuk, mintavételtől függően, a legkönnyebb
-30 ember átlagát is becslésként, és a legnehezebb 30 átlagát is. (És
-természetesen egy sor értéket a kettő között.) De, amint már ott is
-megállapítottuk, ezen extrémumok valószínűsége kisebb, a közbülső (és
-ilyen módon a valósághoz közelebb álló) értékeké pedig -- szerencsére --
-nagyobb. Más szóval arra jutottunk, hogy a becslőfüggvény értékeinek is
-van egy eloszlása: meg lehet adni, hogy adott tartományba eső becslést
-mekkora valószínűséggel adnak. Ezt nevezzük \textbf{mintavételi
-eloszlásnak}.
-
-Ennek ismeretében már teljesen pontosan is definiálhatjuk a fenti
-tulajdonságokat: egy becslőfüggvényt torzítatlannak mondunk, ha a
-mintavételi eloszlásának a várható értéke a valódi (sokasági) jellemző,
-a hatásosságot pedig a mintavételi eloszlás szórásával mérhetjük. (Egy
-becslőfüggvényt hatásosnak mondunk, ha torzítatlan, és a torzítatlan
-becslők körében minimális szórású.)
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Elfogadjuk, hogy a becslőfüggvény által szolgáltatott becslés
+  mintáról-mintára ingadozik, de legalább az teljesüljön, hogy az
+  ingadozás centrumában a valódi (sokasági) jellemző legyen, olyan
+  értelemben, hogy \emph{átlagosan} jó legyen a becsült érték. Precízen:
+  egy becslőfüggvényt torzítatlannak mondunk, ha a mintavételi
+  eloszlásának a várható értéke a valódi (sokasági) jellemző. E
+  tulajdonság neve: \textbf{torzítatlanság}. A fenti szimulációk azt
+  sugallják, hogy az előbbi példában a mintaátlag torzítatlan becslője a
+  sokasági várható értéknek (ezt persze még bizonyítani kellene).
+\item
+  Ennek az ingadozásnak a mértéke lehetőleg minél kisebb legyen, e
+  tulajdonság neve: \textbf{hatásosság}. A hatásosságot a mintavételi
+  eloszlás szórásával mérhetjük, egy becslőfüggvényt hatásosnak mondunk,
+  ha torzítatlan, és a torzítatlan becslők körében minimális szórású. A
+  fenti szimulációk azt sugallják, hogy a mintanagyság növelésével egyre
+  hatásosabbá válik a mintaátlag mint becslőfüggvény. 
+\end{enumerate}
 
 Azzal a kérdéssel, hogy hogyan lehet egy becslőfüggvényt ,,kitalálni''
 (tehát, ha megadnak egy paramétert, akkor mutatni egy rá vonatkozó, és
@@ -2311,6 +2409,25 @@ akkor várhatóan 95 esetben tartalmazná a CI a valódi, sokasági értéket.)
 Érdemes megfigyelni, hogy a konfidenciaintervallum két végpontja
 szimmetrikus a pontbecslésre; ez a várható érték becslésére jellemző, de
 más paramétereknél nem feltétlenül van így.
+
+Itt is hasznos mindezeket egy szimulációval szemléltetni
+(\ref{fig:cisim}. ábra).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SimData <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{idx =} \DecValTok{1}\OperatorTok{:}\DecValTok{100}\NormalTok{, }\DataTypeTok{CI =} \KeywordTok{t}\NormalTok{(}\KeywordTok{replicate}\NormalTok{(}\DecValTok{100}\NormalTok{, TeachingDemos}\OperatorTok{::}\KeywordTok{z.test}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{30}\NormalTok{, }
+    \DecValTok{70}\NormalTok{, }\DecValTok{10}\NormalTok{), }\DataTypeTok{stdev =} \DecValTok{10}\NormalTok{)}\OperatorTok{$}\NormalTok{conf.int)))}
+\NormalTok{Hmisc}\OperatorTok{::}\KeywordTok{Dotplot}\NormalTok{(idx }\OperatorTok{~}\StringTok{ }\NormalTok{Hmisc}\OperatorTok{::}\KeywordTok{Cbind}\NormalTok{(}\OtherTok{NA}\NormalTok{, CI.}\DecValTok{1}\NormalTok{, CI.}\DecValTok{2}\NormalTok{), }\DataTypeTok{data =}\NormalTok{ SimData, }\DataTypeTok{abline =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{v =} \DecValTok{70}\NormalTok{, }
+    \DataTypeTok{col =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{), }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{bevbiostat_files/figure-latex/cisim-1.pdf}
+\caption{\label{fig:cisim}Konfidenciaintervallumok szemléltetése
+szimulációval.}
+\end{figure}
 
 \section{Hipotézisvizsgálat}\label{induktivhipotezisvizsgalat}
 
@@ -2723,13 +2840,34 @@ Welch-próbára esik. Ennek nullhipotézise, hogy a két csoport várható
 értéke között nincs különbség, ellenhipotézise, hogy van, a két várható
 érték nem egyezik.
 
-Elvégezve a próbát azt kapjuk, hogy a \(p\)-értéke: \(p=0,\!007003\).
-Mivel ez a \(p\)-érték minden szokásos szignifikanciaszintnél kisebb
-(még az 1\%-ot sem éri el), kijelenthetjük: a várható értékek egyezésére
-vonatkozó nullhipotézis minden szokásos szignifikanciaszinten elvethető,
-azaz minden szokásos szignifikanciaszinten kijelenthető, hogy a két
-csoport (sokaságbeli!) várható értéke között különbség van. (Azaz: a
-mintában tapasztalt különbség olyan nagy (a minta egyéb jellemzőit is
+Végezzük el a próbát:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{t.test}\NormalTok{(bwt }\OperatorTok{~}\StringTok{ }\NormalTok{smoke, }\DataTypeTok{data =}\NormalTok{ birthwt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  bwt by smoke
+## t = 3, df = 200, p-value = 0,007
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   79 489
+## sample estimates:
+## mean in group 0 mean in group 1 
+##            3056            2772
+\end{verbatim}
+
+A \(p\)-érték: \(p=0,\!007\), ez minden szokásos szignifikanciaszintnél
+kisebb (még az 1\%-ot sem éri el), így kijelenthetjük: a várható értékek
+egyezésére vonatkozó nullhipotézis minden szokásos szignifikanciaszinten
+elvethető, azaz minden szokásos szignifikanciaszinten kijelenthető, hogy
+a két csoport (sokaságbeli!) várható értéke között különbség van. (Azaz:
+a mintában tapasztalt különbség olyan nagy (a minta egyéb jellemzőit is
 figyelembe véve), hogy az már túlmutat a mintavételi ingadozás hatásán,
 nem hihető, hogy betudható pusztán a mintavételi ingadozás hatásának.
 Azt kell feltételeznünk, hogy mögötte sokasági hatás (azaz sokaságban is

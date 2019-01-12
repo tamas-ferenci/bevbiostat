@@ -47,15 +47,43 @@ függvény. (A becsült értéket a statisztikában általában is kalappal jel�
 \[
 	f\left(x_1,x_2,\ldots,x_n\right)=\frac{\sum_{i=1}^n x_i}{n}=\overline{x}
 \]
-függvény. Ahogy már korábban is megállapítottuk, ennek értéke két dologtól fog függeni: a $\mu$ értékétől (a valódi sokasági jellemzőtől), és attól, hogy konkrétan milyen mintát vettünk. Ez utóbbi hatás miatt természetesen a becslőfüggvény eredménye minden egyes mintán más és más lesz.
+függvény. Ahogy már korábban is megállapítottuk, ennek értéke két dologtól fog függeni: a $\mu$ értékétől (a valódi sokasági jellemzőtől), és attól, hogy konkrétan milyen mintát vettünk. Ez utóbbi hatás miatt természetesen a becslőfüggvény eredménye minden egyes mintán más és más lesz, mintáról-mintára ingadozik. Visszatérve az egyszerű példánkra az 1000 elemű, véges sokaságból történő átlagbecslésre: kaphatjuk, mintavételtől függően, a legkönnyebb 30 ember átlagát is becslésként, és a legnehezebb 30 átlagát is. (És természetesen egy sor értéket a kettő között.) De, amint már ott is megállapítottuk, ezen extrémumok valószínűsége kisebb, a közbülső (és ilyen módon a valósághoz közelebb álló) értékeké pedig -- szerencsére -- nagyobb. Más szóval arra jutottunk, hogy a becslőfüggvény értékeinek is van egy eloszlása: meg lehet adni, hogy adott tartományba eső becslést mekkora valószínűséggel adnak. Ezt nevezzük **mintavételi eloszlásnak**.
 
-Felmerül a kérdés, hogy mit értünk precízen ,,jó'' becslőfüggvény alatt. A gyakorlatban két tulajdonság különösen fontos:
-1. Elfogadjuk, hogy a becslőfüggvény által szolgáltatott becslés mintáról-mintára ingadozik, de legalább az teljesüljön, hogy az ingadozás centrumában a valódi (sokasági) jellemző legyen, olyan értelemben, hogy _átlagosan_ jó legyen a becsült érté. E tulajdonság neve: **torzítatlanság**.
-2. Ennek az ingadozásnak a mértéke lehetőleg minél kisebb legyen, e tulajdonság neve: **hatásosság**.
+Érdemes ezt egy szimulációval is megnézni! Vegyünk ugyanabból a sokaságból, melyet itt eloszlásával adtunk meg ($\mathcal{N}\left(30,70\right)$), 10 darab 30 elemű mintát, majd mindegyiknek számoljuk ki az átlagát:
+```{r}
+replicate( 10, mean( rnorm( 30, 70, 10 ) ) )
+```
 
-Amint említettük is, a becslőfüggvény értéke (tehát az adott mintából számolt becslés) nem állandó, hanem mintáról-mintára ingadozik. Visszatérve az egyszerű példánkra az 1000 elemű, véges sokaságból történő átlagbecslésre: kaphatjuk, mintavételtől függően, a legkönnyebb 30 ember átlagát is becslésként, és a legnehezebb 30 átlagát is. (És természetesen egy sor értéket a kettő között.) De, amint már ott is megállapítottuk, ezen extrémumok valószínűsége kisebb, a közbülső (és ilyen módon a valósághoz közelebb álló) értékeké pedig -- szerencsére -- nagyobb. Más szóval arra jutottunk, hogy a becslőfüggvény értékeinek is van egy eloszlása: meg lehet adni, hogy adott tartományba eső becslést mekkora valószínűséggel adnak. Ezt nevezzük **mintavételi eloszlásnak**.
+Látszik, hogy -- noha a sokaság állandó, és így a várható értéke is állandó, fixen 10 -- a minták átlaga, tehát a sokaság várható értékének mintából _becsült_ értéke ingadozik.
 
-Ennek ismeretében már teljesen pontosan is definiálhatjuk a fenti tulajdonságokat: egy becslőfüggvényt torzítatlannak mondunk, ha a mintavételi eloszlásának a várható értéke a valódi (sokasági) jellemző, a hatásosságot pedig a mintavételi eloszlás szórásával mérhetjük. (Egy becslőfüggvényt hatásosnak mondunk, ha torzítatlan, és a torzítatlan becslők körében minimális szórású.)
+Elég sok ilyen szimulációt végezve, ez az ingadozás jól feltérképezhető (\@ref(fig:sampsim). ábra).
+
+```{r sampsim, fig.cap = "A mintaátlag mintavételi eloszlásának meghatározása szimulációval, normális háttéreloszlás mellett."}
+res <- replicate( 100000, mean( rnorm( 30, 70, 10 ) ) )
+mean( res )
+hist( res, main = "", ylab = "", xlab = "Mintaátlag" )
+abline( v = 70, col = "red", lwd = 2 )
+```
+
+Ilyen módon további fontos kérdések is vizsgálhatóak, például megnézhetjük, hogy a becsült érték ingadozása hogyan függ a mintanagyságtól (\@ref(fig:sampsimn). ábra).
+
+```{r sampsimn, fig.cap="A mintavételi eloszlás függése a mintanagyságtól."}
+res <- replicate( 100000, mean( rnorm( 30, 70, 10 ) ) )
+plot( density( res ), ylim = c( 0, 0.7 ), main = "", ylab = "", xlab = "Mintaátlag" )
+res50 <- replicate( 100000, mean( rnorm( 50, 70, 10 ) ) )
+lines( density( res50 ), col = "blue" )
+res300 <- replicate( 100000, mean( rnorm( 300, 70, 10 ) ) )
+lines( density( res300 ), col = "orange" )
+abline( v = 70, col = "red", lwd = 2 )
+```
+
+Az ilyen vizsgálatok (szokták ezt Monte Carlo szimulációnak is nevezni) könnyen kivitelezhetőek, és megfelelő számítási kapacitás mellett bonyolult problémák kezelésére is alkalmas. Hátránya viszont, hogy nem kapunk analitikus eredményt (tehát a mintavételi eloszlást nem kapjuk meg matematikai képlettel felírt függvényként); ebben az egyszerű példában ez sem jelent problémát, nemsokára vissza is fogunk rá térni.
+
+Felmerül a kérdés, hogy mit értünk precízen ,,jó'' becslőfüggvény alatt. A gyakorlatban három tulajdonság különösen fontos:
+
+1. Elfogadjuk, hogy a becslőfüggvény által szolgáltatott becslés mintáról-mintára ingadozik, de legalább az teljesüljön, hogy az ingadozás centrumában a valódi (sokasági) jellemző legyen, olyan értelemben, hogy _átlagosan_ jó legyen a becsült érték. Precízen: egy becslőfüggvényt torzítatlannak mondunk, ha a mintavételi eloszlásának a várható értéke a valódi (sokasági) jellemző. E tulajdonság neve: **torzítatlanság**. A fenti szimulációk azt sugallják, hogy az előbbi példában a mintaátlag torzítatlan becslője a sokasági várható értéknek (ezt persze még bizonyítani kellene).
+2. Ennek az ingadozásnak a mértéke lehetőleg minél kisebb legyen, e tulajdonság neve: **hatásosság**. A hatásosságot a mintavételi eloszlás szórásával mérhetjük, egy becslőfüggvényt hatásosnak mondunk, ha torzítatlan, és a torzítatlan becslők körében minimális szórású. A fenti szimulációk azt sugallják, hogy a mintanagyság növelésével egyre hatásosabbá válik a mintaátlag mint becslőfüggvény.
+<!-- 3. Végezetül, kissé leegyszerűsítve fogalmazva, egy becslőfüggvényt **konzisztensnek** mondunk, ha a mintanagyság növekedtével nullába tart a minta -->
 
 Azzal a kérdéssel, hogy hogyan lehet egy becslőfüggvényt ,,kitalálni'' (tehát, ha megadnak egy paramétert, akkor mutatni egy rá vonatkozó, és persze lehetőleg minél jobb statisztikai tulajdonságokkal bíró becslőfüggvényt) nem foglalkozunk részletesebben, csak megemlítjük, hogy erre vonatkozóan jól bejáratott módszerek, ún. becslési elvek léteznek. (A legnevezetesebb közülük a maximum likelihood-elv, továbbá a plug-in becslés, a legkisebb négyzetek elve, a momentumok módszere és a Bayes-becslés.)
 
@@ -115,6 +143,14 @@ Tipikusan $\alpha=0,\!05$, amint mondtuk, ekkor $1-\alpha=95$\%-os konfidenciain
 _Nagyon fontos_ megfigyelni, hogy csak mintavétel _előtt_ vannak valószínűségi változók (,,nagy betűk''), _utána_ már nem (,,kis betűk'') -- ezért használtuk a megbízhatóság szót a valószínűség helyett. Mintavétel _után_ ugyanis már nem tehetünk olyan kijelentést, hogy a megkonstruált CI 95\%-os ,,valószínűséggel'' tartalmazza a valódi, sokasági paramétert, hiszen ha már egy realizálódott minta van a kezünkben, akkor elvileg akárhol lehet a valódi érték, erről semmi közelebbit nem tudunk mondani. Valószínűséget csak a (szükségképp képzeletbeli) ,,ismételt mintavételi'' értelemben tudunk behozni a feladatba, ezért használjuk megkülönböztetésül a megbízhatóság szót. Így kell érteni, hogy a konfidenciaintervallum jellemzi, hogy ,,hol lehet'' a valódi (sokasági) paraméter.
 
 A születési tömegek 95\%-os konfidenciaintervalluma [2840,0--3049,2] gramm. (Megjegyezzük, hogy ez a fentitől kissé eltérő módszerrel készült, ami tekintettel van arra is, hogy itt most -- szemben a fenti példával -- nem ismerjük _a priori_ a sokaság szórását.) Ez azt jelenti, hogy a _legjobb_ tippünk a születési tömeg sokasági várható értékére a `r mean( birthwt$bwt )` gramm, de azt is tudjuk ezen felül mondani, hogy bár ez csak bizonytalan tipp (hiszen a becsült érték mintáról-mintára ingadozik), de 95\%-os _megbízhatósággal_ azért kijelenthető, hogy nem kisebb a keresett, ismeretlen sokasági várható érték mint 2840,0 gramm és nem nagyobb mint 3049,2 gramm. (Amit úgy értünk, hogy azt becsüljük, hogy ha a sokaságból 100 mintát vennénk, és mindegyikből ugyanígy megkonstruálnánk a konfidenciaintervallumokat, akkor várhatóan 95 esetben tartalmazná a CI a valódi, sokasági értéket.) Érdemes megfigyelni, hogy a konfidenciaintervallum két végpontja szimmetrikus a pontbecslésre; ez a várható érték becslésére jellemző, de más paramétereknél nem feltétlenül van így.
+
+Itt is hasznos mindezeket egy szimulációval szemléltetni (\@ref(fig:cisim). ábra).
+
+```{r cisim, fig.cap="Konfidenciaintervallumok szemléltetése szimulációval."}
+SimData <- data.frame( idx = 1:100, CI = t( replicate( 100, TeachingDemos::z.test( rnorm( 30, 70, 10 ), stdev = 10 )$conf.int ) ) )
+Hmisc::Dotplot( idx ~ Hmisc::Cbind( NA, CI.1, CI.2 ), data = SimData, abline = list( v = 70, col = "red", lwd = 2 ), ylab = "" )
+```
+
 
 ## Hipotézisvizsgálat {#induktivhipotezisvizsgalat}
 
@@ -251,7 +287,12 @@ Az adatbázisban 115 nemdohányzó és 74 dohányzó anyától származó újsz�
 
 A kérdésről tehát _biztosat_ nem lehet mondani -- de statisztikai próbával _valószínűségi kijelentést_ tehetünk. Elsőként döntenünk kell arról, hogy milyen próbát alkalmazzunk. Ennek a részletei számunkra most nem fontosak, a lényeg csak a végeredmény: a körülmények (két független csoport, aránylag nagy mintanagyság mindkét csoportban, _a priori_ nem ismert sokasági szórás) a választásunk az ún. Welch-próbára esik. Ennek nullhipotézise, hogy a két csoport várható értéke között nincs különbség, ellenhipotézise, hogy van, a két várható érték nem egyezik.
 
-Elvégezve a próbát azt kapjuk, hogy a $p$-értéke: $p=0,\!007003$. Mivel ez a $p$-érték minden szokásos szignifikanciaszintnél kisebb (még az 1\%-ot sem éri el), kijelenthetjük: a várható értékek egyezésére vonatkozó nullhipotézis minden szokásos szignifikanciaszinten elvethető, azaz minden szokásos szignifikanciaszinten kijelenthető, hogy a két csoport (sokaságbeli!) várható értéke között különbség van. (Azaz: a mintában tapasztalt különbség olyan nagy (a minta egyéb jellemzőit is figyelembe véve), hogy az már túlmutat a mintavételi ingadozás hatásán, nem hihető, hogy betudható pusztán a mintavételi ingadozás hatásának. Azt kell feltételeznünk, hogy mögötte sokasági hatás (azaz sokaságban is eltérő várható érték) van.)
+Végezzük el a próbát:
+```{r}
+t.test( bwt ~ smoke, data = birthwt )
+```
+
+A $p$-érték: $p=0,\!007$, ez minden szokásos szignifikanciaszintnél kisebb (még az 1\%-ot sem éri el), így kijelenthetjük: a várható értékek egyezésére vonatkozó nullhipotézis minden szokásos szignifikanciaszinten elvethető, azaz minden szokásos szignifikanciaszinten kijelenthető, hogy a két csoport (sokaságbeli!) várható értéke között különbség van. (Azaz: a mintában tapasztalt különbség olyan nagy (a minta egyéb jellemzőit is figyelembe véve), hogy az már túlmutat a mintavételi ingadozás hatásán, nem hihető, hogy betudható pusztán a mintavételi ingadozás hatásának. Azt kell feltételeznünk, hogy mögötte sokasági hatás (azaz sokaságban is eltérő várható érték) van.)
 
 Mindezt röviden úgy is megfogalmazhatjuk, hogy a különbség szignifikáns, még más szóval, hogy a két csoport között lényeges különbség van. (Ebben a kontextusban a ,,lényeges'' statisztikai értelemben szignifikánsat jelent.) Ez a jó pont arra, hogy felhívjuk a figyelmet a különbségre a -- most definiált -- _statisztikai szignifikancia_ és a -- köznapi értelmű -- _klinikai szignifikancia_ között. E kettőt mindig szigorúan különböztessük meg egymástól! A köznapi szóhasználatban a ,,lényeges különbség'' alatt ugyanis azt értjük, hogy a tárgyterületi (esetünkben: orvosi) skálán mi bír jelentőséggel. 1 grammal nagyobb születési tömegnek semmi (klinikai) jelentősége (nem gondol az orvos más klinikai helyzetre, nem rendel más vizsgálat, más kezelést stb.), 500 grammnak nagyon is lehet. A statisztikai szignifikancia viszont _teljesen mást_ mér: azt, hogy mennyire hihető, hogy a különbség betudható a mintavételi ingadozásnak! Adott esetben lehet 500 gramm különbség is (statisztikailag) inszignifikáns (ha nagy a szórás, vagy kicsi a mintanagyság), és lehet 1 gramm különbség is (statisztikailag) szignifikáns (ha kicsi a szórás, vagy nagy a mintanagyság).
 

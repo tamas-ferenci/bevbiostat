@@ -78,7 +78,7 @@ Vegyük észre, hogy ebben a speciális esetben az információtömörítés iga
 
 A gyakorisági soron kívül egy mutatószámnak van még értelme ennél a mérési skálánál: a \emph{módusznak}. A módusz (jele: $\mathrm{Mo}$) nem más, mint a leggyakoribb\footnote{Vö. mode (angol), die Mode (német) a.m. divat; a szó egyébként a hasonló értelmű francia kifejezésből jön.} kimenet (tehát az a kimenet, melyhez tartozó gyakoriság a legnagyobb az adatbázisban). Nagyon formalizálva ezt írhatnánk:
 \[
-	\mathrm{Mo}=\operatorname**{arg\,max}_i f_i.
+	\mathrm{Mo}=\mathop{\mathrm{arg\,max}}_i f_i.
 \]
 
 A példánkban tehát a rassz módusza a kaukázusi.
@@ -98,7 +98,7 @@ A minőségi változók grafikus elemzése lényegében a gyakorisági sor vizua
 Oszlopdiagramot használtunk a következő ábrán (\@ref(fig:oszlopdiagram). ábra).
 
 ```{r oszlopdiagram, fig.cap="Példa egy minőségi változó ábrázolására oszlopdiagrammal."}
-barplot( table( birthwt$race ) )
+barplot( table( birthwt$race ), xlab = "Rassz", ylab = "Gyakoriság [fő]" )
 ```
 
 Az oszlop- és kördiagramok használata kapcsán megjegyzendő, hogy tudományos munkákban általában az oszlopdiagram a preferált, pszichológiai vizsgálatok szerint ugyanis az emberi szem jobban tud lineáris mértékeket kezelni és értelmezni, mint területet. Az egyetlen megfontolás, ami mégis az oszlopdiagram ellen szólhat néha, hogy az oszlopok kirajzolási sorrendje már implikál egyfajta sorrendezést (a természetes balról-jobbra olvasás miatt), ami adott esetben nem következik az változó tartalmából.
@@ -118,7 +118,7 @@ Az analitikus eszközök közül először most is a gyakorisági sort, majd a k
 Gyakorisági sor természetesen mennyiségi változóra is készíthető, de csak módosításokkal. Annak ugyanis, hogy megszámoljuk, hogy az egyes előforduló kimenetekből mennyi van, nincs sok értelme (hogy egy példával illusztráljuk: az itt tipikus folytonos változóknál könnyen lehet, hogy minden egyes előforduló kimenetből csak egyetlen egy lesz). A problémát nyilván a folytonosság jelenti, ami ellen úgy védekezhetünk, hogy nem adott értéket felvev} megfigyelési egységek számát adjuk meg, hanem _adott intervallumba esőek_ számát. Így kapjuk az **osztályközös gyakorisági sort**. (Az elnevezés arra utal, hogy osztályközöket hozunk létre -- így fogjuk hívni az előbb említett intervallumokat.) A gyakoriság, relatív gyakoriság, kumulált gyakoriság és kumulált relatív gyakoriság\footnote{Emlékezzünk vissza, hogy a magasabb mérési skála minden alacsonyabb tulajdonságával bír, így természetesen az összes, alacsonyabb mérési skálán értelmezett módszer a magasabb mérési skálák esetében is alkalmazható.} értelmezése változatlan. A születési tömeg változó osztályközös gyakorisági sora (precízebben szólva: egy lehetséges osztályközös gyakorisági sora; hiszen ez már függeni fog az osztályközök megválasztásától is), a következő:
 ```{r}
 tab <- table( cut( birthwt$bwt, seq( 500, 5000, 500 ) ) )
-data.frame( Ci0 = seq( 500, 4500, 500 ), Ci1 = seq( 1000, 5000, 500 ), fi = tab, gi = prop.table( tab ) )
+cbind( Ci0 = seq( 500, 4500, 500 ), Ci1 = seq( 1000, 5000, 500 ), fi = tab, gi = prop.table( tab ) )
 ```
 
 Itt $C_{i0}$ és $C_{i1}$ az $i$-edik osztályköz alsó és felső határát jelöli, rendre. (Az megállapodás kérdése, hogy a határon lévő megfigyelési egységeket, például egy pont 2000 grammos újszülöttet hová sorolunk, ennek természetesen csak a kerekítésből adódó diszkrétség miatt van egyáltalán jelentősége.)
@@ -211,7 +211,7 @@ A másik lehetőség a szórás ,,megjavítása'', olyan módon, hogy az eltér�
 \]
 (A szakirodalom itt nem teljesen egyértelmű: néha $MAD$-nak nevezik azt a mutatót is, ahol csak az első javítást csinálják meg, tehát abszolútértéket vesznek, de azokat továbbra is csak átlagolják, és az eltéréseket is az átlagtól veszik.)
 
-A születési tömegek medián abszolút eltérése `r mad( birthwt$bwt )` gramm, tehát az újszülöttek testtömegeinek mediánjuk körül vett (abszolút) ingadozásának mediánja `r mad( birthwt$bwt )` gramm. (Pontosabban szólva ezek az értékek a fent definiált $MAD$ 1,4826-szorosai, a konstans szorzó értelme, hogy így a normális eloszlás $MAD$-ja épp a szórás lesz.)
+A születési tömegek medián abszolút eltérése `r mad( birthwt$bwt, constant = 1 )` gramm, tehát az újszülöttek testtömegeinek mediánjuk körül vett (abszolút) ingadozásának mediánja `r mad( birthwt$bwt, constant = 1 )` gramm.
 
 ##### Alakmutatók{#deskriptivmennyegyvaltanalitikusmutatoszamokalakmutatok}
 
@@ -225,7 +225,7 @@ A grafikus eszközök közül először a hisztogramot, utána röviden a magfü
 
 A hisztogram leegyszerűsítve nem más, mint az osztályközös gyakorisági sor ábrázolása oszlopdiagramon, annyi specialitással, hogy az oszlopokat közvetlenül egymás mellé rajzoljuk, hely kihagyása nélkül (\@ref(fig:hisztogram). ábra).
 ```{r hisztogram, fig.cap="Példa egy mennyiségi változó ábrázolására hisztogrammal."}
-hist( birthwt$bwt, xlab = "Születési tömeg [g]", ylab = "Gyakoriság", main = "" )
+hist( birthwt$bwt, xlab = "Születési tömeg [g]", ylab = "Gyakoriság [fő]", main = "" )
 rug( birthwt$bwt )
 ```
 
@@ -248,6 +248,13 @@ hist( birthwt$bwt, 30, xlab = "Születési tömeg [g]", ylab = "Gyakoriság", ma
 ```
 
 Itt érzékelhető igazán, hogy miért probléma az is, ha túl finom, és az is, ha túl durva felosztást választunk (adott, rögzített mintanagyság mellett!). Amennyiben az osztályközök száma túl kevés, akkor sok információt vesztünk: az eloszlásról kapott kép összemossa a finomabb részleteket (bal oldal). Úgy is szokták mondani: nagy lesz a torzítás. Ha viszont túl sok osztályközt választunk, akkor rendkívül esetlegessé válik, hogy egy osztályközbe hány mintaelem esik, nagyon ingadozó lesz a magasság (jobb oldal), úgy szokták mondani: nagy lesz a variancia. (Ez itt a sok más helyen is megjelenő torzítás-variancia trade-off egy példája.) Ahogy sokszor elmondtuk: valamiféle optimumot kell találni a kettő között. Ennek módszereiről az osztályközös gyakorisági sornál már írtunk.
+
+Az osztályközöket többféleképp is megadhatjuk R-ben:
+
+1. Explicite megadjuk az osztályközök határait: `hist( birthwt$bwt, breaks = c( 500, 1500, 2000, 2500, 2750, 3000, 3250, 3500, 5000 ) )`.
+2. Megadjuk az osztályközök számát: `hist( birthwt$bwt, breaks = 10 )`. 
+3. Megadjuk a szabály nevét, amivel kérjük az osztályközök számának kiszámolását: `hist( birthwt$bwt, breaks = "Sturges" )`.
+4. Saját függvényt adunk meg, mely vagy az osztályközök számát, vagy a határait kiszámolja az adatok alapján.
 
 #### Magfüggvényes sűrűségbecslő {#deskriptivmennyegyvaltgrafikuskde}
 
