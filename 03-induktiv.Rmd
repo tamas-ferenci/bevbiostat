@@ -201,7 +201,7 @@ Ilyen módon kijelöltük, hogy milyen empirikus tesztstatisztika-értékek eset
 
 Ebben a feladatban a túl magas és a túl alacsony tesztstatisztika érték is ugyanúgy az elvetés irányába mutat\footnote{Ez nem szükségszerű, a hipotézispár függvényében léteznek ún. egyoldali próbák is, de ezzel most nem foglalkozunk.}, így az elfogadási tartományt valóban a nullára szimmetrikusan jelöljük ki. Ha például azt mondjuk, hogy a szignifikanciaszint 5\%, azaz a legextrémebb 5\%-nyi területen utasítsunk el, akkor azt úgy tehetjük meg, hogy a nulleloszlás alsó és a felső szélén is 2,5-2,5\%-nyi valószínűséget vágunk le. Ezeket a ,,szétvágási pontokat'', melyek az elutasítási és az elfogadási tartományokat határolják, **kritikus értékeknek** szokás nevezni. Mivel a nulleloszlás ismert, így ezek könnyen számszerűsíthetőek is mint a 0,025-ös és a 0,975-ös kvantilisei az eloszlásnak; például $\alpha=5$\%-ra a két kritikus érték a $c_a=-1,\!96$ alsó kritikus érték és a $c_f=+1,\!96$ felső kritikus érték.
 
-Mindezeket összefoglalóan szemlélteti \@ref(fig:hiptartomanyok). ábra, $\alpha=5$ és $\alpha=1$\%-os szignifikanciaszintekre.
+Mindezeket összefoglalóan szemlélteti \@aref(fig:hiptartomanyok). ábra, $\alpha=5$ és $\alpha=1$\%-os szignifikanciaszintekre.
 
 ```{r hiptartomanyok, echo=FALSE, fig.cap="A hipotézisvizsgálat döntésének szemléltetése két szignifikanciaszint mellett.",fig.width=15,fig.height=6}
 par( mfrow = c( 1, 2 ) )

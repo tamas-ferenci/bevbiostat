@@ -2,7 +2,7 @@
 
 Ebben az fejezetben a statisztika _deskriptív_ ágával fogunk foglalkozni. Már utaltunk rá, hogy deskriptív statisztikáról akkor beszélünk, amikor kizárólag a mintában lévő információt igyekszünk valamilyen módon megragadni (és nem törődünk azzal, hogy a minta maga is csak a valóság egy ,,szelete'', szebben megfogalmazva: figyelmen kívül hagyjuk a mintavételi helyzetet).
 
-Először ezt a gondolatot fogjuk pontosítani, közelebbről körüljárni; majd pedig megismerkedünk a leíró statisztika legalapvetőbb módszereivel. Látni fogunk grafikus és analitikus módszereket, foglalkozunk egy- és (röviden) többváltozós helyzetekkel; az ismertetést pedig a vizsgált változók mérési skálája (\@ref{alapokvaltozok}. alfejezt) szerint végezzük. (Azzal, hogy a nominális és az ordinális, illetve az intervallum- és arányskálán mért változókat nem választjuk szét, hanem minőségi és mennyiségi változókról fogunk beszélni.) Ezek után az olvasó számára ismerős lesz a mai orvostudományi cikkekben alkalmazott deskriptív eszköztár túlnyomó része; az elemi eszközöknek pedig szinte egésze.
+Először ezt a gondolatot fogjuk pontosítani, közelebbről körüljárni; majd pedig megismerkedünk a leíró statisztika legalapvetőbb módszereivel. Látni fogunk grafikus és analitikus módszereket, foglalkozunk egy- és (röviden) többváltozós helyzetekkel; az ismertetést pedig a vizsgált változók mérési skálája (\@ref{alapokvaltozok}. alfejezet) szerint végezzük. (Azzal, hogy a nominális és az ordinális, illetve az intervallum- és arányskálán mért változókat nem választjuk szét, hanem minőségi és mennyiségi változókról fogunk beszélni.) Ezek után az olvasó számára ismerős lesz a mai orvostudományi cikkekben alkalmazott deskriptív eszköztár túlnyomó része; az elemi eszközöknek pedig szinte egésze.
 
 Ebben a fejezetben a már említett módon a Low Infant Birth Weight adatbázist fogjuk futó példaként használni a módszertani mondanivaló illusztrálására. Az ábrák és a számítások \texttt{R} statisztikai környezet alatt készültek.
 
@@ -95,7 +95,7 @@ Ami a mutatószámokat illeti, ordinális esetben elvileg már definiálható le
 
 A minőségi változók grafikus elemzése lényegében a gyakorisági sor vizualizálását jelenti. Ennek két, gyakorlatban legtipikusabb eszköze az **oszlopdiagram** és a **kördiagram**. Az előbbi oszlopok magasságával, az utóbbi körcikkek területével szemlélteti a gyakoriságokat. (Bár ez utóbbi, jellegéből adódóan, igazából csak relatív gyakoriságokat tud szemléltetni. Oszlopdiagrammal gyakoriság és relatív gyakoriság is szemléltethető; sőt, a kettő lényegében ekvivalens, csak a függőleges tengely skálázása lesz más.)
 
-Oszlopdiagramot használtunk a következő ábrán (\@ref(fig:oszlopdiagram). ábra).
+Oszlopdiagramot használtunk \@aref(fig:oszlopdiagram). ábrán.
 
 ```{r oszlopdiagram, fig.cap="Példa egy minőségi változó ábrázolására oszlopdiagrammal."}
 barplot( table( birthwt$race ), xlab = "Rassz", ylab = "Gyakoriság [fő]" )
@@ -239,7 +239,7 @@ A hisztogram a legnépszerűbb adatvizualizációs módszer mennyiségi változ�
 
 Hátránya, hogy kevésbé objektív (mint a grafikus módszerek általában) -- ha például két változót össze kell hasonlítanunk, akkor két átlaggal (azaz két számmal) az értelemszerűen könnyebben megtehető mint két hisztogrammal.
 
-A legnagyobb kihívás azonban az osztályközök helyes megválasztása. Ez a probléma teljesen ugyanaz, mint amit az osztályközös gyakorisági sornál is kifejtettünk. Sőt, itt talán még jobban szemléltethető: a következő ábrán ugyanazt az adatsort ábrázoltuk, csak épp az optimálisnál lényegesen több, illetve lényegesen kevesebb osztályközt használva is (\@ref(fig:hisztogramvalasztasok). ábra).
+A legnagyobb kihívás azonban az osztályközök helyes megválasztása. Ez a probléma teljesen ugyanaz, mint amit az osztályközös gyakorisági sornál is kifejtettünk. Sőt, itt talán még jobban szemléltethető: \@aref(fig:hisztogramvalasztasok). ábrán ugyanazt az adatsort ábrázoltuk, csak épp az optimálisnál lényegesen több, illetve lényegesen kevesebb osztályközt használva is.
 ```{r hisztogramvalasztasok, fig.cap="Ugyanazon adatsor ábrázolása különféle számú osztályközt tartalmazó hisztogrammal."}
 par( mfrow = c( 1, 3 ) )
 hist( birthwt$bwt, 3, xlab = "Születési tömeg [g]", ylab = "Gyakoriság", main = "" )
@@ -394,7 +394,7 @@ Végül egy figyelmeztetés. Mint általában, természetesen itt is elmondható
 
 ### Grafikus eszközök {#deskriptivmennyketvaltvaltgrafikus}
 
-Két mennyiségi változó kapcsolatának legfontosabb ábrázolási eszköze az **szóródási diagram**. A szóródási diagramot úgy kapjuk, hogy minden megfigyelési egységnek egy pontot feleltetünk meg a síkban úgy, hogy a pont egyik koordinátája a megfigyelési egység egyik, a másik koordinátája a másik változó szerinti értéke. (Tehát lényegében a megfigyelési egységhez tartozó változókat koordinátáknak tekintjük, és ezeket mérjük fel egy kétdimenziós koordináta-rendszer két tengelyére.) Az anyai és újszülött testtömeg szóródási diagramját a következő ábra mutatja (\@ref(fig:scatterplot). ábra).
+Két mennyiségi változó kapcsolatának legfontosabb ábrázolási eszköze az **szóródási diagram**. A szóródási diagramot úgy kapjuk, hogy minden megfigyelési egységnek egy pontot feleltetünk meg a síkban úgy, hogy a pont egyik koordinátája a megfigyelési egység egyik, a másik koordinátája a másik változó szerinti értéke. (Tehát lényegében a megfigyelési egységhez tartozó változókat koordinátáknak tekintjük, és ezeket mérjük fel egy kétdimenziós koordináta-rendszer két tengelyére.) Az anyai és újszülött testtömeg szóródási diagramját \@aref(fig:scatterplot). ábra mutatja.
 ```{r scatterplot, fig.cap="Két mennyiségi változó kapcsolatának ábrázolása szóródási diagrammal."}
 plot( bwt ~ lwt, data = birthwt, xlab = "Anya testtömege (UM) [font]", ylab = "Születési tömeg [g]" )
 abline( h = mean( birthwt$bwt ), v = mean( birthwt$lwt ), lty = "dashed" )
@@ -407,7 +407,7 @@ Jól látható, immár grafikusan is, hogy mit értünk a két változó közöt
 
 Ráerősítve az előbb mondottakra, az ábrán behúztuk a pontokra legjobban illeszkedő egyenest is. Ahogy említettük, a kapcsolat ,,erőssége'' egyúttal azt is jelenti, hogy a pontok mennyire szorosan illeszkednek a rájuk legjobban illeszkedő egyenesre (látható, hogy itt nem túl szorosan).
 
-Mindezeket szemlélteti a következő ábra is (\@ref(fig:corrdemo). ábra), mely különböző korrelációs együtthatójú kapcsolatokat (különböző előjelekkel és abszolút értékekkel, azaz különböző irányú és erősségű kapcsolatokat) mutat be példákkal.
+Mindezeket szemlélteti \@aref(fig:corrdemo). ábra is, mely különböző korrelációs együtthatójú kapcsolatokat (különböző előjelekkel és abszolút értékekkel, azaz különböző irányú és erősségű kapcsolatokat) mutat be példákkal.
 
 ```{r corrdemo,echo=FALSE, fig.cap="Különféle korrelációs együtthatók szemléltetése.", fig.width=20, fig.height=4}
 par( mfrow = c( 1, 9 ) )

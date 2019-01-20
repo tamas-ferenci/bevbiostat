@@ -15,6 +15,7 @@ description: "Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba.
 Előszó.
 
 ```{r include=FALSE}
+library(magyarbookdown)
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
