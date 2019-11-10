@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 . fejezet Deskriptív statisztika | Bevezetés a biostatisztikába</title>
-  <meta name="description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 . fejezet Deskriptív statisztika | Bevezetés a biostatisztikába" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,18 @@
   <meta name="twitter:description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
   
 
-<meta name="author" content="Ferenci Tamás">
+<meta name="author" content="Ferenci Tamás" />
 
 
-<meta name="date" content="2019-01-20">
+<meta name="date" content="2019-11-10" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="a-statisztika-alapjai.html">
-<link rel="next" href="induktiv.html">
+<link rel="prev" href="a-statisztika-alapjai.html"/>
+<link rel="next" href="induktiv.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +40,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -51,41 +53,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -106,7 +133,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Előszó</a></li>
 <li class="chapter" data-level="2" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html"><i class="fa fa-check"></i><b>2</b> A statisztika alapjai</a><ul>
-<li class="chapter" data-level="2.1" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#a-statisztika-alapfogalmai-es-agai"><i class="fa fa-check"></i><b>2.1</b> A statisztika alapfogalmai és ágai</a></li>
+<li class="chapter" data-level="2.1" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#a-statisztika-alapfogalmai-és-ágai"><i class="fa fa-check"></i><b>2.1</b> A statisztika alapfogalmai és ágai</a></li>
 <li class="chapter" data-level="2.2" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokvaltozok"><i class="fa fa-check"></i><b>2.2</b> Változók és mérési skálák</a></li>
 <li class="chapter" data-level="2.3" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokvelhatarolas"><i class="fa fa-check"></i><b>2.3</b> A biostatisztika kapcsolódó tudományai és elhatárolása</a></li>
 <li class="chapter" data-level="2.4" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokszamtech"><i class="fa fa-check"></i><b>2.4</b> A biostatisztika számítástechnikai háttere</a></li>
@@ -170,10 +197,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="deskriptivaltalaban" class="section level2">
 <h2><span class="header-section-number">3.1</span> A deskriptív statisztikáról általában</h2>
 <p>Amint már többször említettük, a deskriptív statisztika definíciós jellemzője, hogy kizárólag a mintában lévő információval törődik, számára az az ,,univerzum’‘, és teljes mértékben figyelmen kívül hagyja azt a kérdéskört, hogy a mintában lévő információ hogyan viszonyul a sokaságban lévő információhoz. Innen ered a módszer neve is: a deskripció leírást jelent, azaz a deskriptív módszerek <em>pusztán</em> a minta – valamilyen szempontból ,,jó’’ – leírását célozzák meg (nem pedig következtetést a sokaságra). Nem véletlen, hogy ebben a kontextusban nagyon sokszor minta helyett  mondunk (tükrözve, hogy itt igazából nincs is jelentősége annak, hogy az adataink csak – a szó statisztikai értelmében – egy mintát jelentenek).</p>
-<p>A ,,jó leírás’‘alatt legtöbbször azt értjük, hogy a mintában lévő információt úgy próbáljuk <em>tömöríteni</em>, hogy közben – valamilyen elemzési célra tekintettel – <em>kiemeljük a lényeget</em>. Erre azért van szükség, mert a legtöbb esetben a mintában lévő információ (még ha csak néhány változóra, és néhány tucat megfigyelési egységre is gondolunk) feldolgozhatatlan ,,ránézésre’‘. A számok tengeréből még a legalapvetőbb kérdésekre sem tudnánk válaszolni. Szükség van tehát olyan módszerekre, melyek ,,emészthetővé teszik’’ ezt a számtengert: csökkentik a bonyolultságát, hogy tudjuk értelmezni azt, fel tudjuk használni kérdések megválaszolásához, illetve új megállapítások eléréséhez.</p>
+<p>A ,,jó leírás’’ alatt legtöbbször azt értjük, hogy a mintában lévő információt úgy próbáljuk <em>tömöríteni</em>, hogy közben – valamilyen elemzési célra tekintettel – <em>kiemeljük a lényeget</em>. Erre azért van szükség, mert a legtöbb esetben a mintában lévő információ (még ha csak néhány változóra, és néhány tucat megfigyelési egységre is gondolunk) feldolgozhatatlan ,,ránézésre’‘. A számok tengeréből még a legalapvetőbb kérdésekre sem tudnánk válaszolni. Szükség van tehát olyan módszerekre, melyek ,,emészthetővé teszik’’ ezt a számtengert: csökkentik a bonyolultságát, hogy tudjuk értelmezni azt, fel tudjuk használni kérdések megválaszolásához, illetve új megállapítások eléréséhez.</p>
 <p>Nyilvánvaló, hogy a bonyolultság csökkentése csak úgy lehetséges, ha információt hagyunk el. Az egész művelet kritikus pontja épp ez: annak megválasztása, hogy mennyi információt hanyagoljunk el (és persze hogyan). A ,,hogyan’’ szerepe triviális: ha egy adott, mennyiségi változóra vonatkozó 100 elemű mintából elhagyjuk az első 99 elemet, akkor ugyan egyetlen számmá, azaz teljesen áttekinthetővé alakítjuk az információt – csak épp nyilván semmit nem érünk el vele. Ha viszont kiszámoljuk az átlagot, akkor ugyanúgy egyetlen számot kapunk, de immár úgy, hogy annak van értelme, azaz felhasználhatjuk kérdések megválaszolásához, illetve új megállapítások eléréséhez.</p>
 <p>A meghatározó kulcskérdés az elhanyagolásban (az információtömörítésben) tehát a ,,mennyit’’. Látható, hogy trade-off áll fenn az <em>áttekinthetőség</em>, és a <em>reprodukciós hűség</em> között: minél többet hanyagolunk el, annál inkább segítjük az áttekinthetőséget, de annál többet vesztünk az eredeti információ hűséges reprodukciójából. A deskriptív statisztika igazi sava-borsa (végeredményben a legtöbb módszer, így vagy úgy, de ebben foglal el egy álláspontot) a jó kompromisszum megkötése a kettő között. Példának okáért, adatbázisunkban a születési tömeg változó megfigyelései így néznek ki:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">birthwt<span class="op">$</span>bwt</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">birthwt<span class="op">$</span>bwt</a></code></pre></div>
 <pre><code>##   [1] 2523 2551 2557 2594 2600 2622 2637 2637 2663 2665 2722 2733 2751 2750
 ##  [15] 2769 2769 2778 2782 2807 2821 2835 2835 2836 2863 2877 2877 2906 2920
 ##  [29] 2920 2920 2920 2948 2948 2977 2977 2977 2977 2922 3005 3033 3042 3062
@@ -202,7 +229,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">3.2.1</span> Grafikus és analitikus módszerek</h3>
 <p>A fent mutatott példák (átlagtól szóráson át a terjedelemig) mind ún. <em>analitikus</em> eszközök voltak, azaz a (számszerű) információból számszerű, csak épp tömörebb, lényeget kiemelő információt gyártottak. Az analitikus módszerek tipikus példái a mutatószámok, mint amilyen az átlag vagy a szórás, bár léteznek ennél komplexebb (nem egyetlen számból álló) eredményt szolgáltató analitikus eszközök is – az azonban közös pont, hogy mindegyik számszerű kimenetet ad.</p>
 <p>Ezzel állnak szemben a <em>grafikus</em> módszerek, melyek a bemenő (számszerű) információból valamilyen képi megjelenítést konstruálnak. Szokás ezért az ilyet <em>adatvizualizációnak</em> is nevezni, bár ezt a megnevezést gyakran csak a komplexebb módszerekre alkalmazzák.</p>
-<p>A grafikus módszerek általában kevésbé tömörek és kevésbé objektivizálhatóak (ami gond lehet, ha például összehasonlításra van szükség), de cserébe nagyon sokszor jobban értelmezhető benyomást tudnak adni a vizsgált adatbázisról. Ennek hátterében az van, hogy az emberi agy különösen alkalmas struktúrák azonosítására, vizsgálatára grafikus információkban; így ha ügyesen tudjuk vizualizálni adatbázisunk tartalmát, azzal nagyban megkönnyíthetjük az elemzését. Nem véletlen, hogy John Wilder Tukey egyszer azt mondta: ``There is no excuse for failing to plot and look!‘’ (,,Nincs mentség arra, ha nem ábrázoljuk az adatokat és nézünk egyszerűen rá!’’).</p>
+<p>A grafikus módszerek általában kevésbé tömörek és kevésbé objektivizálhatóak (ami gond lehet, ha például összehasonlításra van szükség), de cserébe nagyon sokszor jobban értelmezhető benyomást tudnak adni a vizsgált adatbázisról. Ennek hátterében az van, hogy az emberi agy különösen alkalmas struktúrák azonosítására, vizsgálatára grafikus információkban; így ha ügyesen tudjuk vizualizálni adatbázisunk tartalmát, azzal nagyban megkönnyíthetjük az elemzését. Nem véletlen, hogy John Wilder Tukey egyszer azt mondta: ``There is no excuse for failing to plot and look!’’ (,,Nincs mentség arra, ha nem ábrázoljuk az adatokat és nézünk egyszerűen rá!’’).</p>
 </div>
 <div id="deskriptivcsoportositasegytobbvalt" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Egy- és többváltozós módszerek</h3>
@@ -223,24 +250,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Ilyen változó elemzésének tipikus analitikus eszköze az ún. <strong>gyakorisági sor</strong>. A gyakorisági sor a változó lehetséges kimeneteit (kategóriáit) tartalmazza, együtt azzal, hogy az adott kimenetből hány fordult elő az adatbázisban. Az ilyen ,,darabszámot’’ a statisztikában általában is <strong>gyakoriságnak</strong> nevezik, és <span class="math inline">\(f\)</span>-fel jelölik. (Illetve, ha utalni akarunk arra, hogy az <span class="math inline">\(i\)</span>-edik kategória gyakoriságáról van szó, akkor <span class="math inline">\(f_i\)</span>-vel.) Általában <span class="math inline">\(n\)</span>-nel szokás jelölni a mintanagyságot, így nyilván <span class="math inline">\(\sum_{i=1}^n f_i = n\)</span>.</p>
 <p>Szokás még beszélni <strong>relatív gyakoriságról</strong> is, ami nem más, mint az előbbi (abszolút) gyakoriság osztva a mintanagysággal (azaz <span class="math inline">\(n\)</span>-nel). A relatív gyakoriság tehát azt mutatja meg, hogy egy kategóriába a megfigyelési egységek mekkora hányada esik. Nyilván <span class="math inline">\(\sum_{i=1}^n g_i = 1\)</span>.</p>
 <p>Példának okáért, a rassz változó gyakorisági sora:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">birthwt<span class="op">$</span>race &lt;-<span class="st"> </span><span class="kw">factor</span>(birthwt<span class="op">$</span>race, <span class="dt">levels =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Kaukázusi&quot;</span>, <span class="st">&quot;Afroamerikai&quot;</span>, 
-    <span class="st">&quot;Egyéb&quot;</span>))
-<span class="kw">table</span>(birthwt<span class="op">$</span>race)</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">birthwt<span class="op">$</span>race &lt;-<span class="st"> </span><span class="kw">factor</span>(birthwt<span class="op">$</span>race, <span class="dt">levels =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Kaukázusi&quot;</span>, <span class="st">&quot;Afroamerikai&quot;</span>, </a>
+<a class="sourceLine" id="cb5-2" title="2">    <span class="st">&quot;Egyéb&quot;</span>))</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">table</span>(birthwt<span class="op">$</span>race)</a></code></pre></div>
 <pre><code>## 
 ##    Kaukázusi Afroamerikai        Egyéb 
 ##           96           26           67</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race))</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race))</a></code></pre></div>
 <pre><code>## 
 ##    Kaukázusi Afroamerikai        Egyéb 
 ##          0,5          0,1          0,4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cbind</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race), <span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race)))</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">cbind</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race), <span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race)))</a></code></pre></div>
 <pre><code>##              [,1] [,2]
 ## Kaukázusi      96  0,5
 ## Afroamerikai   26  0,1
 ## Egyéb          67  0,4</code></pre>
 <p>Megjegyezzük, hogy a teljes relatív gyakorisági sort a statisztikusok nagyon gyakran a változó <strong>megoszlásának</strong> hívják.</p>
 <p>Vegyük észre, hogy ebben a speciális esetben az információtömörítés igazából semmilyen információveszteséggel nem járt: ez a három szám  hordoz  információt erről a változóról mint az eredeti 189 szám! Ez azonban egy abszolút speciális eset, ami kizárólag a változó minőségi mivoltának volt köszönhető.</p>
-<p>A gyakorisági soron kívül egy mutatószámnak van még értelme ennél a mérési skálánál: a . A módusz (jele: <span class="math inline">\(\mathrm{Mo}\)</span>) nem más, mint a leggyakoribb kimenet (tehát az a kimenet, melyhez tartozó gyakoriság a legnagyobb az adatbázisban). Nagyon formalizálva ezt írhatnánk: <span class="math display">\[
+<p>A gyakorisági soron kívül egy mutatószámnak van még értelme ennél a mérési skálánál: a . A módusz (jele: <span class="math inline">\(\mathrm{Mo}\)</span>) nem más, mint a leggyakoribb kimenet (tehát az a kimenet, melyhez tartozó gyakoriság a legnagyobb az adatbázisban). Nagyon formalizálva ezt írhatnánk:
+<span class="math display">\[
     \mathrm{Mo}=\mathop{\mathrm{arg\,max}}_i f_i.
 \]</span></p>
 <p>A példánkban tehát a rassz módusza a kaukázusi.</p>
@@ -253,7 +281,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">3.3.2</span> Grafikus eszközök</h3>
 <p>A minőségi változók grafikus elemzése lényegében a gyakorisági sor vizualizálását jelenti. Ennek két, gyakorlatban legtipikusabb eszköze az <strong>oszlopdiagram</strong> és a <strong>kördiagram</strong>. Az előbbi oszlopok magasságával, az utóbbi körcikkek területével szemlélteti a gyakoriságokat. (Bár ez utóbbi, jellegéből adódóan, igazából csak relatív gyakoriságokat tud szemléltetni. Oszlopdiagrammal gyakoriság és relatív gyakoriság is szemléltethető; sőt, a kettő lényegében ekvivalens, csak a függőleges tengely skálázása lesz más.)</p>
 <p>Oszlopdiagramot használtunk a <a href="deskriptiv.html#fig:oszlopdiagram">3.1</a>. ábrán.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race), <span class="dt">xlab =</span> <span class="st">&quot;Rassz&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság [fő]&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">barplot</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race), <span class="dt">xlab =</span> <span class="st">&quot;Rassz&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság [fő]&quot;</span>)</a></code></pre></div>
 <div class="figure"><span id="fig:oszlopdiagram"></span>
 <img src="bevbiostat_files/figure-html/oszlopdiagram-1.png" alt="Példa egy minőségi változó ábrázolására oszlopdiagrammal." width="672" />
 <p class="caption">
@@ -273,8 +301,8 @@ Figure 3.1: Példa egy minőségi változó ábrázolására oszlopdiagrammal.
 <div id="deskriptivmennyegyvaltanalitikusgyakorisagisor" class="section level4">
 <h4><span class="header-section-number">3.4.1.1</span> Gyakorisági sor</h4>
 <p>Gyakorisági sor természetesen mennyiségi változóra is készíthető, de csak módosításokkal. Annak ugyanis, hogy megszámoljuk, hogy az egyes előforduló kimenetekből mennyi van, nincs sok értelme (hogy egy példával illusztráljuk: az itt tipikus folytonos változóknál könnyen lehet, hogy minden egyes előforduló kimenetből csak egyetlen egy lesz). A problémát nyilván a folytonosság jelenti, ami ellen úgy védekezhetünk, hogy nem adott értéket felvev} megfigyelési egységek számát adjuk meg, hanem <em>adott intervallumba esőek</em> számát. Így kapjuk az <strong>osztályközös gyakorisági sort</strong>. (Az elnevezés arra utal, hogy osztályközöket hozunk létre – így fogjuk hívni az előbb említett intervallumokat.) A gyakoriság, relatív gyakoriság, kumulált gyakoriság és kumulált relatív gyakoriság értelmezése változatlan. A születési tömeg változó osztályközös gyakorisági sora (precízebben szólva: egy lehetséges osztályközös gyakorisági sora; hiszen ez már függeni fog az osztályközök megválasztásától is), a következő:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab &lt;-<span class="st"> </span><span class="kw">table</span>(<span class="kw">cut</span>(birthwt<span class="op">$</span>bwt, <span class="kw">seq</span>(<span class="dv">500</span>, <span class="dv">5000</span>, <span class="dv">500</span>)))
-<span class="kw">cbind</span>(<span class="dt">Ci0 =</span> <span class="kw">seq</span>(<span class="dv">500</span>, <span class="dv">4500</span>, <span class="dv">500</span>), <span class="dt">Ci1 =</span> <span class="kw">seq</span>(<span class="dv">1000</span>, <span class="dv">5000</span>, <span class="dv">500</span>), <span class="dt">fi =</span> tab, <span class="dt">gi =</span> <span class="kw">prop.table</span>(tab))</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">table</span>(<span class="kw">cut</span>(birthwt<span class="op">$</span>bwt, <span class="kw">seq</span>(<span class="dv">500</span>, <span class="dv">5000</span>, <span class="dv">500</span>)))</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">cbind</span>(<span class="dt">Ci0 =</span> <span class="kw">seq</span>(<span class="dv">500</span>, <span class="dv">4500</span>, <span class="dv">500</span>), <span class="dt">Ci1 =</span> <span class="kw">seq</span>(<span class="dv">1000</span>, <span class="dv">5000</span>, <span class="dv">500</span>), <span class="dt">fi =</span> tab, <span class="dt">gi =</span> <span class="kw">prop.table</span>(tab))</a></code></pre></div>
 <pre><code>##                  Ci0  Ci1 fi    gi
 ## (500,1e+03]      500 1000  1 0,005
 ## (1e+03,1,5e+03] 1000 1500  4 0,021
@@ -297,15 +325,16 @@ Figure 3.1: Példa egy minőségi változó ábrázolására oszlopdiagrammal.
 <p>A mutatószámok a megfigyelések valamilyen jellemzőjét próbálják meg egy-egy számba tömörítve megragadni. A következőkben aszerint csoportosítva mutatjuk be őket, hogy mi ez a megragadott jellemző.</p>
 <div id="deskriptivmennyegyvaltanalitikusmutatoszamokcentralistendencia" class="section level5">
 <h5><span class="header-section-number">3.4.1.2.1</span> Középértékek (centrális tendencia)</h5>
-<p><strong>Centrális tendencia</strong> alatt azt értjük, hogy mi az az érték, ami körül csoportosulnak a megfigyelések. Függően a konkrét mutatótól, olyanokra gondolhatunk ez alatt, mint ,,közepes’‘, ,,tipikus’‘vagy ,,átlagos’’ érték. A legtöbb statisztikai alkalmazás szempontjából ez a legfontosabb jellemzője a változónak, ezért ha csak egyetlen számmal jellemezhetjük a változót, az tipikusan a centrális tendencia valamilyen leírója lesz. Ezeket a mutatószámokat általában <strong>középértéknek</strong> vagy <strong>helyzetmutatónak</strong> nevezik.</p>
-<p>A centrális tendencia legismertebb mutatója a <strong>(számtani) átlag</strong>, jele <span class="math inline">\(\overline{x}\)</span>. Definíciószerűen nem más, mint az az szám, amivel helyettesítve minden megfigyelési egység értékét, az ún. értékösszeg (a változó megfigyeléseinek összege) változatlan maradna: <span class="math display">\[
+<p><strong>Centrális tendencia</strong> alatt azt értjük, hogy mi az az érték, ami körül csoportosulnak a megfigyelések. Függően a konkrét mutatótól, olyanokra gondolhatunk ez alatt, mint ,,közepes’‘, ,,tipikus’’ vagy ,,átlagos’’ érték. A legtöbb statisztikai alkalmazás szempontjából ez a legfontosabb jellemzője a változónak, ezért ha csak egyetlen számmal jellemezhetjük a változót, az tipikusan a centrális tendencia valamilyen leírója lesz. Ezeket a mutatószámokat általában <strong>középértéknek</strong> vagy <strong>helyzetmutatónak</strong> nevezik.</p>
+<p>A centrális tendencia legismertebb mutatója a <strong>(számtani) átlag</strong>, jele <span class="math inline">\(\overline{x}\)</span>. Definíciószerűen nem más, mint az az szám, amivel helyettesítve minden megfigyelési egység értékét, az ún. értékösszeg (a változó megfigyeléseinek összege) változatlan maradna:
+<span class="math display">\[
     \overline{x}=\frac{\sum_{i=1}^n x_i}{n}.
 \]</span></p>
 <p>Azonnal látható, hogy ennek akkor van értelme, ha a különböző megfigyelések számtani összege valamilyen értelmes tartalommal bír. (Van például értelme beszélni egy osztály átlagos testtömegéről, hiszen a testtömegek összege értelmes kifejezés, megadja például, hogy mennyit mutatna egy mérleg, ha mindenki ráállná.) Ha azonban a változó olyan, hogy nem az megfigyelések összegének van értelme, akkor a számtani átlag használata félrevezető lehet, és mással kell helyettesíteni – például, ha a megfigyelések összege helyett azok szorzata a tárgyterületileg értelmes, akkor az ún. mértani átlaggal. (Tipikus példa erre az, ha a változó valamilyen növekedési ütemet jelent időben. Ha egy alany testtömege egy évben 1,2-szeresére nőtt, rákövetkező évben pedig 1,3-szeresére, akkor az össznövekedés nyilván nem a növekedések összege (<span class="math inline">\(1,\!2 + 1,\!2 = 2,\!4\)</span>), hanem azok szorzata (<span class="math inline">\(1,\!2 \cdot 1,\!2 = 1,\!44\)</span>) lesz.)</p>
 <p>A születési tömegek átlaga 2944,6 gramm, ami azt jelenti, hogy az adatbázisban szereplő újszülöttek össz-testtömege akkor maradna változatlan, ha mindegyikük 2944,6 gramm lenne.</p>
 <p>Az átlag ún. számított középérték, mivel valamilyen számszerű összefüggésben van a megfigyelések értékeivel.</p>
 <p>Az átlag előnye, hogy rendkívül közismert, mindenki számára kényelmesen kezelhető, szokásos gondolkodásunkhoz közel álló mutató. (Ez olyannyira erős tényező, hogy nagyon sok orvosi publikáció még akkor is erőlteti az átlag használatát, amikor az – a mindjárt részletezendő okokból – nem célszerű.)</p>
-<p>Az átlag legnagyobb hátránya, hogy nem <strong>robusztus</strong>. Egy statisztikai mutatószám robusztussága azt méri, hogy mennyire érzékeny arra, ha a mintában a többi értéktől, a csoportosulás alaptendenciájától jelentősen eltérő érték vagy értékek vannak. Az ilyen megfigyeléseket egyébként nagyon gyakran <strong>outliernek</strong> is nevezik. (,,Érzékenység’‘alatt azt értjük, hogy a mutatót mennyire tudja befolyásolni, eredeti értékétől eltéríteni ilyen outlierek jelenléte.) Az átlag ilyen szempontból extrém rossz mutató: egyrészt bármelyik megfigyelés bármilyen megváltozása módosítja az átlag értékét, de ami az igazán nagy baj, hogy ha egyetlen megfigyelés is tart a végtelenhez, úgy az átlag is tart a végtelenhez, <em>függetlenül</em> az összes többi megfigyeléstől, és függetlenül a minta nagyságától. Mindez azt mondja nekünk, hogy ha csak egyetlen outlier is van a mintában, már az is képes arra, hogy teljesen értelmetlenné tegye az átlagot. (Hiszen ha van egy ilyen outlier a mintában, akkor az átlag <em>pont hogy nem</em> a minta ,,közepes’’ értékét fogja mutatni, hanem egyre inkább az outlierét, minél jobban kilóg.)</p>
+<p>Az átlag legnagyobb hátránya, hogy nem <strong>robusztus</strong>. Egy statisztikai mutatószám robusztussága azt méri, hogy mennyire érzékeny arra, ha a mintában a többi értéktől, a csoportosulás alaptendenciájától jelentősen eltérő érték vagy értékek vannak. Az ilyen megfigyeléseket egyébként nagyon gyakran <strong>outliernek</strong> is nevezik. (,,Érzékenység’’ alatt azt értjük, hogy a mutatót mennyire tudja befolyásolni, eredeti értékétől eltéríteni ilyen outlierek jelenléte.) Az átlag ilyen szempontból extrém rossz mutató: egyrészt bármelyik megfigyelés bármilyen megváltozása módosítja az átlag értékét, de ami az igazán nagy baj, hogy ha egyetlen megfigyelés is tart a végtelenhez, úgy az átlag is tart a végtelenhez, <em>függetlenül</em> az összes többi megfigyeléstől, és függetlenül a minta nagyságától. Mindez azt mondja nekünk, hogy ha csak egyetlen outlier is van a mintában, már az is képes arra, hogy teljesen értelmetlenné tegye az átlagot. (Hiszen ha van egy ilyen outlier a mintában, akkor az átlag <em>pont hogy nem</em> a minta ,,közepes’’ értékét fogja mutatni, hanem egyre inkább az outlierét, minél jobban kilóg.)</p>
 <p>Megjegyezzük, hogy pontosan emiatt az átlag használata a centrális tendencia jellemzésére nem csak gyakorlati szempontból lehet problémás (adatrögzítési hibákból, adatbázis-sérülésekből eredeti outlierek), hanem elméletileg is ellenjavallt, ha a változó olyan, hogy fel kell készülni kis számú, de a többitől lényegesen nagyobb vagy kisebb megfigyelés jelenlétére. (Ez fordulhat elő – mindenféle adatrögzítési és egyéb hiba nélkül is! – például ún. aszimmetrikus eloszlásoknál, melyekről később fogunk részletesebben beszélni.)</p>
 <p>Épp ezen a robusztussági problémán igyekszik javítani a <strong>trimmelt (vagy nyesett) átlag</strong>: ezt úgy kapjuk, hogy elhagyjuk a legkisebb és legnagyobb adott számú elemet, és csak a maradékot átlagoljuk ki. Tipikusan az elhagyott megfigyelések száma alul és felül is a mintanagyság 2,5%-a; ebben az esetben 5%-os trimmelt átlagról beszélünk. (Bár elsőre ez szokatlan mutatónak tűnhet, és a tudományos irodalomban tényleg ritkábban is használják, de számos pontozásos sportágban épp ilyen elven alakítják ki a zsűri ,,átlagos’’ pontszámát.) A születési tömegek 5%-os trimmelt átlaga 2957,4 gramm, ami egyúttal azt is mutatja, lévén, hogy közel van a szokásos átlaghoz, hogy a születési tömegek aránylag szimmetrikus eloszlásúak, vélhetően komoly outlier nélkül.</p>
 <p>Alapvetően más megközelítését jelenti a centrális tendencia megragadásának a <strong>medián</strong> használata, melynek jele <span class="math inline">\(\mathrm{Me}_x\)</span>. A medián nem más, mint a nagyság szerint sorbarendezett megfigyelések közül a középső. (Amennyiben a mintanagyság páros, úgy nyilván két ,,középső’’ is van, ez esetben megállapodás kérdése, hogy mit nevezünk mediánnak; vehetjük például a kettő átlagát.) Úgy is szoktak fogalmazni, hogy a medián felezőpont, az az érték, amiről elmondható, hogy alatta és felette is egyaránt ugyanannyi mintaelem (az összes fele-fele) található.</p>
@@ -321,21 +350,28 @@ Figure 3.1: Példa egy minőségi változó ábrázolására oszlopdiagrammal.
 <p><strong>Szóródásnak</strong> nevezzük azt, hogy a megfigyelések milyen szorosan csoportosulnak azon érték körül, ami körül csoportosulnak (lásd a centrális tendenciát!), más szóval mennyire ingadoznak a megfigyelések, mekkora változékonyság van bennük. A gyakorlatban ez a második legfontosabb kérdés: ha csak egy jellemzőt adhatunk meg, akkor az a centrális tendencia lesz, de ha kettőt, akkor megadjuk azt is, hogy mekkora a szóródás.</p>
 <p>A minta szóródásának legegyszerűbb mérőszáma a legkisebb (<span class="math inline">\(\mathrm{Min}\)</span>) és a legnagyobb (<span class="math inline">\(\mathrm{Max}\)</span>) mintaelem értéke, a <strong>mintaminimum</strong> és <strong>mintamaximum</strong>, illetve kettejük különbsége, melyet <strong>terjedelemnek</strong> nevezünk és <span class="math inline">\(R\)</span>-rel jelölünk: <span class="math inline">\(R=\mathrm{Max}-\mathrm{Min}\)</span>. Ezek előnye, hogy teljesen egyértelmű a tartalmuk, hátrányuk, hogy rendkívül érzékenyek arra, hogy konkrétan milyen mintát vettünk a sokaságból, ezért következtetési célokra nem is szokták alkalmazni.</p>
 <p>A születési tömegek mintaminimuma 709 gramm, mintamaximuma 4990 gramm, így e változó terjedelme 4281gramm.</p>
-<p>A leggyakoribb általános célú mutatója a szóródásnak a , jele általában <span class="math inline">\(s_x\)</span> vagy <span class="math inline">\(\sigma_x\)</span>. (A kettő neve nem keverendő: a ,,szóródás’‘a jellemző, a ,,szórás’’ egy lehetséges mutatószáma a szóródásnak.) A szórás nem más, mint a megfigyelések átlagtól vett átlagos eltérése. Ez utóbbi átlag alatt négyzetes átlagot értve – egyszerű számtani átlag nem lenne jó, hiszen azzal a pozitív és negatív irányú eltérések csökkentenék (sőt, belátható, hogy kioltanák) egymás hatását. Azaz: <span class="math display">\[
+<p>A leggyakoribb általános célú mutatója a szóródásnak a , jele általában <span class="math inline">\(s_x\)</span> vagy <span class="math inline">\(\sigma_x\)</span>. (A kettő neve nem keverendő: a ,,szóródás’’ a jellemző, a ,,szórás’’ egy lehetséges mutatószáma a szóródásnak.) A szórás nem más, mint a megfigyelések átlagtól vett átlagos eltérése. Ez utóbbi átlag alatt négyzetes átlagot értve – egyszerű számtani átlag nem lenne jó, hiszen azzal a pozitív és negatív irányú eltérések csökkentenék (sőt, belátható, hogy kioltanák) egymás hatását. Azaz:
+<span class="math display">\[
     s_x=\sqrt{\frac{\sum_{i=1}^n \left(x_i-\overline{x}\right)^2}{n}}.
 \]</span></p>
 <p>Ennek a négyzetét szokás szórásnégyzetnek vagy <strong>varianciának</strong> nevezni. Deskriptív esetben néha inkább mintaszórást illetve mintavarianciát mondanak (hogy a megfelelő valószínűségszámítási fogalomtól megkülönböztessék).</p>
-<p>A fent definiált mutatót szokás precízen korrigálatlan mintaszórásnak nevezni, ezzel szemben a <strong>korrigált mintaszórás</strong>: <span class="math display">\[
+<p>A fent definiált mutatót szokás precízen korrigálatlan mintaszórásnak nevezni, ezzel szemben a <strong>korrigált mintaszórás</strong>:
+<span class="math display">\[
     s_x^{\ast}=\sqrt{\frac{\sum_{i=1}^n \left(x_i-\overline{x}\right)^2}{n-1}}.
-\]</span> A különbségük oka csak a következtető statisztikában válik világossá (a korrigálatlan mintavariancia, első ránézésre talán meglepő módon, nem torzítatlan becslője a sokasági varianciának).</p>
+\]</span>
+A különbségük oka csak a következtető statisztikában válik világossá (a korrigálatlan mintavariancia, első ránézésre talán meglepő módon, nem torzítatlan becslője a sokasági varianciának).</p>
 <p>A születési tömegek korrigált mintaszórása 729,2 gramm, tehát az újszülöttek testtömegeinek átlaguk körül vett ingadozásának (négyzetes) átlaga 729,2 gramm.</p>
-<p>A szórás hátránya, hogy – az átlaghoz hasonlóan – nem robusztus mutató. (Egyrészt azért, mert maga is az eltérések négyzetét használja, ami érzékeny a kilógó értékekre, másrészt azért, mert a eltéréseket a nem-robusztus átlagtól veszi.) Egyik lehetséges megoldás az <strong>interkvartilis terjedelem</strong> (jele <span class="math inline">\(IQR\)</span>) használata, ami a felső és az alsó kvartilis különbsége: <span class="math display">\[
+<p>A szórás hátránya, hogy – az átlaghoz hasonlóan – nem robusztus mutató. (Egyrészt azért, mert maga is az eltérések négyzetét használja, ami érzékeny a kilógó értékekre, másrészt azért, mert a eltéréseket a nem-robusztus átlagtól veszi.) Egyik lehetséges megoldás az <strong>interkvartilis terjedelem</strong> (jele <span class="math inline">\(IQR\)</span>) használata, ami a felső és az alsó kvartilis különbsége:
+<span class="math display">\[
     IQR=Q_3-Q_1.
-\]</span> Az interkvartilis terjedelem a robusztus kvartiliseken alapul, így robusztus mutató, és könnyen látható, hogy tartalmilag a szóródást jellemzi, hiszen minél jobban szóródott az eloszlás, annál távolabb lesz az alsó és a felső negyedelőpontja.</p>
+\]</span>
+Az interkvartilis terjedelem a robusztus kvartiliseken alapul, így robusztus mutató, és könnyen látható, hogy tartalmilag a szóródást jellemzi, hiszen minél jobban szóródott az eloszlás, annál távolabb lesz az alsó és a felső negyedelőpontja.</p>
 <p>A születési tömegek interkvartilis terjedelme 1073 gramm, tehát az a tömeg, ami fölött az újszülöttek egynegyede (és alatta háromnegyede) van, 1073 grammal nagyobb annál a tömegnél, ami fölött az újszülöttek háromnegyede (és alatta egynegyede) van.</p>
-<p>A másik lehetőség a szórás ,,megjavítása’‘, olyan módon, hogy az eltéréseknek nem a négyzetét, hanem az abszolút értékét vesszük. (Ezzel a kapott mennyiség matematikai kezelhetőségét rontjuk, hiszen a négyzetreemelés jobban kezelhető matematikai objektum, de a robusztusságot növeljük.) További javítási lehetőség, ha az eltéréseket nem az átlagtól hanem a mediántól vesszük, és nem is átlagoljuk őket, hanem a mediánjukat képezzük. A mutató neve, ami mindhárom ,,trükköt’’ beveti: <strong>medián abszolút eltérés</strong>, jele <span class="math inline">\(MAD\)</span>, tehát <span class="math display">\[
+<p>A másik lehetőség a szórás ,,megjavítása’‘, olyan módon, hogy az eltéréseknek nem a négyzetét, hanem az abszolút értékét vesszük. (Ezzel a kapott mennyiség matematikai kezelhetőségét rontjuk, hiszen a négyzetreemelés jobban kezelhető matematikai objektum, de a robusztusságot növeljük.) További javítási lehetőség, ha az eltéréseket nem az átlagtól hanem a mediántól vesszük, és nem is átlagoljuk őket, hanem a mediánjukat képezzük. A mutató neve, ami mindhárom ,,trükköt’’ beveti: <strong>medián abszolút eltérés</strong>, jele <span class="math inline">\(MAD\)</span>, tehát
+<span class="math display">\[
     MAD=\mathrm{Me}\left(\left|x_i-\mathrm{Me}\left(x\right)\right|\right).
-\]</span> (A szakirodalom itt nem teljesen egyértelmű: néha <span class="math inline">\(MAD\)</span>-nak nevezik azt a mutatót is, ahol csak az első javítást csinálják meg, tehát abszolútértéket vesznek, de azokat továbbra is csak átlagolják, és az eltéréseket is az átlagtól veszik.)</p>
+\]</span>
+(A szakirodalom itt nem teljesen egyértelmű: néha <span class="math inline">\(MAD\)</span>-nak nevezik azt a mutatót is, ahol csak az első javítást csinálják meg, tehát abszolútértéket vesznek, de azokat továbbra is csak átlagolják, és az eltéréseket is az átlagtól veszik.)</p>
 <p>A születési tömegek medián abszolút eltérése 563 gramm, tehát az újszülöttek testtömegeinek mediánjuk körül vett (abszolút) ingadozásának mediánja 563 gramm.</p>
 </div>
 <div id="deskriptivmennyegyvaltanalitikusmutatoszamokalakmutatok" class="section level5">
@@ -350,24 +386,26 @@ Figure 3.1: Példa egy minőségi változó ábrázolására oszlopdiagrammal.
 <div id="deskriptivmennyegyvaltgrafikushisztogram" class="section level4">
 <h4><span class="header-section-number">3.4.2.1</span> Hisztogram</h4>
 <p>A hisztogram leegyszerűsítve nem más, mint az osztályközös gyakorisági sor ábrázolása oszlopdiagramon, annyi specialitással, hogy az oszlopokat közvetlenül egymás mellé rajzoljuk, hely kihagyása nélkül (<a href="deskriptiv.html#fig:hisztogram">3.2</a>. ábra).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(birthwt<span class="op">$</span>bwt, <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság [fő]&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)
-<span class="kw">rug</span>(birthwt<span class="op">$</span>bwt)</code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">hist</span>(birthwt<span class="op">$</span>bwt, <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság [fő]&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw">rug</span>(birthwt<span class="op">$</span>bwt)</a></code></pre></div>
 <div class="figure"><span id="fig:hisztogram"></span>
 <img src="bevbiostat_files/figure-html/hisztogram-1.png" alt="Példa egy mennyiségi változó ábrázolására hisztogrammal." width="672" />
 <p class="caption">
 Figure 3.2: Példa egy mennyiségi változó ábrázolására hisztogrammal.
 </p>
 </div>
-<p>Az ábrán látható, hogy az oszlopok határai kijelölik az osztályközöket (ezek természetesen nem feltétlenül azonos szélességűek); adott osztályköz fölé pedig <span class="math display">\[
+<p>Az ábrán látható, hogy az oszlopok határai kijelölik az osztályközöket (ezek természetesen nem feltétlenül azonos szélességűek); adott osztályköz fölé pedig
+<span class="math display">\[
     \frac{f_i}{n \cdot h_i}
-\]</span> magasságú oszlopokat rajzolunk, ahol <span class="math inline">\(h_i\)</span> az adott osztályköz szélessége. Ezen az ábrán feltüntettük (alul, apró tüskékként) magukat a nyers megfigyeléseket is (,,rugplot’’).</p>
+\]</span>
+magasságú oszlopokat rajzolunk, ahol <span class="math inline">\(h_i\)</span> az adott osztályköz szélessége. Ezen az ábrán feltüntettük (alul, apró tüskékként) magukat a nyers megfigyeléseket is (,,rugplot’’).</p>
 <p>A hisztogram a legnépszerűbb adatvizualizációs módszer mennyiségi változókra. Ahogy már utaltunk is rá, hatalmas előnye, hogy a vizuálisan közölt információ rendkívül jól feldolgozható az emberi agy számára: a fenti hisztogram alapján szinte ,,ránézésre’’, egyetlen pillantással jó képünk alakul ki a centrális tendenciáról, a szóródásról, sőt, az eloszlás alakjának finomabb jellemzőiről is. Egy átlagot még el sem olvastunk, amikorra a hisztogram alapján már olyan finom jellemzőkről, mint az eloszlás szimmetriája is képünk van.</p>
 <p>Hátránya, hogy kevésbé objektív (mint a grafikus módszerek általában) – ha például két változót össze kell hasonlítanunk, akkor két átlaggal (azaz két számmal) az értelemszerűen könnyebben megtehető mint két hisztogrammal.</p>
 <p>A legnagyobb kihívás azonban az osztályközök helyes megválasztása. Ez a probléma teljesen ugyanaz, mint amit az osztályközös gyakorisági sornál is kifejtettünk. Sőt, itt talán még jobban szemléltethető: a <a href="deskriptiv.html#fig:hisztogramvalasztasok">3.3</a>. ábrán ugyanazt az adatsort ábrázoltuk, csak épp az optimálisnál lényegesen több, illetve lényegesen kevesebb osztályközt használva is.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
-<span class="kw">hist</span>(birthwt<span class="op">$</span>bwt, <span class="dv">3</span>, <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)
-<span class="kw">hist</span>(birthwt<span class="op">$</span>bwt, <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)
-<span class="kw">hist</span>(birthwt<span class="op">$</span>bwt, <span class="dv">30</span>, <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="kw">hist</span>(birthwt<span class="op">$</span>bwt, <span class="dv">3</span>, <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="kw">hist</span>(birthwt<span class="op">$</span>bwt, <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="kw">hist</span>(birthwt<span class="op">$</span>bwt, <span class="dv">30</span>, <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gyakoriság&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
 <div class="figure"><span id="fig:hisztogramvalasztasok"></span>
 <img src="bevbiostat_files/figure-html/hisztogramvalasztasok-1.png" alt="Ugyanazon adatsor ábrázolása különféle számú osztályközt tartalmazó hisztogrammal." width="672" />
 <p class="caption">
@@ -379,14 +417,14 @@ Figure 3.3: Ugyanazon adatsor ábrázolása különféle számú osztályközt t
 <ol style="list-style-type: decimal">
 <li>Explicite megadjuk az osztályközök határait: <code>hist( birthwt$bwt, breaks = c( 500, 1500, 2000, 2500, 2750, 3000, 3250, 3500, 5000 ) )</code>.</li>
 <li>Megadjuk az osztályközök számát: <code>hist( birthwt$bwt, breaks = 10 )</code>.</li>
-<li>Megadjuk a szabály nevét, amivel kérjük az osztályközök számának kiszámolását: <code>hist( birthwt$bwt, breaks = &quot;Sturges&quot; )</code>.</li>
+<li>Megadjuk a szabály nevét, amivel kérjük az osztályközök számának kiszámolását: <code>hist( birthwt$bwt, breaks = "Sturges" )</code>.</li>
 <li>Saját függvényt adunk meg, mely vagy az osztályközök számát, vagy a határait kiszámolja az adatok alapján.</li>
 </ol>
 </div>
 <div id="deskriptivmennyegyvaltgrafikuskde" class="section level4">
 <h4><span class="header-section-number">3.4.2.2</span> Magfüggvényes sűrűségbecslő</h4>
 <p>A hisztogrammal kapcsolatos egyik probléma az előbb említett érzékenység az osztályközök megválasztására. Emellett felvethető az is, hogy a hisztogram szakaszonként konstans becslést ad, ami zavaró lehet (különösen, ha kicsi a mintanagyság, és emiatt nem tudunk sok osztályközt felvenni). Ez utóbbit kiküszöböli, és sok gyakorlati esetben az előbbit is enyhíti a <strong>magfüggvényes sűrűségbecslő</strong> alkalmazása. Ennek matematikai részleteivel most nem foglalkozunk, megelégszünk annyival, hogy a hisztogramhoz hasonlóan az eloszlás alakját becsli, ám a hisztogramtól eltérően nem szakaszonként konstans görbével (<a href="deskriptiv.html#fig:kde">3.4</a>. ábra).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(birthwt<span class="op">$</span>bwt), <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Sűrűség&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(birthwt<span class="op">$</span>bwt), <span class="dt">xlab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Sűrűség&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
 <div class="figure"><span id="fig:kde"></span>
 <img src="bevbiostat_files/figure-html/kde-1.png" alt="Példa egy mennyiségi változó ábrázolására magfüggvényes sűrűségbecslővel." width="672" />
 <p class="caption">
@@ -399,7 +437,7 @@ Figure 3.4: Példa egy mennyiségi változó ábrázolására magfüggvényes s�
 <h4><span class="header-section-number">3.4.2.3</span> (Tukey-féle) boxplot</h4>
 <p>Végül egy egész más elven felépülő, de szellemes, és a gyakorlatban is nagyon hasznos vizualizációs módszerrel ismerkedünk meg, a (Tukey-féle)  (vagy ritkán használt magyar nevén: dobozábrával).</p>
 <p>A boxplot nem más, mint egy számegyenes fölé rajzolt téglalap, mely egy adott változót reprezentál úgy, hogy a téglalap alsó széle az alsó kvartilisnél (<span class="math inline">\(Q_1\)</span>-nél), a felső széle pedig a felső kvartilisnél (<span class="math inline">\(Q_3\)</span>-nál) van. A téglalapon belül egy vastagabb függőleges vonal is látható, ez a mediánnál található (<a href="deskriptiv.html#fig:boxplot">3.5</a>. ábra).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(birthwt<span class="op">$</span>bwt)</code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">boxplot</span>(birthwt<span class="op">$</span>bwt)</a></code></pre></div>
 <div class="figure"><span id="fig:boxplot"></span>
 <img src="bevbiostat_files/figure-html/boxplot-1.png" alt="Példa egy mennyiségi változó ábrázolására boxplottal." width="672" />
 <p class="caption">
@@ -420,7 +458,7 @@ Figure 3.5: Példa egy mennyiségi változó ábrázolására boxplottal.
 <div id="deskriptivminketvaltanalitikuskontingenciatabla" class="section level4">
 <h4><span class="header-section-number">3.5.1.1</span> Kontingenciatábla</h4>
 <p>A kontingenciatábla egy olyan táblázat, melynek soraiban és oszlopaiban a két változó lehetséges kimenetelei vannak, az egyes cellákban pedig azon megfigyelési egységek darabszáma (tehát gyakorisága), melyek a cella sora és oszlopa szerinti kimenetűek a sorhoz illetve az oszlophoz rendelt változó szerint. Például, a rassz és az irritábilis méh kontingenciatáblája így néz ki:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui)</code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui)</a></code></pre></div>
 <pre><code>##               
 ##                 0  1
 ##   Kaukázusi    83 13
@@ -428,8 +466,8 @@ Figure 3.5: Példa egy mennyiségi változó ábrázolására boxplottal.
 ##   Egyéb        55 12</code></pre>
 <p>Tehát például 83 olyan megfigyelési egység van az adatbázisban, ahol az anya rassza kaukázusi <em>és</em> nincs irritábilis méh szindrómája 12 egyéb rasszú, és irritábilis méh szindrómában szenvedő alany van, és így tovább.</p>
 <p>A kontingenciatábla szigorúan véve csak a <span class="math inline">\(3 \times 2\)</span> darab gyakoriságot jelenti; de néha összegző sorokat vagy oszlopokat írunk mellé:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab &lt;-<span class="st"> </span><span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui)
-<span class="kw">rbind</span>(<span class="kw">cbind</span>(tab, <span class="kw">margin.table</span>(tab, <span class="dv">1</span>)), <span class="kw">cbind</span>(<span class="kw">t</span>(<span class="kw">margin.table</span>(tab, <span class="dv">2</span>)), <span class="kw">margin.table</span>(tab)))</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui)</a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="kw">rbind</span>(<span class="kw">cbind</span>(tab, <span class="kw">margin.table</span>(tab, <span class="dv">1</span>)), <span class="kw">cbind</span>(<span class="kw">t</span>(<span class="kw">margin.table</span>(tab, <span class="dv">2</span>)), <span class="kw">margin.table</span>(tab)))</a></code></pre></div>
 <pre><code>##                0  1    
 ## Kaukázusi     83 13  96
 ## Afroamerikai  23  3  26
@@ -441,23 +479,23 @@ Figure 3.5: Példa egy mennyiségi változó ábrázolására boxplottal.
 <p>Természetesen nem csak az oszlopváltozóra feltételezhetünk! Pontosan ugyanígy van értelme beszélni az oszlopváltozó feltételes eloszlásáról a sorváltozó adott értéke, mint feltétel mellett. Például kijelenthetjük, hogy annak feltételes relatív gyakorisága, hogy egy alany nem szenved irritábilis méh szindrómában <span class="math inline">\(83/96=86,\!5\)</span>% <em>azon feltétel mellett</em>, hogy kaukázusi a rassza. Hasonlóan továbbmenve azt is mondhatjuk, hogy az irritábilis méh fennállásának feltételes megoszlása azon feltétel mellett, hogy az alany kaukázusi, 86,5%–13,5%.</p>
 <p>Összefoglalva, egy cellához négyféle számot is rendelhetünk, a bal felső példáján: 83 (gyakoriság), 43,9% (relatív gyakoriság), 51,6% (feltételes relatív gyakoriság azon feltétel mellett, hogy nem áll fenn irritábilis méh szindróma) és 86,5% (feltételes relatív gyakoriság azon feltétel mellett, hogy a rassz kaukázusi). Mindezeket szemléltetik a következő táblázatok.</p>
 <p>Relatív gyakoriságok (peremeken a vetületi megoszlásokkal):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui))
-<span class="kw">rbind</span>(<span class="kw">cbind</span>(tab, <span class="kw">margin.table</span>(tab, <span class="dv">1</span>)), <span class="kw">cbind</span>(<span class="kw">t</span>(<span class="kw">margin.table</span>(tab, <span class="dv">2</span>)), <span class="kw">margin.table</span>(tab)))</code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui))</a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="kw">rbind</span>(<span class="kw">cbind</span>(tab, <span class="kw">margin.table</span>(tab, <span class="dv">1</span>)), <span class="kw">cbind</span>(<span class="kw">t</span>(<span class="kw">margin.table</span>(tab, <span class="dv">2</span>)), <span class="kw">margin.table</span>(tab)))</a></code></pre></div>
 <pre><code>##                0    1    
 ## Kaukázusi    0,4 0,07 0,5
 ## Afroamerikai 0,1 0,02 0,1
 ## Egyéb        0,3 0,06 0,4
 ##              0,9 0,15 1,0</code></pre>
 <p>Irritábilis méh feltételes relatív gyakoriságai a rassz különböző kimenetei, mint feltétel esetén</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui), <span class="dv">1</span>)
-<span class="kw">rbind</span>(<span class="kw">cbind</span>(tab, <span class="kw">margin.table</span>(tab, <span class="dv">1</span>)))</code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui), <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="kw">rbind</span>(<span class="kw">cbind</span>(tab, <span class="kw">margin.table</span>(tab, <span class="dv">1</span>)))</a></code></pre></div>
 <pre><code>##                0   1  
 ## Kaukázusi    0,9 0,1 1
 ## Afroamerikai 0,9 0,1 1
 ## Egyéb        0,8 0,2 1</code></pre>
 <p>Rassz feltételes relatív gyakoriságai az irritábilis méh különböző kimenetei, mint feltétel esetén:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui), <span class="dv">2</span>)
-<span class="kw">rbind</span>(tab, <span class="kw">t</span>(<span class="kw">margin.table</span>(tab, <span class="dv">2</span>)))</code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui), <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="kw">rbind</span>(tab, <span class="kw">t</span>(<span class="kw">margin.table</span>(tab, <span class="dv">2</span>)))</a></code></pre></div>
 <pre><code>##                0   1
 ## Kaukázusi    0,5 0,5
 ## Afroamerikai 0,1 0,1
@@ -474,7 +512,7 @@ Figure 3.5: Példa egy mennyiségi változó ábrázolására boxplottal.
 <div id="deskriptivminketvaltanalitikusmutatoszamok" class="section level4">
 <h4><span class="header-section-number">3.5.1.2</span> Mutatószámok</h4>
 <p>A kapcsolat <em>erősségének</em> kvalitatív fogalmát fent megadtuk; erre több mutatót is definiáltak, melyekkel az erősség számszerűen is lemérhető. Amennyiben a változók nominálisak, úgy pusztán erre van lehetőség.</p>
-<p>Ha azonban a változók ordinálisak, úgy értelmet nyert a kapcsolat <em>irányának</em> fogalma is. Ordinális változók esetén ugyanis a sorok és oszlopok sorrendje nem tetszőleges, van értelme mindkét változó szerint ,,nagyobb’‘és ,,kisebb’’ kimenetről beszélni. Innentől kezdve tehát nem csak azt mondhatjuk, hogy van kapcsolat, ha más oszlopban más a feltételes megoszlás, hanem értelmet nyer az a kijelentés is, hogy nagyobb oszlopban a feltételes megoszlás úgy más, hogy inkább nagyobb sorbeli érték szerepelnek, vagy épp úgy, hogy inkább kisebbek. (Itt is egyenértékű, ha ugyanezt a sorok és oszlopok fordított szerepével mondjuk el.) Ezt ragadja meg a kapcsolat irányának fogalma: ha van kapcsolat (nem 0 az erőssége), akkor az pozitív, amennyiben az oszlopváltozó szerinti nagyobb érték tendenciájában a sorváltozó szerinti nagyobb értékkel jár együtt (és fordítva), negatív, ha az oszlopváltozó szerinti nagyobb érték tendenciájában a sorváltozó szerint kisebb értékkel jár együtt (és fordítva). Ordinális változónál erről is lehet nyilatkozni mutatókkal.</p>
+<p>Ha azonban a változók ordinálisak, úgy értelmet nyert a kapcsolat <em>irányának</em> fogalma is. Ordinális változók esetén ugyanis a sorok és oszlopok sorrendje nem tetszőleges, van értelme mindkét változó szerint ,,nagyobb’’ és ,,kisebb’’ kimenetről beszélni. Innentől kezdve tehát nem csak azt mondhatjuk, hogy van kapcsolat, ha más oszlopban más a feltételes megoszlás, hanem értelmet nyer az a kijelentés is, hogy nagyobb oszlopban a feltételes megoszlás úgy más, hogy inkább nagyobb sorbeli érték szerepelnek, vagy épp úgy, hogy inkább kisebbek. (Itt is egyenértékű, ha ugyanezt a sorok és oszlopok fordított szerepével mondjuk el.) Ezt ragadja meg a kapcsolat irányának fogalma: ha van kapcsolat (nem 0 az erőssége), akkor az pozitív, amennyiben az oszlopváltozó szerinti nagyobb érték tendenciájában a sorváltozó szerinti nagyobb értékkel jár együtt (és fordítva), negatív, ha az oszlopváltozó szerinti nagyobb érték tendenciájában a sorváltozó szerint kisebb értékkel jár együtt (és fordítva). Ordinális változónál erről is lehet nyilatkozni mutatókkal.</p>
 <p>A konkrét mutatószámokkal most nem foglalkozunk (többek között azért sem, mert meglehetősen sok van belőlük, attól függően, hogy pontosan hogyan viselkednek az egyes változók).</p>
 </div>
 </div>
@@ -491,12 +529,15 @@ Figure 3.5: Példa egy mennyiségi változó ábrázolására boxplottal.
 <h3><span class="header-section-number">3.6.1</span> Analitikus eszközök</h3>
 <p>A kapcsolat fogalmát mennyiségi változókra is ugyanazon gondolatot követve értelmezzük, mint amit minőségi változóknál már láttunk. Azt mondjuk, hogy két változó kapcsolatban van egymással, ha az egyik változó átlag feletti értékei tendenciájában a másik változó átlag feletti értékeivel járnak együtt (és ekkor persze fordítva is: az egyik változó átlag alatti értékei tendenciájában a másik változó átlag alatti értékeivel járnak együtt). Azaz: ha egy megfigyelési egység értéke az egyik változó szerint átlag feletti, akkor várhatóan a másik változó szerint is átlag feletti lesz. Pontosabban szólva ez a <em>pozitív</em> kapcsolat definíciója, a negatív esetén az egyik változó átlag feletti értékei tendenciájában a másik átlag alatti értékeivel járnak együtt, és fordítva. Itt természetesen <em>sztochasztikus</em> kapcsolatról beszélünk, ezért a ,,tendenciájában’’ kifejezés: nem arról van szó, hogy ha a megfigyelési egység egyik változója átlag feletti, akkor _biztos, hogy a másik is, de az esetek <em>többségében</em> érvényesül ez a tendencia.</p>
 <p>Érdemes megfigyelni, hogy itt mindenképp van értelme az iránynak (összhangban azzal, hogy a mennyiségi változók bírnak az ordinális tulajdonságaival is, természetesen).</p>
-<p>Két mennyiségi változó fent definiált kapcsolatát klasszikusan a <strong>kovarianciával</strong> szokás lemérni. Ennek definíciója: <span class="math display">\[
+<p>Két mennyiségi változó fent definiált kapcsolatát klasszikusan a <strong>kovarianciával</strong> szokás lemérni. Ennek definíciója:
+<span class="math display">\[
     \mathrm{cov}\left(x,y\right)=\frac{\sum_{i=1}^n \left[\left(x_i-\overline{x}\right)\left(y_i-\overline{y}\right)\right]}{n}.
-\]</span> A számítás logikája vegytisztán tükrözi a definíciót: az <span class="math inline">\(\left(x_i-\overline{x}\right)\)</span> tükrözi az egyik, az <span class="math inline">\(\left(y_i-\overline{y}\right)\)</span> a másik változó szerint azt, hogy az adott megfigyelési egység átlag alatti vagy átlag feletti. Vegyük észre, hogy a kettő szorzata pedig <em>pontosan akkor</em> lesz pozitív, ha vagy mindkét változó szerint átlag feletti a megfigyelési egység, vagy mindkét változó szerint átlag alatti – azaz ha az adott megfigyelési egység a pozitív kapcsolatot erősíti meg! Ha a szorzat negatív, akkor az adott megfigyelési egység a negatív kapcsolatot erősíti.</p>
+\]</span>
+A számítás logikája vegytisztán tükrözi a definíciót: az <span class="math inline">\(\left(x_i-\overline{x}\right)\)</span> tükrözi az egyik, az <span class="math inline">\(\left(y_i-\overline{y}\right)\)</span> a másik változó szerint azt, hogy az adott megfigyelési egység átlag alatti vagy átlag feletti. Vegyük észre, hogy a kettő szorzata pedig <em>pontosan akkor</em> lesz pozitív, ha vagy mindkét változó szerint átlag feletti a megfigyelési egység, vagy mindkét változó szerint átlag alatti – azaz ha az adott megfigyelési egység a pozitív kapcsolatot erősíti meg! Ha a szorzat negatív, akkor az adott megfigyelési egység a negatív kapcsolatot erősíti.</p>
 <p>Sőt, ennél több is igaz: a szorzatnak nem csak az előjele stimmel, de a nagysága is, az ugyanis kifejezi, hogy mennyire erősít meg bennünket az adott megfigyelési egység a kapcsolat fennállásában. Ha a megfigyelési egység egyik (pláne ha mindkét) változó szerint közel van az átlaghoz, akkor az csak gyenge ,,bizonyíték’’ a kapcsolat mellett (kis módosulással lehet, hogy az ellenkező irányú kapcsolatot erősítené), viszont ha mindkét változó szerint távol van az átlagtól, az erős érv a kapcsolat mellett.</p>
 <p>A szummázás ezeket a hatásokat fogja összeadni megfigyelési egységről megfigyelési egységre, így előjele a kapcsolat irányát mutatja, abszolút értéke pedig annak erősségét. (Az <span class="math inline">\(n\)</span>-nel való leosztás nyilván szükséges, különben a kétszer megismételt adatbázison kétszer akkora lenne a kovariancia, holott az információ ugyanaz; tehát ezeket a szorzatokat átlagolni kell.)</p>
-<p>Hogy mi a kovariancia problémája, az azonnal kiderül, ha közöljük az anyai és az újszülött testtömeg közti kovarianciát: 4141,7. Ami kétségtelenül kiolvasható ebből, hogy az anyai és az újszülött testtömeg között van kapcsolat, mégpedig pozitív irányú (nagyobb anyai tömeg – nagyobb újszülött tömeg, és fordítva), hiszen az előjel pozitív. Amiről viszont lényegében semmit nem tudunk meg, az az erősség! Annál is inkább, mert a kovariancia mértékegység-függő: más értéket kapunk, ha az újszülött testtömegét nem grammban, hanem kilogrammban rögzítjük. Tekintetbe véve, hogy az információ ettől még ugyanaz marad, ez nyilván nem szerencsés A probléma tehát, hogy honnan tudhatnánk, hogy a 4141,7 sok vagy kevés? Ebben segít minket az a matematikai észrevétel, hogy mindenképp fennáll a <span class="math inline">\(-s_x s_y \leq \mathrm{cov}\left(x,y\right) \leq s_x s_y\)</span> összefüggés, tehát a kovariancia abszolút értéke nem lehet nagyobb mint a két változó szórásának szorzata. Így máris van mihez viszonyítani a kovariancia nagyságát! Ez tehát a következő mutató definiálását adja, a neve <strong>korrelációs együttható</strong>: <span class="math display">\[
+<p>Hogy mi a kovariancia problémája, az azonnal kiderül, ha közöljük az anyai és az újszülött testtömeg közti kovarianciát: 4141,7. Ami kétségtelenül kiolvasható ebből, hogy az anyai és az újszülött testtömeg között van kapcsolat, mégpedig pozitív irányú (nagyobb anyai tömeg – nagyobb újszülött tömeg, és fordítva), hiszen az előjel pozitív. Amiről viszont lényegében semmit nem tudunk meg, az az erősség! Annál is inkább, mert a kovariancia mértékegység-függő: más értéket kapunk, ha az újszülött testtömegét nem grammban, hanem kilogrammban rögzítjük. Tekintetbe véve, hogy az információ ettől még ugyanaz marad, ez nyilván nem szerencsés{} A probléma tehát, hogy honnan tudhatnánk, hogy a 4141,7 sok vagy kevés{}? Ebben segít minket az a matematikai észrevétel, hogy mindenképp fennáll a <span class="math inline">\(-s_x s_y \leq \mathrm{cov}\left(x,y\right) \leq s_x s_y\)</span> összefüggés, tehát a kovariancia abszolút értéke nem lehet nagyobb mint a két változó szórásának szorzata. Így máris van mihez viszonyítani a kovariancia nagyságát! Ez tehát a következő mutató definiálását adja, a neve <strong>korrelációs együttható</strong>:
+<span class="math display">\[
     \mathrm{corr}\left(x,y\right)=\frac{\mathrm{cov}\left(x,y\right)}{s_x s_y}.
 \]</span></p>
 <p>Ez az előjel értelmezésén semmit nem változtat, hiszen a kovariancia előjelét meghagyja (a nevezőben szórások szerepelnek, így mindkettő szükségképp pozitív), viszont az abszolút értéket értelmezhetővé teszi, hiszen a korrelációra már az teljesül, hogy <span class="math inline">\(-1 \leq \mathrm{corr}\left(x,y\right) \leq 1\)</span>. A korreláció tehát minél közelebb van <span class="math inline">\(\pm 1\)</span>-hez, annál erősebb a két változó közötti kapcsolat.</p>
@@ -508,9 +549,9 @@ Figure 3.5: Példa egy mennyiségi változó ábrázolására boxplottal.
 <div id="deskriptivmennyketvaltvaltgrafikus" class="section level3">
 <h3><span class="header-section-number">3.6.2</span> Grafikus eszközök</h3>
 <p>Két mennyiségi változó kapcsolatának legfontosabb ábrázolási eszköze az <strong>szóródási diagram</strong>. A szóródási diagramot úgy kapjuk, hogy minden megfigyelési egységnek egy pontot feleltetünk meg a síkban úgy, hogy a pont egyik koordinátája a megfigyelési egység egyik, a másik koordinátája a másik változó szerinti értéke. (Tehát lényegében a megfigyelési egységhez tartozó változókat koordinátáknak tekintjük, és ezeket mérjük fel egy kétdimenziós koordináta-rendszer két tengelyére.) Az anyai és újszülött testtömeg szóródási diagramját a <a href="deskriptiv.html#fig:scatterplot">3.6</a>. ábra mutatja.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(bwt <span class="op">~</span><span class="st"> </span>lwt, <span class="dt">data =</span> birthwt, <span class="dt">xlab =</span> <span class="st">&quot;Anya testtömege (UM) [font]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">mean</span>(birthwt<span class="op">$</span>bwt), <span class="dt">v =</span> <span class="kw">mean</span>(birthwt<span class="op">$</span>lwt), <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)
-<span class="kw">abline</span>(<span class="kw">lm</span>(bwt <span class="op">~</span><span class="st"> </span>lwt, <span class="dt">data =</span> birthwt), <span class="dt">lty =</span> <span class="st">&quot;dotted&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">plot</span>(bwt <span class="op">~</span><span class="st"> </span>lwt, <span class="dt">data =</span> birthwt, <span class="dt">xlab =</span> <span class="st">&quot;Anya testtömege (UM) [font]&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Születési tömeg [g]&quot;</span>)</a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">mean</span>(birthwt<span class="op">$</span>bwt), <span class="dt">v =</span> <span class="kw">mean</span>(birthwt<span class="op">$</span>lwt), <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)</a>
+<a class="sourceLine" id="cb28-3" title="3"><span class="kw">abline</span>(<span class="kw">lm</span>(bwt <span class="op">~</span><span class="st"> </span>lwt, <span class="dt">data =</span> birthwt), <span class="dt">lty =</span> <span class="st">&quot;dotted&quot;</span>)</a></code></pre></div>
 <div class="figure"><span id="fig:scatterplot"></span>
 <img src="bevbiostat_files/figure-html/scatterplot-1.png" alt="Két mennyiségi változó kapcsolatának ábrázolása szóródási diagrammal." width="672" />
 <p class="caption">
@@ -527,7 +568,7 @@ Figure 3.6: Két mennyiségi változó kapcsolatának ábrázolása szóródási
 Figure 3.7: Különféle korrelációs együtthatók szemléltetése.
 </p>
 </div>
-<p>A grafikus ábrázolás előnye, hogy (szemben a korrelációs együtthatóval) nem okoz gondot semmilyen outlier, nemlineáris kapcsolat stb. – ezek mind láthatóak lesznek az ábrán. (Itt is hangsúlyosan él tehát Tukey már említett tanácsa) Erre mutat példát a nevezetes Anscombe-kvartett (<a href="deskriptiv.html#fig:anscombe">3.8</a>. ábra). Az ábrák négy kétváltozós adatsor szóródási diagramját mutatják. Mindegyiknek <em>hajszálpontosan ugyanaz</em> a korrelációs együtthatója (sőt, az átlaguk és a szórásuk is – így ugyanaz a rájuk legjobban illeszkedő egyenes is), mégis, a valós helyzet drámaian más. Outlierek, nemlineáris kapcsolatok vannak jelen. Ez azonban csak ábrázolás után derül ki, a korrelációs együttható használata mindezt teljesen elfedné!</p>
+<p>A grafikus ábrázolás előnye, hogy (szemben a korrelációs együtthatóval) nem okoz gondot semmilyen outlier, nemlineáris kapcsolat stb. – ezek mind láthatóak lesznek az ábrán. (Itt is hangsúlyosan él tehát Tukey már említett tanácsa{}) Erre mutat példát a nevezetes Anscombe-kvartett (<a href="deskriptiv.html#fig:anscombe">3.8</a>. ábra). Az ábrák négy kétváltozós adatsor szóródási diagramját mutatják. Mindegyiknek <em>hajszálpontosan ugyanaz</em> a korrelációs együtthatója (sőt, az átlaguk és a szórásuk is – így ugyanaz a rájuk legjobban illeszkedő egyenes is), mégis, a valós helyzet drámaian más. Outlierek, nemlineáris kapcsolatok vannak jelen. Ez azonban csak ábrázolás után derül ki, a korrelációs együttható használata mindezt teljesen elfedné!</p>
 <div class="figure"><span id="fig:anscombe"></span>
 <img src="bevbiostat_files/figure-html/anscombe-1.png" alt="Az Anscombe-kvartett." width="672" />
 <p class="caption">
@@ -546,6 +587,22 @@ Figure 3.8: Az Anscombe-kvartett.
 
 </div>
 </div>
+<!-- Default Statcounter code for Physcon Research
+http://research.physcon.uni-obuda.hu/ -->
+<script type="text/javascript">
+var sc_project=11601191; 
+var sc_invisible=1; 
+var sc_security="5a06c22d"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="ingyen
+webstatisztika" href="https://www.statcounter.hu/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/11601191/0/5a06c22d/1/"
+alt="ingyen webstatisztika"></a></div></noscript>
+<!-- End of Statcounter Code -->
             </section>
 
           </div>
@@ -557,11 +614,13 @@ Figure 3.8: Az Anscombe-kvartett.
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -602,10 +661,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
