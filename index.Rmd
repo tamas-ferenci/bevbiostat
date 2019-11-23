@@ -24,5 +24,6 @@ knitr::write_bib(c(
 ), 'packages.bib')
 options(digits = 1)
 knitr::opts_chunk$set( tidy = TRUE, fig.height = 4 )
-download.file( "https://github.com/tamas-ferenci/bevbiostat/raw/master/bevbiostatcover.png", "./docs/bevbiostatcover.png" )
+download.file( "https://github.com/tamas-ferenci/bevbiostat/raw/master/bevbiostatcover.png", "./docs/bevbiostatcover.png",
+               mode = "wb" )
 ```
