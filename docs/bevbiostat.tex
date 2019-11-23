@@ -300,11 +300,11 @@ A meghatározó kulcskérdés az elhanyagolásban (az információtömörítésb
 
 Ezt a megadást nevezhetnénk az egyik végpontnak ebben a kompromisszumban: 100\% reprodukciós hűség, de -- szinte -- 0\% áttekinthetőség. Ez a legalapvetőbb kérdések megválaszolását, a legalapvetőbb észrevételek elérését is lehetetlenné teszi.
 
-Másik végpontnak vehetjük azt, amikor a fenti adatoknak csak az átlagát adjuk meg \text{2944,6}.
+Másik végpontnak vehetjük azt, amikor a fenti adatoknak csak az átlagát adjuk meg 2944.6.
 
 Ez 0\%-hoz közeli reprodukciós hűséget jelent (189 számból 1-et ,,gyártottunk'', szinte semmit nem tudunk reprodukálni az eredeti adatbázisból), viszont remek az áttekinthetősége (például azonnal látható, hogy milyen érték körül csoportosulnak az adatok).
 
-Az igazán érdekes az, hogy -- természetszerűleg -- a két végpont között számos egyéb kompromisszumot köthetünk. Megadhatjuk például (az utóbbi végponttól az előbbi felé haladva) az adatok átlagát és szórását: \text{2944,6} \(\pm\) \text{729,2}, az adatok átlagát, mediánját, szórását és interkvartilis terjedelmét\footnote{Most még nem fontos, hogy ezek a mutatók pontosan mit jelentenek (a későbbiekből úgyis ki fog derülni), csak annyi számít, hogy a minta különböző leírói.}: \text{2944,6} (\text{2977}) \(\pm\) \text{729,2} (\text{1073}), vagy épp az adatok átlagát, mediánját, szórását, interkvartilis terjedelmét, illetve minimumát és maximumát: \text{2944,6} (\text{2977}) \(\pm\) \text{729,2} (\text{1073}) {[}709-4990{]}.
+Az igazán érdekes az, hogy -- természetszerűleg -- a két végpont között számos egyéb kompromisszumot köthetünk. Megadhatjuk például (az utóbbi végponttól az előbbi felé haladva) az adatok átlagát és szórását: 2944.6 \(\pm\) 729.2, az adatok átlagát, mediánját, szórását és interkvartilis terjedelmét\footnote{Most még nem fontos, hogy ezek a mutatók pontosan mit jelentenek (a későbbiekből úgyis ki fog derülni), csak annyi számít, hogy a minta különböző leírói.}: 2944.6 (2977) \(\pm\) 729.2 (1073), vagy épp az adatok átlagát, mediánját, szórását, interkvartilis terjedelmét, illetve minimumát és maximumát: 2944.6 (2977) \(\pm\) 729.2 (1073) {[}709-4990{]}.
 
 Látszik, hogy minden ilyen megadás egyfajta kompromisszum: egyre több információt őrzünk meg (egyre kevesebb az adatvesztés, hűségesebb a reprodukció), viszont közben romlik a megadás áttekinthetősége.
 
@@ -375,7 +375,7 @@ Példának okáért, a rassz változó gyakorisági sora:
 \begin{verbatim}
 ## 
 ##    Kaukázusi Afroamerikai        Egyéb 
-##          0,5          0,1          0,4
+##          0.5          0.1          0.4
 \end{verbatim}
 
 \begin{Shaded}
@@ -386,9 +386,9 @@ Példának okáért, a rassz változó gyakorisági sora:
 
 \begin{verbatim}
 ##              [,1] [,2]
-## Kaukázusi      96  0,5
-## Afroamerikai   26  0,1
-## Egyéb          67  0,4
+## Kaukázusi      96  0.5
+## Afroamerikai   26  0.1
+## Egyéb          67  0.4
 \end{verbatim}
 
 Megjegyezzük, hogy a teljes relatív gyakorisági sort a statisztikusok nagyon gyakran a változó \textbf{megoszlásának} hívják\footnote{Valószínűségszámításban jártasak számára nem meglepő az elnevezés: ez az eloszlás mintabeli analógja.}.
@@ -457,15 +457,15 @@ Gyakorisági sor természetesen mennyiségi változóra is készíthető, de csa
 
 \begin{verbatim}
 ##                  Ci0  Ci1 fi    gi
-## (500,1e+03]      500 1000  1 0,005
-## (1e+03,1,5e+03] 1000 1500  4 0,021
-## (1,5e+03,2e+03] 1500 2000 14 0,074
-## (2e+03,2,5e+03] 2000 2500 40 0,212
-## (2,5e+03,3e+03] 2500 3000 38 0,201
-## (3e+03,3,5e+03] 3000 3500 45 0,238
-## (3,5e+03,4e+03] 3500 4000 38 0,201
-## (4e+03,4,5e+03] 4000 4500  7 0,037
-## (4,5e+03,5e+03] 4500 5000  2 0,011
+## (500,1e+03]      500 1000  1 0.005
+## (1e+03,1.5e+03] 1000 1500  4 0.021
+## (1.5e+03,2e+03] 1500 2000 14 0.074
+## (2e+03,2.5e+03] 2000 2500 40 0.212
+## (2.5e+03,3e+03] 2500 3000 38 0.201
+## (3e+03,3.5e+03] 3000 3500 45 0.238
+## (3.5e+03,4e+03] 3500 4000 38 0.201
+## (4e+03,4.5e+03] 4000 4500  7 0.037
+## (4.5e+03,5e+03] 4500 5000  2 0.011
 \end{verbatim}
 
 Itt \(C_{i0}\) és \(C_{i1}\) az \(i\)-edik osztályköz alsó és felső határát jelöli, rendre. (Az megállapodás kérdése, hogy a határon lévő megfigyelési egységeket, például egy pont 2000 grammos újszülöttet hová sorolunk, ennek természetesen csak a kerekítésből adódó diszkrétség miatt van egyáltalán jelentősége.)
@@ -497,7 +497,7 @@ A centrális tendencia legismertebb mutatója a \textbf{(számtani) átlag}, jel
 
 Azonnal látható, hogy ennek akkor van értelme, ha a különböző megfigyelések számtani összege valamilyen értelmes tartalommal bír. (Van például értelme beszélni egy osztály átlagos testtömegéről, hiszen a testtömegek összege értelmes kifejezés, megadja például, hogy mennyit mutatna egy mérleg, ha mindenki ráállná.) Ha azonban a változó olyan, hogy nem az megfigyelések összegének van értelme, akkor a számtani átlag használata félrevezető lehet, és mással kell helyettesíteni -- például, ha a megfigyelések összege helyett azok szorzata a tárgyterületileg értelmes, akkor az ún. mértani átlaggal. (Tipikus példa erre az, ha a változó valamilyen növekedési ütemet jelent időben. Ha egy alany testtömege egy évben 1,2-szeresére nőtt, rákövetkező évben pedig 1,3-szeresére, akkor az össznövekedés nyilván nem a növekedések összege (\(1,\!2 + 1,\!2 = 2,\!4\)), hanem azok szorzata (\(1,\!2 \cdot 1,\!2 = 1,\!44\)) lesz.)
 
-A születési tömegek átlaga \text{2944,6} gramm, ami azt jelenti, hogy az adatbázisban szereplő újszülöttek össz-testtömege akkor maradna változatlan, ha mindegyikük \text{2944,6} gramm lenne.
+A születési tömegek átlaga 2944.6 gramm, ami azt jelenti, hogy az adatbázisban szereplő újszülöttek össz-testtömege akkor maradna változatlan, ha mindegyikük 2944.6 gramm lenne.
 
 Az átlag ún. számított középérték, mivel valamilyen számszerű összefüggésben van a megfigyelések értékeivel.
 
@@ -507,13 +507,13 @@ Az átlag legnagyobb hátránya, hogy nem \textbf{robusztus}. Egy statisztikai m
 
 Megjegyezzük, hogy pontosan emiatt az átlag használata a centrális tendencia jellemzésére nem csak gyakorlati szempontból lehet problémás (adatrögzítési hibákból, adatbázis-sérülésekből eredeti outlierek), hanem elméletileg is ellenjavallt, ha a változó olyan, hogy fel kell készülni kis számú, de a többitől lényegesen nagyobb vagy kisebb megfigyelés jelenlétére. (Ez fordulhat elő -- mindenféle adatrögzítési és egyéb hiba nélkül is! -- például ún. aszimmetrikus eloszlásoknál, melyekről később fogunk részletesebben beszélni.)
 
-Épp ezen a robusztussági problémán igyekszik javítani a \textbf{trimmelt (vagy nyesett) átlag}: ezt úgy kapjuk, hogy elhagyjuk a legkisebb és legnagyobb adott számú elemet, és csak a maradékot átlagoljuk ki. Tipikusan az elhagyott megfigyelések száma alul és felül is a mintanagyság 2,5\%-a; ebben az esetben 5\%-os trimmelt átlagról beszélünk. (Bár elsőre ez szokatlan mutatónak tűnhet, és a tudományos irodalomban tényleg ritkábban is használják, de számos pontozásos sportágban épp ilyen elven alakítják ki a zsűri ,,átlagos'' pontszámát.) A születési tömegek 5\%-os trimmelt átlaga \text{2957,4} gramm, ami egyúttal azt is mutatja, lévén, hogy közel van a szokásos átlaghoz, hogy a születési tömegek aránylag szimmetrikus eloszlásúak, vélhetően komoly outlier nélkül.
+Épp ezen a robusztussági problémán igyekszik javítani a \textbf{trimmelt (vagy nyesett) átlag}: ezt úgy kapjuk, hogy elhagyjuk a legkisebb és legnagyobb adott számú elemet, és csak a maradékot átlagoljuk ki. Tipikusan az elhagyott megfigyelések száma alul és felül is a mintanagyság 2,5\%-a; ebben az esetben 5\%-os trimmelt átlagról beszélünk. (Bár elsőre ez szokatlan mutatónak tűnhet, és a tudományos irodalomban tényleg ritkábban is használják, de számos pontozásos sportágban épp ilyen elven alakítják ki a zsűri ,,átlagos'' pontszámát.) A születési tömegek 5\%-os trimmelt átlaga 2957.4 gramm, ami egyúttal azt is mutatja, lévén, hogy közel van a szokásos átlaghoz, hogy a születési tömegek aránylag szimmetrikus eloszlásúak, vélhetően komoly outlier nélkül.
 
 Alapvetően más megközelítését jelenti a centrális tendencia megragadásának a \textbf{medián} használata, melynek jele \(\mathrm{Me}_x\). A medián nem más, mint a nagyság szerint sorbarendezett megfigyelések közül a középső. (Amennyiben a mintanagyság páros, úgy nyilván két ,,középső'' is van, ez esetben megállapodás kérdése, hogy mit nevezünk mediánnak; vehetjük például a kettő átlagát.) Úgy is szoktak fogalmazni, hogy a medián felezőpont, az az érték, amiről elmondható, hogy alatta és felette is egyaránt ugyanannyi mintaelem (az összes fele-fele) található.
 
 Értelemszerű, hogy a medián szintén a centrális tendenciát jellemzi, csak épp kevésbé megszokott módon, mint az átlag -- ez egyúttal használatának egyik fő gátja is: sok ember számára a medián tartalma (és egyáltalán, értelme) kevésbé ismert, így e mutató nem annyira jól kezelhető. Előnye viszont a robusztusság, ilyen szempontból az átlaggal szemben a másik végpontot képviseli: míg az átlag extrém érzékeny volt, addig a medián extrém robusztus. A minta minden medián feletti értéke (az egyszerűség kedvéért most gondoljunk páratlan mintanagyságra) tetszőlegesen megnövelhető (akár az összes egyszerre is), vagy a medián alatti értékek tetszőlegesen lecsökkenthetőek (akár az összes egyszerre is), vagy akár a kettő együtt is, a medián értéke \emph{nem változik}! Hátránya, hogy a jó robusztusságért cserében kevesebb információt használ fel a mintából\footnote{Így már az is érthető, hogy a trimmelt átlag egyfajta kompromisszumnak tekinthető a kettő között, ti. a robusztusság és a mintaértékek mind teljesebb kihasználása között. Az is észrevehető, hogy bizonyos értelemben ez ráadásul általánosítja is a két mutatót: a 0\%-os trimmelt átlag épp a ,,hagyományos'' átlag, a 100\%-os trimmelt átlag pedig épp a medián.}; ezt épp a mintaértékek meglehetősen szabad ,,állítgathatósága'' mutatja. (Hogy ez miért baj, az precízen csak induktív statisztikai keretben lehet megérteni, az ottani tárgyalás után már érthető lesz, hogy mit jelent az, hogy a medián kevésbé hatásos becslő mint az átlag.) A tanulság az, hogy ha feltehető, hogy a háttéreloszlás szimmetrikus-közeli, akkor érdemes átlagot használni, ha nem, vagy outlierek jelenlétére is fel kell készülni (azaz indokolt robusztus statisztika használata), akkor jobb a medián ilyen szempontból.
 
-A születési tömegek mediánja \text{2977} gramm, azaz a \text{2977} gramm az a testtömeg, amiről elmondható, hogy az újszülöttek fele kisebb ennél, fele nagyobb.
+A születési tömegek mediánja 2977 gramm, azaz a 2977 gramm az a testtömeg, amiről elmondható, hogy az újszülöttek fele kisebb ennél, fele nagyobb.
 
 Ahogy a medián a minta ,,felezőpontja'' ugyanúgy definiálhatók általános osztópontok; ezeket \textbf{kvantiliseknek} nevezzük. A \(p\)-kvantilis (\(0<p<1\)) az az érték, amiről elmondható, hogy a megfigyelések \(p\)-ed része kisebb nála, \(\left(1-p\right)\)-ed része nagyobb nála. (Tehát a medián az \(1/2\)-kvantilis.) Gyakorlati szempontból nagyobb jelentősége van még a negyedelőpontoknak, melyek neve \textbf{kvartilis}. Ilyenből tehát nyilván három van: a \(p=1/4,2/4=1/2,3/4\)-kvantilis, ezek közül a középső persze ugyanaz mint a medián. A másik kettőt alsó és felső kvartilisnek szokták nevezni, és \(Q_1\)-gyel, illetve \(Q_3\)-mal jelölik. Tehát például \(Q_1\) az a szám, amire igaz, hogy a minta egynegyede (darabszámra) nála kisebb értékű, háromnegyede nála nagyobb. Ezek valójában már nem is a centrális tendenciát, hanem általában az eloszlás alakját mutatják, mégpedig robusztus módon (ugyanazon okból, mint amit a mediánnál is láttunk). Ritkábban, de szokták használni ugyanerre a célra a tizedelőpontokat, nevük decilis (\(D_1,D_2,\ldots,D_9\)) és a századolópontokat, nevük percentilis (\(P_1,P_2,\ldots,P_{99}\)).
 
@@ -530,7 +530,7 @@ Ennek kapcsán azt is megjegyezzük, hogy átlagot, mediánt (és általában mi
 
 A minta szóródásának legegyszerűbb mérőszáma a legkisebb (\(\mathrm{Min}\)) és a legnagyobb (\(\mathrm{Max}\)) mintaelem értéke, a \textbf{mintaminimum} és \textbf{mintamaximum}, illetve kettejük különbsége, melyet \textbf{terjedelemnek} nevezünk és \(R\)-rel jelölünk: \(R=\mathrm{Max}-\mathrm{Min}\). Ezek előnye, hogy teljesen egyértelmű a tartalmuk, hátrányuk, hogy rendkívül érzékenyek arra, hogy konkrétan milyen mintát vettünk a sokaságból, ezért következtetési célokra nem is szokták alkalmazni.
 
-A születési tömegek mintaminimuma \text{709} gramm, mintamaximuma \text{4990} gramm, így e változó terjedelme \text{4281}gramm.
+A születési tömegek mintaminimuma 709 gramm, mintamaximuma 4990 gramm, így e változó terjedelme 4281gramm.
 
 A leggyakoribb általános célú mutatója a szóródásnak a \emph{szórás}, jele általában \(s_x\) vagy \(\sigma_x\). (A kettő neve nem keverendő: a ,,szóródás'' a jellemző, a ,,szórás'' egy lehetséges mutatószáma a szóródásnak.) A szórás nem más, mint a megfigyelések átlagtól vett átlagos eltérése. Ez utóbbi átlag alatt négyzetes átlagot értve -- egyszerű számtani átlag nem lenne jó, hiszen azzal a pozitív és negatív irányú eltérések csökkentenék (sőt, belátható, hogy kioltanák) egymás hatását. Azaz:
 \[
@@ -545,7 +545,7 @@ A fent definiált mutatót szokás precízen korrigálatlan mintaszórásnak nev
 \]
 A különbségük oka csak a következtető statisztikában válik világossá (a korrigálatlan mintavariancia, első ránézésre talán meglepő módon, nem torzítatlan becslője a sokasági varianciának).
 
-A születési tömegek korrigált mintaszórása \text{729,2} gramm, tehát az újszülöttek testtömegeinek átlaguk körül vett ingadozásának (négyzetes) átlaga \text{729,2} gramm.
+A születési tömegek korrigált mintaszórása 729.2 gramm, tehát az újszülöttek testtömegeinek átlaguk körül vett ingadozásának (négyzetes) átlaga 729.2 gramm.
 
 A szórás hátránya, hogy -- az átlaghoz hasonlóan -- nem robusztus mutató. (Egyrészt azért, mert maga is az eltérések négyzetét használja, ami érzékeny a kilógó értékekre, másrészt azért, mert a eltéréseket a nem-robusztus átlagtól veszi.) Egyik lehetséges megoldás az \textbf{interkvartilis terjedelem} (jele \(IQR\)) használata, ami a felső és az alsó kvartilis különbsége:
 \[
@@ -553,7 +553,7 @@ A szórás hátránya, hogy -- az átlaghoz hasonlóan -- nem robusztus mutató.
 \]
 Az interkvartilis terjedelem a robusztus kvartiliseken alapul, így robusztus mutató, és könnyen látható, hogy tartalmilag a szóródást jellemzi, hiszen minél jobban szóródott az eloszlás, annál távolabb lesz az alsó és a felső negyedelőpontja.
 
-A születési tömegek interkvartilis terjedelme \text{1073} gramm, tehát az a tömeg, ami fölött az újszülöttek egynegyede (és alatta háromnegyede) van, \text{1073} grammal nagyobb annál a tömegnél, ami fölött az újszülöttek háromnegyede (és alatta egynegyede) van.
+A születési tömegek interkvartilis terjedelme 1073 gramm, tehát az a tömeg, ami fölött az újszülöttek egynegyede (és alatta háromnegyede) van, 1073 grammal nagyobb annál a tömegnél, ami fölött az újszülöttek háromnegyede (és alatta egynegyede) van.
 
 A másik lehetőség a szórás ,,megjavítása'`, olyan módon, hogy az eltéréseknek nem a négyzetét, hanem az abszolút értékét vesszük. (Ezzel a kapott mennyiség matematikai kezelhetőségét rontjuk, hiszen a négyzetreemelés jobban kezelhető matematikai objektum, de a robusztusságot növeljük.) További javítási lehetőség, ha az eltéréseket nem az átlagtól hanem a mediántól vesszük, és nem is átlagoljuk őket, hanem a mediánjukat képezzük. A mutató neve, ami mindhárom ,,trükköt'' beveti: \textbf{medián abszolút eltérés}, jele \(MAD\), tehát
 \[
@@ -561,7 +561,7 @@ A másik lehetőség a szórás ,,megjavítása'`, olyan módon, hogy az eltér�
 \]
 (A szakirodalom itt nem teljesen egyértelmű: néha \(MAD\)-nak nevezik azt a mutatót is, ahol csak az első javítást csinálják meg, tehát abszolútértéket vesznek, de azokat továbbra is csak átlagolják, és az eltéréseket is az átlagtól veszik.)
 
-A születési tömegek medián abszolút eltérése \text{563} gramm, tehát az újszülöttek testtömegeinek mediánjuk körül vett (abszolút) ingadozásának mediánja \text{563} gramm.
+A születési tömegek medián abszolút eltérése 563 gramm, tehát az újszülöttek testtömegeinek mediánjuk körül vett (abszolút) ingadozásának mediánja 563 gramm.
 
 \hypertarget{deskriptivmennyegyvaltanalitikusmutatoszamokalakmutatok}{%
 \paragraph{Alakmutatók}\label{deskriptivmennyegyvaltanalitikusmutatoszamokalakmutatok}}
@@ -746,10 +746,10 @@ Relatív gyakoriságok (peremeken a vetületi megoszlásokkal):
 
 \begin{verbatim}
 ##                0    1    
-## Kaukázusi    0,4 0,07 0,5
-## Afroamerikai 0,1 0,02 0,1
-## Egyéb        0,3 0,06 0,4
-##              0,9 0,15 1,0
+## Kaukázusi    0.4 0.07 0.5
+## Afroamerikai 0.1 0.02 0.1
+## Egyéb        0.3 0.06 0.4
+##              0.9 0.15 1.0
 \end{verbatim}
 
 Irritábilis méh feltételes relatív gyakoriságai a rassz különböző kimenetei, mint feltétel esetén
@@ -763,9 +763,9 @@ Irritábilis méh feltételes relatív gyakoriságai a rassz különböző kimen
 
 \begin{verbatim}
 ##                0   1  
-## Kaukázusi    0,9 0,1 1
-## Afroamerikai 0,9 0,1 1
-## Egyéb        0,8 0,2 1
+## Kaukázusi    0.9 0.1 1
+## Afroamerikai 0.9 0.1 1
+## Egyéb        0.8 0.2 1
 \end{verbatim}
 
 Rassz feltételes relatív gyakoriságai az irritábilis méh különböző kimenetei, mint feltétel esetén:
@@ -779,10 +779,10 @@ Rassz feltételes relatív gyakoriságai az irritábilis méh különböző kime
 
 \begin{verbatim}
 ##                0   1
-## Kaukázusi    0,5 0,5
-## Afroamerikai 0,1 0,1
-## Egyéb        0,3 0,4
-##              1,0 1,0
+## Kaukázusi    0.5 0.5
+## Afroamerikai 0.1 0.1
+## Egyéb        0.3 0.4
+##              1.0 1.0
 \end{verbatim}
 
 Természetesen nem arról van szó, hogy bármelyik jobb lenne, mint a többi -- egyszerűen más elemzési célra alkalmasak. A feltételes megoszlásokra gondolva, az is érdekes kérdés lehet, hogy a kaukázusiak mekkora hányada szenved irritábilis méh szindrómában, és az is érdekes (de más tartalmú) kérdés, hogy az irritábilis méh szindrómában szenvedők mekkora hányada kaukázusi rasszú. Mindezek között egyszerű algebrai összefüggések állnak fenn, ezeket most nem részletezzük\footnote{Két dolgot érdemes ennek kapcsán megjegyezni. Az egyik, hogy az előzőek fényében a vetületi megoszlásokat joggal nevezhetjük (precízebben) a változó feltétel nélküli vetületi megoszlásának. A másik, hogy jobban belegondolva észrevehető, hogy az elsőként definiált ,,szokásos'' relatív gyakoriság is ,,gyakoriság / peremgyakoriság'' alakú (tehát megoszlás), csak épp a peremgyakoriság nem fenti ,,egyszerű'' (egydimenziós) peremgyakoriság, hanem a peremgyakoriságok peremgyakorisága (egyfajta nulladimenziós peremgyakoriság). Ezt szokás együttes megoszlásnak nevezni (szemben az eddig definiált feltételes megoszlással, és a feltétel nélküli, de vetületi megoszlással).}.
@@ -837,14 +837,14 @@ Sőt, ennél több is igaz: a szorzatnak nem csak az előjele stimmel, de a nagy
 
 A szummázás ezeket a hatásokat fogja összeadni megfigyelési egységről megfigyelési egységre, így előjele a kapcsolat irányát mutatja, abszolút értéke pedig annak erősségét. (Az \(n\)-nel való leosztás nyilván szükséges, különben a kétszer megismételt adatbázison kétszer akkora lenne a kovariancia, holott az információ ugyanaz; tehát ezeket a szorzatokat átlagolni kell.)
 
-Hogy mi a kovariancia problémája, az azonnal kiderül, ha közöljük az anyai és az újszülött testtömeg közti kovarianciát: \text{4141,7}. Ami kétségtelenül kiolvasható ebből, hogy az anyai és az újszülött testtömeg között van kapcsolat, mégpedig pozitív irányú (nagyobb anyai tömeg -- nagyobb újszülött tömeg, és fordítva), hiszen az előjel pozitív. Amiről viszont lényegében semmit nem tudunk meg, az az erősség! Annál is inkább, mert a kovariancia mértékegység-függő: más értéket kapunk, ha az újszülött testtömegét nem grammban, hanem kilogrammban rögzítjük. Tekintetbe véve, hogy az információ ettől még ugyanaz marad, ez nyilván nem szerencsés\dots\{\} A probléma tehát, hogy honnan tudhatnánk, hogy a \text{4141,7} sok vagy kevés\dots\{\}? Ebben segít minket az a matematikai észrevétel, hogy mindenképp fennáll a \(-s_x s_y \leq \mathrm{cov}\left(x,y\right) \leq s_x s_y\) összefüggés, tehát a kovariancia abszolút értéke nem lehet nagyobb mint a két változó szórásának szorzata. Így máris van mihez viszonyítani a kovariancia nagyságát! Ez tehát a következő mutató definiálását adja, a neve \textbf{korrelációs együttható}:
+Hogy mi a kovariancia problémája, az azonnal kiderül, ha közöljük az anyai és az újszülött testtömeg közti kovarianciát: 4141.7. Ami kétségtelenül kiolvasható ebből, hogy az anyai és az újszülött testtömeg között van kapcsolat, mégpedig pozitív irányú (nagyobb anyai tömeg -- nagyobb újszülött tömeg, és fordítva), hiszen az előjel pozitív. Amiről viszont lényegében semmit nem tudunk meg, az az erősség! Annál is inkább, mert a kovariancia mértékegység-függő: más értéket kapunk, ha az újszülött testtömegét nem grammban, hanem kilogrammban rögzítjük. Tekintetbe véve, hogy az információ ettől még ugyanaz marad, ez nyilván nem szerencsés\dots\{\} A probléma tehát, hogy honnan tudhatnánk, hogy a 4141.7 sok vagy kevés\dots\{\}? Ebben segít minket az a matematikai észrevétel, hogy mindenképp fennáll a \(-s_x s_y \leq \mathrm{cov}\left(x,y\right) \leq s_x s_y\) összefüggés, tehát a kovariancia abszolút értéke nem lehet nagyobb mint a két változó szórásának szorzata. Így máris van mihez viszonyítani a kovariancia nagyságát! Ez tehát a következő mutató definiálását adja, a neve \textbf{korrelációs együttható}:
 \[
     \mathrm{corr}\left(x,y\right)=\frac{\mathrm{cov}\left(x,y\right)}{s_x s_y}.
 \]
 
 Ez az előjel értelmezésén semmit nem változtat, hiszen a kovariancia előjelét meghagyja (a nevezőben szórások szerepelnek, így mindkettő szükségképp pozitív), viszont az abszolút értéket értelmezhetővé teszi, hiszen a korrelációra már az teljesül, hogy \(-1 \leq \mathrm{corr}\left(x,y\right) \leq 1\). A korreláció tehát minél közelebb van \(\pm 1\)-hez, annál erősebb a két változó közötti kapcsolat.
 
-Például, az anyai testtömeg és az újszülött születési tömege közti korrelációs együttható értéke \text{0,2}. Ez alapján nem csak azt tudjuk mondani, hogy van kapcsolat és az pozitív irányú (a \text{0,2} előjele pozitív), de most már azt is, hogy ez a kapcsolat igen gyenge (ha elhelyezzük a \text{0,2}-ot a 0--1 között).
+Például, az anyai testtömeg és az újszülött születési tömege közti korrelációs együttható értéke 0.2. Ez alapján nem csak azt tudjuk mondani, hogy van kapcsolat és az pozitív irányú (a 0.2 előjele pozitív), de most már azt is, hogy ez a kapcsolat igen gyenge (ha elhelyezzük a 0.2-ot a 0--1 között).
 
 Belátható, hogy az így definiált korrelációs együttható a \emph{lineáris} kapcsolat erősségét méri (szokás emiatt lineáris korrelációs együtthatónak is nevezni). Valóban, ha a korreláció abszolút érték 1, az épp azt jelenti, hogy \(y=ax+b\) függvényszerű kapcsolat van a két változó között. De általában is, a korreláció ,,erősségét'' úgy kell érteni, hogy mennyire szorosan valósul meg ez az egyenesre illeszkedés. Fontos megjegyezni, hogy más kapcsolat erősségét \emph{nem} méri ez az együttható, tehát nem lineáris kapcsolat lehet a két változó között (extrém esetben akár függvényszerű is!), úgy, hogy közben a lineáris korrelációs együttható értéke nulla.
 
@@ -967,7 +967,7 @@ függvény. Ahogy már korábban is megállapítottuk, ennek értéke két dolog
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 73 69 71 71 67 72 72 70 73 69
+##  [1] 68 68 69 67 74 71 71 73 69 68
 \end{verbatim}
 
 Látszik, hogy -- noha a sokaság állandó, és így a várható értéke is állandó, fixen 10 -- a minták átlaga, tehát a sokaság várható értékének mintából \emph{becsült} értéke ingadozik.
@@ -1056,7 +1056,7 @@ ahogy azt eredetileg állítottuk is.
 
 Ezzel igazoltuk, hogy ilyen körülmények mellett a mintaátlag torzítatlan becslője a sokasági átlagnak, sőt, kiszámoltuk a mintavételi szórását is. (Be lehetne látni kicsit komolyabb matematikai statisztikai eszközökkel, hogy ez ráadásul e körülmények között hatásos becslő is, tehát ennél kisebb mintavételi szórás el sem érhető a torzítatlan becslők körében.)
 
-Ez tehát azt jelenti, hogy a \text{2944,6} gramm nem csak a születési tömegek átlaga (ahogy azt az előbb mondtuk), hanem egyúttal a ,,vizsgálat beválogatási feltételeinek megfelelő újszülöttek'' (fiktív, végtelen!) sokaságának várható értékének becslője is! Nem csak azt mondhatjuk, hogy \text{2944,6} gramm a mintaátlag (biztosan), hanem azt is, hogy ez a legjobb tippünk arra, hogy mennyi a sokaság várható értéke. Vegyük észre, hogy minket valójában ez utóbbi érdekel! Tehát bár a számérték itt pont ugyanaz lett (ez nincs mindig így!), az igazán érdekes eredmény az utóbbi megfogalmazás (hiszen minket nem \emph{konkrétan} ez a 189 újszülött érdekel, hanem \emph{általában} az ilyen újszülöttek jellemzőinek viselkedése).
+Ez tehát azt jelenti, hogy a 2944.6 gramm nem csak a születési tömegek átlaga (ahogy azt az előbb mondtuk), hanem egyúttal a ,,vizsgálat beválogatási feltételeinek megfelelő újszülöttek'' (fiktív, végtelen!) sokaságának várható értékének becslője is! Nem csak azt mondhatjuk, hogy 2944.6 gramm a mintaátlag (biztosan), hanem azt is, hogy ez a legjobb tippünk arra, hogy mennyi a sokaság várható értéke. Vegyük észre, hogy minket valójában ez utóbbi érdekel! Tehát bár a számérték itt pont ugyanaz lett (ez nincs mindig így!), az igazán érdekes eredmény az utóbbi megfogalmazás (hiszen minket nem \emph{konkrétan} ez a 189 újszülött érdekel, hanem \emph{általában} az ilyen újszülöttek jellemzőinek viselkedése).
 
 Mind ez idáig azonban csak olyan becslőfüggvényekről beszéltünk, melyek egyetlen értéket, ,,a'' legjobb becslést adják vissza eredményként. Az ilyen becslést hívjuk \textbf{pontbecslésnek}. (Hiszen az eredménye egyetlen pont a számegyenesen.) Ez olyan szempontból azonban nem szerencsés, hogy az eredmény semmit nem mond az abban lévő bizonytalanságról -- noha, legalábbis becsülni, azt is tudnánk!
 
@@ -1088,7 +1088,7 @@ Tipikusan \(\alpha=0,\!05\), amint mondtuk, ekkor \(1-\alpha=95\)\%-os konfidenc
 
 \emph{Nagyon fontos} megfigyelni, hogy csak mintavétel \emph{előtt} vannak valószínűségi változók (,,nagy betűk'`), \emph{utána} már nem (,,kis betűk'`) -- ezért használtuk a megbízhatóság szót a valószínűség helyett. Mintavétel \emph{után} ugyanis már nem tehetünk olyan kijelentést, hogy a megkonstruált CI 95\%-os ,,valószínűséggel'' tartalmazza a valódi, sokasági paramétert, hiszen ha már egy realizálódott minta van a kezünkben, akkor elvileg akárhol lehet a valódi érték, erről semmi közelebbit nem tudunk mondani. Valószínűséget csak a (szükségképp képzeletbeli) ,,ismételt mintavételi'' értelemben tudunk behozni a feladatba, ezért használjuk megkülönböztetésül a megbízhatóság szót. Így kell érteni, hogy a konfidenciaintervallum jellemzi, hogy ,,hol lehet'' a valódi (sokasági) paraméter.
 
-A születési tömegek 95\%-os konfidenciaintervalluma {[}2840,0--3049,2{]} gramm. (Megjegyezzük, hogy ez a fentitől kissé eltérő módszerrel készült, ami tekintettel van arra is, hogy itt most -- szemben a fenti példával -- nem ismerjük \emph{a priori} a sokaság szórását.) Ez azt jelenti, hogy a \emph{legjobb} tippünk a születési tömeg sokasági várható értékére a \text{2944,6} gramm, de azt is tudjuk ezen felül mondani, hogy bár ez csak bizonytalan tipp (hiszen a becsült érték mintáról-mintára ingadozik), de 95\%-os \emph{megbízhatósággal} azért kijelenthető, hogy nem kisebb a keresett, ismeretlen sokasági várható érték mint 2840,0 gramm és nem nagyobb mint 3049,2 gramm. (Amit úgy értünk, hogy azt becsüljük, hogy ha a sokaságból 100 mintát vennénk, és mindegyikből ugyanígy megkonstruálnánk a konfidenciaintervallumokat, akkor várhatóan 95 esetben tartalmazná a CI a valódi, sokasági értéket.) Érdemes megfigyelni, hogy a konfidenciaintervallum két végpontja szimmetrikus a pontbecslésre; ez a várható érték becslésére jellemző, de más paramétereknél nem feltétlenül van így.
+A születési tömegek 95\%-os konfidenciaintervalluma {[}2840,0--3049,2{]} gramm. (Megjegyezzük, hogy ez a fentitől kissé eltérő módszerrel készült, ami tekintettel van arra is, hogy itt most -- szemben a fenti példával -- nem ismerjük \emph{a priori} a sokaság szórását.) Ez azt jelenti, hogy a \emph{legjobb} tippünk a születési tömeg sokasági várható értékére a 2944.6 gramm, de azt is tudjuk ezen felül mondani, hogy bár ez csak bizonytalan tipp (hiszen a becsült érték mintáról-mintára ingadozik), de 95\%-os \emph{megbízhatósággal} azért kijelenthető, hogy nem kisebb a keresett, ismeretlen sokasági várható érték mint 2840,0 gramm és nem nagyobb mint 3049,2 gramm. (Amit úgy értünk, hogy azt becsüljük, hogy ha a sokaságból 100 mintát vennénk, és mindegyikből ugyanígy megkonstruálnánk a konfidenciaintervallumokat, akkor várhatóan 95 esetben tartalmazná a CI a valódi, sokasági értéket.) Érdemes megfigyelni, hogy a konfidenciaintervallum két végpontja szimmetrikus a pontbecslésre; ez a várható érték becslésére jellemző, de más paramétereknél nem feltétlenül van így.
 
 Itt is hasznos mindezeket egy szimulációval szemléltetni (\ref{fig:cisim}. ábra).
 
@@ -1217,7 +1217,7 @@ Végezzük el a próbát:
 ##  Welch Two Sample t-test
 ## 
 ## data:  bwt by smoke
-## t = 3, df = 170, p-value = 0,007
+## t = 3, df = 170, p-value = 0.007
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
 ##   79 489

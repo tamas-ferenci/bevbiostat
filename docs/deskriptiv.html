@@ -10,8 +10,8 @@
 
   <meta property="og:title" content="3 . fejezet Deskriptív statisztika | Bevezetés a biostatisztikába" />
   <meta property="og:type" content="book" />
-  
-  <meta property="og:image" content="bevbiostatcover.png" />
+  <meta property="og:url" content="https://tamas-ferenci.github.io/bevbiostat/" />
+  <meta property="og:image" content="https://tamas-ferenci.github.io/bevbiostat/bevbiostatcover.png" />
   <meta property="og:description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
   <meta name="github-repo" content="tamas-ferenci/bevbiostat" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="3 . fejezet Deskriptív statisztika | Bevezetés a biostatisztikába" />
   
   <meta name="twitter:description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
-  <meta name="twitter:image" content="bevbiostatcover.png" />
+  <meta name="twitter:image" content="https://tamas-ferenci.github.io/bevbiostat/bevbiostatcover.png" />
 
 <meta name="author" content="Ferenci Tamás" />
 
@@ -215,9 +215,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [166] 2296 2301 2325 2353 2353 2367 2381 2381 2381 2410 2410 2410 2414 2424 2438
 ## [181] 2442 2450 2466 2466 2466 2495 2495 2495 2495</code></pre>
 <p>Ezt a megadást nevezhetnénk az egyik végpontnak ebben a kompromisszumban: 100% reprodukciós hűség, de – szinte – 0% áttekinthetőség. Ez a legalapvetőbb kérdések megválaszolását, a legalapvetőbb észrevételek elérését is lehetetlenné teszi.</p>
-<p>Másik végpontnak vehetjük azt, amikor a fenti adatoknak csak az átlagát adjuk meg 2944,6.</p>
+<p>Másik végpontnak vehetjük azt, amikor a fenti adatoknak csak az átlagát adjuk meg 2944.6.</p>
 <p>Ez 0%-hoz közeli reprodukciós hűséget jelent (189 számból 1-et ,,gyártottunk’’, szinte semmit nem tudunk reprodukálni az eredeti adatbázisból), viszont remek az áttekinthetősége (például azonnal látható, hogy milyen érték körül csoportosulnak az adatok).</p>
-<p>Az igazán érdekes az, hogy – természetszerűleg – a két végpont között számos egyéb kompromisszumot köthetünk. Megadhatjuk például (az utóbbi végponttól az előbbi felé haladva) az adatok átlagát és szórását: 2944,6 <span class="math inline">\(\pm\)</span> 729,2, az adatok átlagát, mediánját, szórását és interkvartilis terjedelmét: 2944,6 (2977) <span class="math inline">\(\pm\)</span> 729,2 (1073), vagy épp az adatok átlagát, mediánját, szórását, interkvartilis terjedelmét, illetve minimumát és maximumát: 2944,6 (2977) <span class="math inline">\(\pm\)</span> 729,2 (1073) [709-4990].</p>
+<p>Az igazán érdekes az, hogy – természetszerűleg – a két végpont között számos egyéb kompromisszumot köthetünk. Megadhatjuk például (az utóbbi végponttól az előbbi felé haladva) az adatok átlagát és szórását: 2944.6 <span class="math inline">\(\pm\)</span> 729.2, az adatok átlagát, mediánját, szórását és interkvartilis terjedelmét: 2944.6 (2977) <span class="math inline">\(\pm\)</span> 729.2 (1073), vagy épp az adatok átlagát, mediánját, szórását, interkvartilis terjedelmét, illetve minimumát és maximumát: 2944.6 (2977) <span class="math inline">\(\pm\)</span> 729.2 (1073) [709-4990].</p>
 <p>Látszik, hogy minden ilyen megadás egyfajta kompromisszum: egyre több információt őrzünk meg (egyre kevesebb az adatvesztés, hűségesebb a reprodukció), viszont közben romlik a megadás áttekinthetősége.</p>
 <p>Összefoglalva tehát megállapíthatjuk, hogy bár az információtömörítés ugyan szükségképp adatvesztést jelent, ez azonban nem feltétlenül baj, épp ellenkezőleg: ez teszi lehetővé, hogy a fontosat észrevegyük. A kulcs a kettő közötti egyensúlyozás.</p>
 </div>
@@ -258,12 +258,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race))</a></code></pre></div>
 <pre><code>## 
 ##    Kaukázusi Afroamerikai        Egyéb 
-##          0,5          0,1          0,4</code></pre>
+##          0.5          0.1          0.4</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">cbind</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race), <span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race)))</a></code></pre></div>
 <pre><code>##              [,1] [,2]
-## Kaukázusi      96  0,5
-## Afroamerikai   26  0,1
-## Egyéb          67  0,4</code></pre>
+## Kaukázusi      96  0.5
+## Afroamerikai   26  0.1
+## Egyéb          67  0.4</code></pre>
 <p>Megjegyezzük, hogy a teljes relatív gyakorisági sort a statisztikusok nagyon gyakran a változó <strong>megoszlásának</strong> hívják.</p>
 <p>Vegyük észre, hogy ebben a speciális esetben az információtömörítés igazából semmilyen információveszteséggel nem járt: ez a három szám  hordoz  információt erről a változóról mint az eredeti 189 szám! Ez azonban egy abszolút speciális eset, ami kizárólag a változó minőségi mivoltának volt köszönhető.</p>
 <p>A gyakorisági soron kívül egy mutatószámnak van még értelme ennél a mérési skálánál: a . A módusz (jele: <span class="math inline">\(\mathrm{Mo}\)</span>) nem más, mint a leggyakoribb kimenet (tehát az a kimenet, melyhez tartozó gyakoriság a legnagyobb az adatbázisban). Nagyon formalizálva ezt írhatnánk:
@@ -303,15 +303,15 @@ Figure 3.1: Példa egy minőségi változó ábrázolására oszlopdiagrammal.
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">table</span>(<span class="kw">cut</span>(birthwt<span class="op">$</span>bwt, <span class="kw">seq</span>(<span class="dv">500</span>, <span class="dv">5000</span>, <span class="dv">500</span>)))</a>
 <a class="sourceLine" id="cb12-2" title="2"><span class="kw">cbind</span>(<span class="dt">Ci0 =</span> <span class="kw">seq</span>(<span class="dv">500</span>, <span class="dv">4500</span>, <span class="dv">500</span>), <span class="dt">Ci1 =</span> <span class="kw">seq</span>(<span class="dv">1000</span>, <span class="dv">5000</span>, <span class="dv">500</span>), <span class="dt">fi =</span> tab, <span class="dt">gi =</span> <span class="kw">prop.table</span>(tab))</a></code></pre></div>
 <pre><code>##                  Ci0  Ci1 fi    gi
-## (500,1e+03]      500 1000  1 0,005
-## (1e+03,1,5e+03] 1000 1500  4 0,021
-## (1,5e+03,2e+03] 1500 2000 14 0,074
-## (2e+03,2,5e+03] 2000 2500 40 0,212
-## (2,5e+03,3e+03] 2500 3000 38 0,201
-## (3e+03,3,5e+03] 3000 3500 45 0,238
-## (3,5e+03,4e+03] 3500 4000 38 0,201
-## (4e+03,4,5e+03] 4000 4500  7 0,037
-## (4,5e+03,5e+03] 4500 5000  2 0,011</code></pre>
+## (500,1e+03]      500 1000  1 0.005
+## (1e+03,1.5e+03] 1000 1500  4 0.021
+## (1.5e+03,2e+03] 1500 2000 14 0.074
+## (2e+03,2.5e+03] 2000 2500 40 0.212
+## (2.5e+03,3e+03] 2500 3000 38 0.201
+## (3e+03,3.5e+03] 3000 3500 45 0.238
+## (3.5e+03,4e+03] 3500 4000 38 0.201
+## (4e+03,4.5e+03] 4000 4500  7 0.037
+## (4.5e+03,5e+03] 4500 5000  2 0.011</code></pre>
 <p>Itt <span class="math inline">\(C_{i0}\)</span> és <span class="math inline">\(C_{i1}\)</span> az <span class="math inline">\(i\)</span>-edik osztályköz alsó és felső határát jelöli, rendre. (Az megállapodás kérdése, hogy a határon lévő megfigyelési egységeket, például egy pont 2000 grammos újszülöttet hová sorolunk, ennek természetesen csak a kerekítésből adódó diszkrétség miatt van egyáltalán jelentősége.)</p>
 <p>Vegyük észre, hogy ez a megoldás lényegében azt jelenti, hogy a mennyiségi változónkat első lépésben ,,lefokozzuk’’ minőségi változóvá, és utána alkalmazzuk – mint teljesen közönséges minőségi változóra – a korábban megismert módszert.</p>
 <p>Elöljáróban jegyezzük meg, hogy itt már a gyakorisági sor – szemben a minőségi esettel – igenis információvesztéssel jár: lehet 14 újszülött 1501 grammos, és lehet mind a 14 1999 grammos, mindkét esetben ugyanúgy a fenti osztályközös gyakorisági sort kapjuk. Az információvesztés mértékét nyilván az osztályközök hossza (a felosztás ,,finomsága’’) fogja meghatározni.</p>
@@ -330,12 +330,12 @@ Figure 3.1: Példa egy minőségi változó ábrázolására oszlopdiagrammal.
     \overline{x}=\frac{\sum_{i=1}^n x_i}{n}.
 \]</span></p>
 <p>Azonnal látható, hogy ennek akkor van értelme, ha a különböző megfigyelések számtani összege valamilyen értelmes tartalommal bír. (Van például értelme beszélni egy osztály átlagos testtömegéről, hiszen a testtömegek összege értelmes kifejezés, megadja például, hogy mennyit mutatna egy mérleg, ha mindenki ráállná.) Ha azonban a változó olyan, hogy nem az megfigyelések összegének van értelme, akkor a számtani átlag használata félrevezető lehet, és mással kell helyettesíteni – például, ha a megfigyelések összege helyett azok szorzata a tárgyterületileg értelmes, akkor az ún. mértani átlaggal. (Tipikus példa erre az, ha a változó valamilyen növekedési ütemet jelent időben. Ha egy alany testtömege egy évben 1,2-szeresére nőtt, rákövetkező évben pedig 1,3-szeresére, akkor az össznövekedés nyilván nem a növekedések összege (<span class="math inline">\(1,\!2 + 1,\!2 = 2,\!4\)</span>), hanem azok szorzata (<span class="math inline">\(1,\!2 \cdot 1,\!2 = 1,\!44\)</span>) lesz.)</p>
-<p>A születési tömegek átlaga 2944,6 gramm, ami azt jelenti, hogy az adatbázisban szereplő újszülöttek össz-testtömege akkor maradna változatlan, ha mindegyikük 2944,6 gramm lenne.</p>
+<p>A születési tömegek átlaga 2944.6 gramm, ami azt jelenti, hogy az adatbázisban szereplő újszülöttek össz-testtömege akkor maradna változatlan, ha mindegyikük 2944.6 gramm lenne.</p>
 <p>Az átlag ún. számított középérték, mivel valamilyen számszerű összefüggésben van a megfigyelések értékeivel.</p>
 <p>Az átlag előnye, hogy rendkívül közismert, mindenki számára kényelmesen kezelhető, szokásos gondolkodásunkhoz közel álló mutató. (Ez olyannyira erős tényező, hogy nagyon sok orvosi publikáció még akkor is erőlteti az átlag használatát, amikor az – a mindjárt részletezendő okokból – nem célszerű.)</p>
 <p>Az átlag legnagyobb hátránya, hogy nem <strong>robusztus</strong>. Egy statisztikai mutatószám robusztussága azt méri, hogy mennyire érzékeny arra, ha a mintában a többi értéktől, a csoportosulás alaptendenciájától jelentősen eltérő érték vagy értékek vannak. Az ilyen megfigyeléseket egyébként nagyon gyakran <strong>outliernek</strong> is nevezik. (,,Érzékenység’’ alatt azt értjük, hogy a mutatót mennyire tudja befolyásolni, eredeti értékétől eltéríteni ilyen outlierek jelenléte.) Az átlag ilyen szempontból extrém rossz mutató: egyrészt bármelyik megfigyelés bármilyen megváltozása módosítja az átlag értékét, de ami az igazán nagy baj, hogy ha egyetlen megfigyelés is tart a végtelenhez, úgy az átlag is tart a végtelenhez, <em>függetlenül</em> az összes többi megfigyeléstől, és függetlenül a minta nagyságától. Mindez azt mondja nekünk, hogy ha csak egyetlen outlier is van a mintában, már az is képes arra, hogy teljesen értelmetlenné tegye az átlagot. (Hiszen ha van egy ilyen outlier a mintában, akkor az átlag <em>pont hogy nem</em> a minta ,,közepes’’ értékét fogja mutatni, hanem egyre inkább az outlierét, minél jobban kilóg.)</p>
 <p>Megjegyezzük, hogy pontosan emiatt az átlag használata a centrális tendencia jellemzésére nem csak gyakorlati szempontból lehet problémás (adatrögzítési hibákból, adatbázis-sérülésekből eredeti outlierek), hanem elméletileg is ellenjavallt, ha a változó olyan, hogy fel kell készülni kis számú, de a többitől lényegesen nagyobb vagy kisebb megfigyelés jelenlétére. (Ez fordulhat elő – mindenféle adatrögzítési és egyéb hiba nélkül is! – például ún. aszimmetrikus eloszlásoknál, melyekről később fogunk részletesebben beszélni.)</p>
-<p>Épp ezen a robusztussági problémán igyekszik javítani a <strong>trimmelt (vagy nyesett) átlag</strong>: ezt úgy kapjuk, hogy elhagyjuk a legkisebb és legnagyobb adott számú elemet, és csak a maradékot átlagoljuk ki. Tipikusan az elhagyott megfigyelések száma alul és felül is a mintanagyság 2,5%-a; ebben az esetben 5%-os trimmelt átlagról beszélünk. (Bár elsőre ez szokatlan mutatónak tűnhet, és a tudományos irodalomban tényleg ritkábban is használják, de számos pontozásos sportágban épp ilyen elven alakítják ki a zsűri ,,átlagos’’ pontszámát.) A születési tömegek 5%-os trimmelt átlaga 2957,4 gramm, ami egyúttal azt is mutatja, lévén, hogy közel van a szokásos átlaghoz, hogy a születési tömegek aránylag szimmetrikus eloszlásúak, vélhetően komoly outlier nélkül.</p>
+<p>Épp ezen a robusztussági problémán igyekszik javítani a <strong>trimmelt (vagy nyesett) átlag</strong>: ezt úgy kapjuk, hogy elhagyjuk a legkisebb és legnagyobb adott számú elemet, és csak a maradékot átlagoljuk ki. Tipikusan az elhagyott megfigyelések száma alul és felül is a mintanagyság 2,5%-a; ebben az esetben 5%-os trimmelt átlagról beszélünk. (Bár elsőre ez szokatlan mutatónak tűnhet, és a tudományos irodalomban tényleg ritkábban is használják, de számos pontozásos sportágban épp ilyen elven alakítják ki a zsűri ,,átlagos’’ pontszámát.) A születési tömegek 5%-os trimmelt átlaga 2957.4 gramm, ami egyúttal azt is mutatja, lévén, hogy közel van a szokásos átlaghoz, hogy a születési tömegek aránylag szimmetrikus eloszlásúak, vélhetően komoly outlier nélkül.</p>
 <p>Alapvetően más megközelítését jelenti a centrális tendencia megragadásának a <strong>medián</strong> használata, melynek jele <span class="math inline">\(\mathrm{Me}_x\)</span>. A medián nem más, mint a nagyság szerint sorbarendezett megfigyelések közül a középső. (Amennyiben a mintanagyság páros, úgy nyilván két ,,középső’’ is van, ez esetben megállapodás kérdése, hogy mit nevezünk mediánnak; vehetjük például a kettő átlagát.) Úgy is szoktak fogalmazni, hogy a medián felezőpont, az az érték, amiről elmondható, hogy alatta és felette is egyaránt ugyanannyi mintaelem (az összes fele-fele) található.</p>
 <p>Értelemszerű, hogy a medián szintén a centrális tendenciát jellemzi, csak épp kevésbé megszokott módon, mint az átlag – ez egyúttal használatának egyik fő gátja is: sok ember számára a medián tartalma (és egyáltalán, értelme) kevésbé ismert, így e mutató nem annyira jól kezelhető. Előnye viszont a robusztusság, ilyen szempontból az átlaggal szemben a másik végpontot képviseli: míg az átlag extrém érzékeny volt, addig a medián extrém robusztus. A minta minden medián feletti értéke (az egyszerűség kedvéért most gondoljunk páratlan mintanagyságra) tetszőlegesen megnövelhető (akár az összes egyszerre is), vagy a medián alatti értékek tetszőlegesen lecsökkenthetőek (akár az összes egyszerre is), vagy akár a kettő együtt is, a medián értéke <em>nem változik</em>! Hátránya, hogy a jó robusztusságért cserében kevesebb információt használ fel a mintából; ezt épp a mintaértékek meglehetősen szabad ,,állítgathatósága’’ mutatja. (Hogy ez miért baj, az precízen csak induktív statisztikai keretben lehet megérteni, az ottani tárgyalás után már érthető lesz, hogy mit jelent az, hogy a medián kevésbé hatásos becslő mint az átlag.) A tanulság az, hogy ha feltehető, hogy a háttéreloszlás szimmetrikus-közeli, akkor érdemes átlagot használni, ha nem, vagy outlierek jelenlétére is fel kell készülni (azaz indokolt robusztus statisztika használata), akkor jobb a medián ilyen szempontból.</p>
 <p>A születési tömegek mediánja 2977 gramm, azaz a 2977 gramm az a testtömeg, amiről elmondható, hogy az újszülöttek fele kisebb ennél, fele nagyobb.</p>
@@ -359,7 +359,7 @@ Figure 3.1: Példa egy minőségi változó ábrázolására oszlopdiagrammal.
     s_x^{\ast}=\sqrt{\frac{\sum_{i=1}^n \left(x_i-\overline{x}\right)^2}{n-1}}.
 \]</span>
 A különbségük oka csak a következtető statisztikában válik világossá (a korrigálatlan mintavariancia, első ránézésre talán meglepő módon, nem torzítatlan becslője a sokasági varianciának).</p>
-<p>A születési tömegek korrigált mintaszórása 729,2 gramm, tehát az újszülöttek testtömegeinek átlaguk körül vett ingadozásának (négyzetes) átlaga 729,2 gramm.</p>
+<p>A születési tömegek korrigált mintaszórása 729.2 gramm, tehát az újszülöttek testtömegeinek átlaguk körül vett ingadozásának (négyzetes) átlaga 729.2 gramm.</p>
 <p>A szórás hátránya, hogy – az átlaghoz hasonlóan – nem robusztus mutató. (Egyrészt azért, mert maga is az eltérések négyzetét használja, ami érzékeny a kilógó értékekre, másrészt azért, mert a eltéréseket a nem-robusztus átlagtól veszi.) Egyik lehetséges megoldás az <strong>interkvartilis terjedelem</strong> (jele <span class="math inline">\(IQR\)</span>) használata, ami a felső és az alsó kvartilis különbsége:
 <span class="math display">\[
     IQR=Q_3-Q_1.
@@ -481,25 +481,25 @@ Figure 3.5: Példa egy mennyiségi változó ábrázolására boxplottal.
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui))</a>
 <a class="sourceLine" id="cb22-2" title="2"><span class="kw">rbind</span>(<span class="kw">cbind</span>(tab, <span class="kw">margin.table</span>(tab, <span class="dv">1</span>)), <span class="kw">cbind</span>(<span class="kw">t</span>(<span class="kw">margin.table</span>(tab, <span class="dv">2</span>)), <span class="kw">margin.table</span>(tab)))</a></code></pre></div>
 <pre><code>##                0    1    
-## Kaukázusi    0,4 0,07 0,5
-## Afroamerikai 0,1 0,02 0,1
-## Egyéb        0,3 0,06 0,4
-##              0,9 0,15 1,0</code></pre>
+## Kaukázusi    0.4 0.07 0.5
+## Afroamerikai 0.1 0.02 0.1
+## Egyéb        0.3 0.06 0.4
+##              0.9 0.15 1.0</code></pre>
 <p>Irritábilis méh feltételes relatív gyakoriságai a rassz különböző kimenetei, mint feltétel esetén</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui), <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb24-2" title="2"><span class="kw">rbind</span>(<span class="kw">cbind</span>(tab, <span class="kw">margin.table</span>(tab, <span class="dv">1</span>)))</a></code></pre></div>
 <pre><code>##                0   1  
-## Kaukázusi    0,9 0,1 1
-## Afroamerikai 0,9 0,1 1
-## Egyéb        0,8 0,2 1</code></pre>
+## Kaukázusi    0.9 0.1 1
+## Afroamerikai 0.9 0.1 1
+## Egyéb        0.8 0.2 1</code></pre>
 <p>Rassz feltételes relatív gyakoriságai az irritábilis méh különböző kimenetei, mint feltétel esetén:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(birthwt<span class="op">$</span>race, birthwt<span class="op">$</span>ui), <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb26-2" title="2"><span class="kw">rbind</span>(tab, <span class="kw">t</span>(<span class="kw">margin.table</span>(tab, <span class="dv">2</span>)))</a></code></pre></div>
 <pre><code>##                0   1
-## Kaukázusi    0,5 0,5
-## Afroamerikai 0,1 0,1
-## Egyéb        0,3 0,4
-##              1,0 1,0</code></pre>
+## Kaukázusi    0.5 0.5
+## Afroamerikai 0.1 0.1
+## Egyéb        0.3 0.4
+##              1.0 1.0</code></pre>
 <p>Természetesen nem arról van szó, hogy bármelyik jobb lenne, mint a többi – egyszerűen más elemzési célra alkalmasak. A feltételes megoszlásokra gondolva, az is érdekes kérdés lehet, hogy a kaukázusiak mekkora hányada szenved irritábilis méh szindrómában, és az is érdekes (de más tartalmú) kérdés, hogy az irritábilis méh szindrómában szenvedők mekkora hányada kaukázusi rasszú. Mindezek között egyszerű algebrai összefüggések állnak fenn, ezeket most nem részletezzük.</p>
 <p>Továbbhaladva, tökéletesen látható, hogy miért mondtuk, hogy a többváltozós elemzés az egyváltozós elemzések kiterjesztése: a fenti kétdimenziós kontingenciatáblában <em>minden</em> információ benne van, amit a két változót külön-külön elemezve látnánk: egyszerűen levetítjük a kontingenciatáblát a megfelelő dimenziós mentén és kapott vetületi gyakoriságok nem mások lesznek, mint a vetítési irány változójának gyakorisági sora! (Amiben minden információ benne van.)</p>
 <p>Az tehát egyértelmű, hogy ez tartalmazza mindazt az információt, amit a két változó külön-külön végzett vizsgálata – csakhogy mi azt állítottuk, hogy többet is. Ez vezet el a változók kapcsolatának kérdéséhez. Minőségi változók esetében (kontingenciatáblán) akkor mondjuk, hogy két változó kapcsolatban van egymással, ha a sorváltozó feltételes megoszlásai <em>ugyanazok</em>, az oszlopváltozó <em>bármely</em> értékére is feltételezünk. Vagy – ami ezzel egyenértékű –: az oszlopváltozó feltételes megoszlásai <em>ugyanazok</em>, a sorváltozó <em>bármely</em> értékére is feltételezünk. (Ez első ránézésre, kicsit nagyvonalú volt, de belátható matematikailag, hogy a kettő valóban egyenértékű: ha az oszlopváltozó feltételes megoszlásai ugyanazok minden sorban, akkor a sorváltozó feltételes megoszlásai is ugyanazok minden oszlopban, és fordítva is, ha az oszlopváltozó feltételes megoszlásai nem ugyanazok minden sorban, akkor a sorváltozó feltételes megoszlásai sem ugyanazok minden oszlopban.)</p>
@@ -535,12 +535,12 @@ Figure 3.5: Példa egy mennyiségi változó ábrázolására boxplottal.
 A számítás logikája vegytisztán tükrözi a definíciót: az <span class="math inline">\(\left(x_i-\overline{x}\right)\)</span> tükrözi az egyik, az <span class="math inline">\(\left(y_i-\overline{y}\right)\)</span> a másik változó szerint azt, hogy az adott megfigyelési egység átlag alatti vagy átlag feletti. Vegyük észre, hogy a kettő szorzata pedig <em>pontosan akkor</em> lesz pozitív, ha vagy mindkét változó szerint átlag feletti a megfigyelési egység, vagy mindkét változó szerint átlag alatti – azaz ha az adott megfigyelési egység a pozitív kapcsolatot erősíti meg! Ha a szorzat negatív, akkor az adott megfigyelési egység a negatív kapcsolatot erősíti.</p>
 <p>Sőt, ennél több is igaz: a szorzatnak nem csak az előjele stimmel, de a nagysága is, az ugyanis kifejezi, hogy mennyire erősít meg bennünket az adott megfigyelési egység a kapcsolat fennállásában. Ha a megfigyelési egység egyik (pláne ha mindkét) változó szerint közel van az átlaghoz, akkor az csak gyenge ,,bizonyíték’’ a kapcsolat mellett (kis módosulással lehet, hogy az ellenkező irányú kapcsolatot erősítené), viszont ha mindkét változó szerint távol van az átlagtól, az erős érv a kapcsolat mellett.</p>
 <p>A szummázás ezeket a hatásokat fogja összeadni megfigyelési egységről megfigyelési egységre, így előjele a kapcsolat irányát mutatja, abszolút értéke pedig annak erősségét. (Az <span class="math inline">\(n\)</span>-nel való leosztás nyilván szükséges, különben a kétszer megismételt adatbázison kétszer akkora lenne a kovariancia, holott az információ ugyanaz; tehát ezeket a szorzatokat átlagolni kell.)</p>
-<p>Hogy mi a kovariancia problémája, az azonnal kiderül, ha közöljük az anyai és az újszülött testtömeg közti kovarianciát: 4141,7. Ami kétségtelenül kiolvasható ebből, hogy az anyai és az újszülött testtömeg között van kapcsolat, mégpedig pozitív irányú (nagyobb anyai tömeg – nagyobb újszülött tömeg, és fordítva), hiszen az előjel pozitív. Amiről viszont lényegében semmit nem tudunk meg, az az erősség! Annál is inkább, mert a kovariancia mértékegység-függő: más értéket kapunk, ha az újszülött testtömegét nem grammban, hanem kilogrammban rögzítjük. Tekintetbe véve, hogy az információ ettől még ugyanaz marad, ez nyilván nem szerencsés{} A probléma tehát, hogy honnan tudhatnánk, hogy a 4141,7 sok vagy kevés{}? Ebben segít minket az a matematikai észrevétel, hogy mindenképp fennáll a <span class="math inline">\(-s_x s_y \leq \mathrm{cov}\left(x,y\right) \leq s_x s_y\)</span> összefüggés, tehát a kovariancia abszolút értéke nem lehet nagyobb mint a két változó szórásának szorzata. Így máris van mihez viszonyítani a kovariancia nagyságát! Ez tehát a következő mutató definiálását adja, a neve <strong>korrelációs együttható</strong>:
+<p>Hogy mi a kovariancia problémája, az azonnal kiderül, ha közöljük az anyai és az újszülött testtömeg közti kovarianciát: 4141.7. Ami kétségtelenül kiolvasható ebből, hogy az anyai és az újszülött testtömeg között van kapcsolat, mégpedig pozitív irányú (nagyobb anyai tömeg – nagyobb újszülött tömeg, és fordítva), hiszen az előjel pozitív. Amiről viszont lényegében semmit nem tudunk meg, az az erősség! Annál is inkább, mert a kovariancia mértékegység-függő: más értéket kapunk, ha az újszülött testtömegét nem grammban, hanem kilogrammban rögzítjük. Tekintetbe véve, hogy az információ ettől még ugyanaz marad, ez nyilván nem szerencsés{} A probléma tehát, hogy honnan tudhatnánk, hogy a 4141.7 sok vagy kevés{}? Ebben segít minket az a matematikai észrevétel, hogy mindenképp fennáll a <span class="math inline">\(-s_x s_y \leq \mathrm{cov}\left(x,y\right) \leq s_x s_y\)</span> összefüggés, tehát a kovariancia abszolút értéke nem lehet nagyobb mint a két változó szórásának szorzata. Így máris van mihez viszonyítani a kovariancia nagyságát! Ez tehát a következő mutató definiálását adja, a neve <strong>korrelációs együttható</strong>:
 <span class="math display">\[
     \mathrm{corr}\left(x,y\right)=\frac{\mathrm{cov}\left(x,y\right)}{s_x s_y}.
 \]</span></p>
 <p>Ez az előjel értelmezésén semmit nem változtat, hiszen a kovariancia előjelét meghagyja (a nevezőben szórások szerepelnek, így mindkettő szükségképp pozitív), viszont az abszolút értéket értelmezhetővé teszi, hiszen a korrelációra már az teljesül, hogy <span class="math inline">\(-1 \leq \mathrm{corr}\left(x,y\right) \leq 1\)</span>. A korreláció tehát minél közelebb van <span class="math inline">\(\pm 1\)</span>-hez, annál erősebb a két változó közötti kapcsolat.</p>
-<p>Például, az anyai testtömeg és az újszülött születési tömege közti korrelációs együttható értéke 0,2. Ez alapján nem csak azt tudjuk mondani, hogy van kapcsolat és az pozitív irányú (a 0,2 előjele pozitív), de most már azt is, hogy ez a kapcsolat igen gyenge (ha elhelyezzük a 0,2-ot a 0–1 között).</p>
+<p>Például, az anyai testtömeg és az újszülött születési tömege közti korrelációs együttható értéke 0.2. Ez alapján nem csak azt tudjuk mondani, hogy van kapcsolat és az pozitív irányú (a 0.2 előjele pozitív), de most már azt is, hogy ez a kapcsolat igen gyenge (ha elhelyezzük a 0.2-ot a 0–1 között).</p>
 <p>Belátható, hogy az így definiált korrelációs együttható a <em>lineáris</em> kapcsolat erősségét méri (szokás emiatt lineáris korrelációs együtthatónak is nevezni). Valóban, ha a korreláció abszolút érték 1, az épp azt jelenti, hogy <span class="math inline">\(y=ax+b\)</span> függvényszerű kapcsolat van a két változó között. De általában is, a korreláció ,,erősségét’’ úgy kell érteni, hogy mennyire szorosan valósul meg ez az egyenesre illeszkedés. Fontos megjegyezni, hogy más kapcsolat erősségét <em>nem</em> méri ez az együttható, tehát nem lineáris kapcsolat lehet a két változó között (extrém esetben akár függvényszerű is!), úgy, hogy közben a lineáris korrelációs együttható értéke nulla.</p>
 <p>Erre tekintettel szokás más korrelációs együtthatókat is definiálni, ezek közül megemlítjük a Spearman-<span class="math inline">\(\rho\)</span> és a Kendall-<span class="math inline">\(\tau\)</span> mutatókat, ezek ún. rangkorrelációs mutatók, amik nem konkrétan lineáris, hanem általános <em>monoton</em> kapcsolat erősségét mérik. Nem foglalkozunk vele részletesen, de megemlítjük, hogy itt is igaz, hogy a kapcsolat erőssége azzal van összefüggésben, hogy az egyik változó ismerete mennyi információt árul el a másik változóról (természetesen sztochasztikus értelemben).</p>
 <p>Végül egy figyelmeztetés. Mint általában, természetesen itt is elmondható, hogy a mutatószám használata nagyon nagy információtömörítést jelent. Éppen ezért ne támaszkodjunk önmagában egy korrelációs együtthatóra (és különösen ne önmagában egy lineáris korrelációs együtthatóra) két változó kapcsolatának megítéléséhez, hiszen ez elfedi az esetleges nemlineáris kapcsolatokat, az outliereket stb. Erre egy nevezetes példa az Anscombe-kvartett, amit mi is hamarosan bemutatunk.</p>

@@ -8,6 +8,7 @@ documentclass: book
 link-citations: yes
 github-repo: tamas-ferenci/bevbiostat
 description: "Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba."
+url: https://tamas-ferenci.github.io/bevbiostat/
 cover-image: bevbiostatcover.png
 ---
 
@@ -21,6 +22,7 @@ library(magyarbookdown)
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
-options(digits = 1, OutDec = ",")
+options(digits = 1)
 knitr::opts_chunk$set( tidy = TRUE, fig.height = 4 )
+download.file( "https://github.com/tamas-ferenci/bevbiostat/raw/master/bevbiostatcover.png", "./docs/bevbiostatcover.png" )
 ```
