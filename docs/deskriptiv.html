@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 . fejezet Deskriptív statisztika | Bevezetés a biostatisztikába</title>
   <meta name="description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 . fejezet Deskriptív statisztika | Bevezetés a biostatisztikába" />
   <meta property="og:type" content="book" />
   
-  
+  <meta property="og:image" content="bevbiostatcover.png" />
   <meta property="og:description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
   <meta name="github-repo" content="tamas-ferenci/bevbiostat" />
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="3 . fejezet Deskriptív statisztika | Bevezetés a biostatisztikába" />
   
   <meta name="twitter:description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
-  
+  <meta name="twitter:image" content="bevbiostatcover.png" />
 
 <meta name="author" content="Ferenci Tamás" />
 
 
-<meta name="date" content="2019-11-10" />
+<meta name="date" content="2019-11-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,20 +201,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Nyilvánvaló, hogy a bonyolultság csökkentése csak úgy lehetséges, ha információt hagyunk el. Az egész művelet kritikus pontja épp ez: annak megválasztása, hogy mennyi információt hanyagoljunk el (és persze hogyan). A ,,hogyan’’ szerepe triviális: ha egy adott, mennyiségi változóra vonatkozó 100 elemű mintából elhagyjuk az első 99 elemet, akkor ugyan egyetlen számmá, azaz teljesen áttekinthetővé alakítjuk az információt – csak épp nyilván semmit nem érünk el vele. Ha viszont kiszámoljuk az átlagot, akkor ugyanúgy egyetlen számot kapunk, de immár úgy, hogy annak van értelme, azaz felhasználhatjuk kérdések megválaszolásához, illetve új megállapítások eléréséhez.</p>
 <p>A meghatározó kulcskérdés az elhanyagolásban (az információtömörítésben) tehát a ,,mennyit’’. Látható, hogy trade-off áll fenn az <em>áttekinthetőség</em>, és a <em>reprodukciós hűség</em> között: minél többet hanyagolunk el, annál inkább segítjük az áttekinthetőséget, de annál többet vesztünk az eredeti információ hűséges reprodukciójából. A deskriptív statisztika igazi sava-borsa (végeredményben a legtöbb módszer, így vagy úgy, de ebben foglal el egy álláspontot) a jó kompromisszum megkötése a kettő között. Példának okáért, adatbázisunkban a születési tömeg változó megfigyelései így néznek ki:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">birthwt<span class="op">$</span>bwt</a></code></pre></div>
-<pre><code>##   [1] 2523 2551 2557 2594 2600 2622 2637 2637 2663 2665 2722 2733 2751 2750
-##  [15] 2769 2769 2778 2782 2807 2821 2835 2835 2836 2863 2877 2877 2906 2920
-##  [29] 2920 2920 2920 2948 2948 2977 2977 2977 2977 2922 3005 3033 3042 3062
-##  [43] 3062 3062 3062 3062 3080 3090 3090 3090 3100 3104 3132 3147 3175 3175
-##  [57] 3203 3203 3203 3225 3225 3232 3232 3234 3260 3274 3274 3303 3317 3317
-##  [71] 3317 3321 3331 3374 3374 3402 3416 3430 3444 3459 3460 3473 3544 3487
-##  [85] 3544 3572 3572 3586 3600 3614 3614 3629 3629 3637 3643 3651 3651 3651
-##  [99] 3651 3699 3728 3756 3770 3770 3770 3790 3799 3827 3856 3860 3860 3884
-## [113] 3884 3912 3940 3941 3941 3969 3983 3997 3997 4054 4054 4111 4153 4167
-## [127] 4174 4238 4593 4990  709 1021 1135 1330 1474 1588 1588 1701 1729 1790
-## [141] 1818 1885 1893 1899 1928 1928 1928 1936 1970 2055 2055 2082 2084 2084
-## [155] 2100 2125 2126 2187 2187 2211 2225 2240 2240 2282 2296 2296 2301 2325
-## [169] 2353 2353 2367 2381 2381 2381 2410 2410 2410 2414 2424 2438 2442 2450
-## [183] 2466 2466 2466 2495 2495 2495 2495</code></pre>
+<pre><code>##   [1] 2523 2551 2557 2594 2600 2622 2637 2637 2663 2665 2722 2733 2751 2750 2769
+##  [16] 2769 2778 2782 2807 2821 2835 2835 2836 2863 2877 2877 2906 2920 2920 2920
+##  [31] 2920 2948 2948 2977 2977 2977 2977 2922 3005 3033 3042 3062 3062 3062 3062
+##  [46] 3062 3080 3090 3090 3090 3100 3104 3132 3147 3175 3175 3203 3203 3203 3225
+##  [61] 3225 3232 3232 3234 3260 3274 3274 3303 3317 3317 3317 3321 3331 3374 3374
+##  [76] 3402 3416 3430 3444 3459 3460 3473 3544 3487 3544 3572 3572 3586 3600 3614
+##  [91] 3614 3629 3629 3637 3643 3651 3651 3651 3651 3699 3728 3756 3770 3770 3770
+## [106] 3790 3799 3827 3856 3860 3860 3884 3884 3912 3940 3941 3941 3969 3983 3997
+## [121] 3997 4054 4054 4111 4153 4167 4174 4238 4593 4990  709 1021 1135 1330 1474
+## [136] 1588 1588 1701 1729 1790 1818 1885 1893 1899 1928 1928 1928 1936 1970 2055
+## [151] 2055 2082 2084 2084 2100 2125 2126 2187 2187 2211 2225 2240 2240 2282 2296
+## [166] 2296 2301 2325 2353 2353 2367 2381 2381 2381 2410 2410 2410 2414 2424 2438
+## [181] 2442 2450 2466 2466 2466 2495 2495 2495 2495</code></pre>
 <p>Ezt a megadást nevezhetnénk az egyik végpontnak ebben a kompromisszumban: 100% reprodukciós hűség, de – szinte – 0% áttekinthetőség. Ez a legalapvetőbb kérdések megválaszolását, a legalapvetőbb észrevételek elérését is lehetetlenné teszi.</p>
 <p>Másik végpontnak vehetjük azt, amikor a fenti adatoknak csak az átlagát adjuk meg 2944,6.</p>
 <p>Ez 0%-hoz közeli reprodukciós hűséget jelent (189 számból 1-et ,,gyártottunk’’, szinte semmit nem tudunk reprodukálni az eredeti adatbázisból), viszont remek az áttekinthetősége (például azonnal látható, hogy milyen érték körül csoportosulnak az adatok).</p>
@@ -625,15 +624,13 @@ alt="ingyen webstatisztika"></a></div></noscript>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",

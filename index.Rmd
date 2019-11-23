@@ -8,6 +8,7 @@ documentclass: book
 link-citations: yes
 github-repo: tamas-ferenci/bevbiostat
 description: "Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba."
+cover-image: bevbiostatcover.png
 ---
 
 # Előszó
