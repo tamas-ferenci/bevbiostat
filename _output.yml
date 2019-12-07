@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: style.css
   includes:
+    in_header: GATamasFerenciGithubIo.html
     after_body: statcounter.html
   config:
     toc:
@@ -13,7 +14,7 @@ bookdown::gitbook:
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
-  latex_engine: xelatex
+  latex_engine: lualatex
   citation_package: natbib
   keep_tex: yes
 bookdown::epub_book: default
