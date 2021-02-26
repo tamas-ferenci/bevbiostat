@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 . fejezet A statisztika alapjai | Bevezetés a biostatisztikába</title>
   <meta name="description" content="Ez a jegyzet rövid bevezetést nyújt a biostatisztika alapjaiba." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 . fejezet A statisztika alapjai | Bevezetés a biostatisztikába" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ferenci Tamás" />
 
 
-<meta name="date" content="2019-12-07" />
+<meta name="date" content="2021-02-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="deskriptiv.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -62,25 +63,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -89,9 +91,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -141,39 +143,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Előszó</a></li>
-<li class="chapter" data-level="2" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html"><i class="fa fa-check"></i><b>2</b> A statisztika alapjai</a><ul>
+<li class="chapter" data-level="2" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html"><i class="fa fa-check"></i><b>2</b> A statisztika alapjai</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#a-statisztika-alapfogalmai-és-ágai"><i class="fa fa-check"></i><b>2.1</b> A statisztika alapfogalmai és ágai</a></li>
 <li class="chapter" data-level="2.2" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokvaltozok"><i class="fa fa-check"></i><b>2.2</b> Változók és mérési skálák</a></li>
 <li class="chapter" data-level="2.3" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokvelhatarolas"><i class="fa fa-check"></i><b>2.3</b> A biostatisztika kapcsolódó tudományai és elhatárolása</a></li>
 <li class="chapter" data-level="2.4" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokszamtech"><i class="fa fa-check"></i><b>2.4</b> A biostatisztika számítástechnikai háttere</a></li>
 <li class="chapter" data-level="2.5" data-path="a-statisztika-alapjai.html"><a href="a-statisztika-alapjai.html#alapokfutopelda"><i class="fa fa-check"></i><b>2.5</b> Futó példa</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="deskriptiv.html"><a href="deskriptiv.html"><i class="fa fa-check"></i><b>3</b> Deskriptív statisztika</a><ul>
+<li class="chapter" data-level="3" data-path="deskriptiv.html"><a href="deskriptiv.html"><i class="fa fa-check"></i><b>3</b> Deskriptív statisztika</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivaltalaban"><i class="fa fa-check"></i><b>3.1</b> A deskriptív statisztikáról általában</a></li>
-<li class="chapter" data-level="3.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositas"><i class="fa fa-check"></i><b>3.2</b> A deskriptív statisztika módszereinek csoportosításáról</a><ul>
+<li class="chapter" data-level="3.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositas"><i class="fa fa-check"></i><b>3.2</b> A deskriptív statisztika módszereinek csoportosításáról</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositasgrafanal"><i class="fa fa-check"></i><b>3.2.1</b> Grafikus és analitikus módszerek</a></li>
 <li class="chapter" data-level="3.2.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositasegytobbvalt"><i class="fa fa-check"></i><b>3.2.2</b> Egy- és többváltozós módszerek</a></li>
 <li class="chapter" data-level="3.2.3" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivcsoportositasmeresiskala"><i class="fa fa-check"></i><b>3.2.3</b> A vizsgált változó(k) mérési skálája</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminegyvalt"><i class="fa fa-check"></i><b>3.3</b> Minőségi változó egyváltozós elemzése</a><ul>
+<li class="chapter" data-level="3.3" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminegyvalt"><i class="fa fa-check"></i><b>3.3</b> Minőségi változó egyváltozós elemzése</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmonegyvaltanalitikus"><i class="fa fa-check"></i><b>3.3.1</b> Analitikus eszközök</a></li>
 <li class="chapter" data-level="3.3.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminegyvaltgrafikus"><i class="fa fa-check"></i><b>3.3.2</b> Grafikus eszközök</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyegyvalt"><i class="fa fa-check"></i><b>3.4</b> Mennyiségi változó egyváltozós elemzése</a><ul>
+<li class="chapter" data-level="3.4" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyegyvalt"><i class="fa fa-check"></i><b>3.4</b> Mennyiségi változó egyváltozós elemzése</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyegyvaltanalitikus"><i class="fa fa-check"></i><b>3.4.1</b> Analitikus eszközök</a></li>
 <li class="chapter" data-level="3.4.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyegyvaltgrafikus"><i class="fa fa-check"></i><b>3.4.2</b> Grafikus eszközök</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminketvalt"><i class="fa fa-check"></i><b>3.5</b> Minőségi változók kétváltozós elemzése</a><ul>
+<li class="chapter" data-level="3.5" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminketvalt"><i class="fa fa-check"></i><b>3.5</b> Minőségi változók kétváltozós elemzése</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminketvaltanalitikus"><i class="fa fa-check"></i><b>3.5.1</b> Analitikus eszközök</a></li>
 <li class="chapter" data-level="3.5.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivminketvaltgrafikus"><i class="fa fa-check"></i><b>3.5.2</b> Grafikus eszközök</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyketvalt"><i class="fa fa-check"></i><b>3.6</b> Mennyiségi változók kétváltozós elemzése</a><ul>
+<li class="chapter" data-level="3.6" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyketvalt"><i class="fa fa-check"></i><b>3.6</b> Mennyiségi változók kétváltozós elemzése</a>
+<ul>
 <li class="chapter" data-level="3.6.1" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyketvaltanalitikus"><i class="fa fa-check"></i><b>3.6.1</b> Analitikus eszközök</a></li>
 <li class="chapter" data-level="3.6.2" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivmennyketvaltvaltgrafikus"><i class="fa fa-check"></i><b>3.6.2</b> Grafikus eszközök</a></li>
 </ul></li>
 <li class="chapter" data-level="3.7" data-path="deskriptiv.html"><a href="deskriptiv.html#deskriptivtovabbitobbvalt"><i class="fa fa-check"></i><b>3.7</b> További többváltozós elemzések</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="induktiv.html"><a href="induktiv.html"><i class="fa fa-check"></i><b>4</b> Induktív statisztika</a><ul>
+<li class="chapter" data-level="4" data-path="induktiv.html"><a href="induktiv.html"><i class="fa fa-check"></i><b>4</b> Induktív statisztika</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="induktiv.html"><a href="induktiv.html#induktivmintavetelihelyzet"><i class="fa fa-check"></i><b>4.1</b> A mintavételi helyzet és következményei</a></li>
 <li class="chapter" data-level="4.2" data-path="induktiv.html"><a href="induktiv.html#induktivbecsleselmelet"><i class="fa fa-check"></i><b>4.2</b> Becsléselmélet</a></li>
 <li class="chapter" data-level="4.3" data-path="induktiv.html"><a href="induktiv.html#induktivhipotezisvizsgalat"><i class="fa fa-check"></i><b>4.3</b> Hipotézisvizsgálat</a></li>
@@ -198,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="a-statisztika-alapjai" class="section level1">
+<div id="a-statisztika-alapjai" class="section level1" number="2">
 <h1><span class="header-section-number">2 . fejezet</span> A statisztika alapjai</h1>
 <p>Alapfogalmak.</p>
 <!-- A biostatisztika a \emph{statisztika} egyik alkalmazott ága, mely az orvosbiológiai területen felmerülő, empirikus adatokkal leírt kérdések kvantitatív vizsgálatával foglalkozik. Egy új vérnyomáscsökkentő gyógyszer-jelölt valóban csökkenti a vérnyomást? Nagyfeszültségű vezeték közelében tartózkodás növeli a rák-kockázatot? Van-e összefüggés egy gyermek táplálkozási energiabevitele és magasságának növekedése között? Ez csak pár példa olyan kérdésekre, melyek megválaszolásának egyik lehetősége az \emph{empirikus adatok} alkalmazása: összegyűjtjük gyógyszert szedő és nem szedő emberek vérnyomását; emberek lakhelyének távolságát a nagyfeszültségű vezetékektől, és azt, hogy kialakult-e náluk rák; gyermekek táplálási adatait és magasságuk alakulását. Ezen adatok birtokában van remény a problémák vizsgálatára, orvosilag releváns kérdések megválaszolására. Továbbmenve az is látható, hogy végeredményben mind számszerű adatra vezet (vérnyomásalakulás, rákkockázat, magasságváltozás stb.), így adhatunk \emph{kvantitatív} válaszokat is a kérdésekre (pontosan mekkora vérnyomás-csökkenést okoz várhatóan a gyógyszer-jelölt, ha egyáltalán okoz, hány százalékkal változtatja a rákkockázatot adott nagyfeszültségű vezeték, ha egyáltalán változtatja, nagyobb energiabevitel mennyiben módosítja a növekedés ütemét, ha egyáltalán módosítja stb.). Ehhez természetesen megfelelő elemzéseket kell végrehajtanunk, megfelelő modelleket kell alkotnunk. Ezzel foglalkozik a biostatisztika. -->
@@ -236,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--    \item Van-e összefüggés egy gyermek táplálkozási energiabevitele és magasságának növekedése között? -->
 <!-- \end{enumerate} -->
 <!-- E kérdéseket ráadásul úgy választottuk meg, hogy a jó részük terítékre kerüljön a fejezetben, így bátorítjuk az olvasót, hogy újra és újra lapozzon ide vissza, ellenőrizve, hogy tényleg egyre több kérdésre tudna-e választ adni. -->
-<div id="a-statisztika-alapfogalmai-és-ágai" class="section level2">
+<div id="a-statisztika-alapfogalmai-és-ágai" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> A statisztika alapfogalmai és ágai</h2>
 <!-- A statisztika fogalmát nem definiáljuk túl precízen, \aref{sec:jelentoseg}.  alfejezetben mondottak fényében feltesszük, hogy érthető a statisztika szerepe és hozzávetőleges feladata. Ha mégis formálisabb definíciót kéne adnunk, akkor azt mondhatnánk, hogy a statisztika a valóság, azon belül is elsősorban a tömeges jelenségek számszerűsíthető tényeinek szisztematikus összegyűjtésével és elemzésével foglalkozó tudományos módszer és gyakorlat. -->
 <!-- Már ennyiből is látszik, hogy a statisztika egyik fontos feladata lesz bizonyos \emph{kérdések szabatos megválaszolása empirikus adatok alapján} (ahogy arra ez előbbi pont is hozott példákat). Ennek kapcsán be kell vezetnünk pár alapfogalmat, mely a statisztikusok beszédében lépten-nyomon előkerül. -->
@@ -247,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- A statisztika azonban nem csak meghatározott kérdések precíz megválaszolásával foglalkozik. A statisztika feladata ezen felül, hogy segítsége \emph{új ismeretek megszerzését}, például az adatbázisok struktúrájának feltárásával és alkalmas megjelenítésével, a változók közti kapcsolatok felderítésével, információtömörítéssel, lényegkiemeléssel stb. (Ebben hatalmas motivációt jelent a számítástechnikai (és orvosi) lehetőségek fejlődése miatt létrejövő egyre nagyobb és nagyobb adatbázisok léte.) -->
 <!-- Ezen felül a statisztika megtanít arra is minket, hogy hogyan kerüljünk el bizonyos gondolkodási csapdákat, és hogyan legyünk képesek \emph{empirikus kérdésekben racionálisan dönteni}. -->
 </div>
-<div id="alapokvaltozok" class="section level2">
+<div id="alapokvaltozok" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Változók és mérési skálák</h2>
 <p>Az előbbi pontban kissé nagyvonalúan csak annyit írtunk, hogy a változó (vagy ismérv) az a szempont, ami alapján a megfigyelési egységeket vizsgálat alá vonjuk. (Természetesen több ilyen is szerepelhet egy vizsgálatban.) Ez meglehetősen kézenfekvő akkor, ha mondjuk az emberek testtömege a vizsgálati szempont – ekkor mondhatjuk egyszerűen, hogy lemérjük őket alkalmas módszerrel, és az e tulajdonságot leíró ,,testtömeg’’ változó legyen a lemért tömeg mondjuk kilogrammban kifejezett értéke. Más esetekben azonban közel nem ilyen egyértelmű a változók megválasztásának a kérdése.</p>
 <p>A statisztika alapvetően számszerű információk feldolgozásával foglalkozó tudomány, így ahhoz, hogy egy szempontot statisztikai úton tudjunk vizsgálni, előbb <em>számszerűen mérhetővé</em> kell tenni. Ez természetesen olyan információkkal is végrehajtható, melyek eredetileg nem számszerűek. Ezt nevezzük <em>operacionalizálásnak</em>. Néha ez valóban szinte triviális feladat (a testtömeget mérjük az adott módon lemért és kilogrammban kifejezett testtömeggel), máskor viszont egyáltalán nem az. Gondoljunk arra, hogy hogyan lehet számszerűen mérhetővé tenni egy olyan jellemzőt, mint hogy milyen súlyos egy alany depressziója – szinte külön tudományág, hogy ehhez milyen kérdőívek, egyéb vizsgálatok kellenek, mellyel ,,lemérhető’’ ez.</p>
@@ -263,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Nagyon sokszor a diszkrét változó fogalmat azonosítják a minőségi, a folytonosat pedig a mennyiségi változóval. Tisztán elméleti szempontból ez nem helyes (hiszen két különböző szempontról van szó), bár tény, hogy a legtöbb esetben valóban fennállnak ezek a megfeleltetések. Egy nevezetes kivétel ez alól a különféle darabszámokat, események számát stb. tartalmazó adatok, melyek a 0, 1, 2, 3 stb. értékeket vehetik fel (tehát diszkrétek), mégis skálán mértek, sőt, azon belül is arányskálán (tehát pont hogy a legmagasabb mérési skálán), hiszen általában van értelme nem csak különbségükről, de akár a hányadosukról is beszélni.</p>
 <!-- A változók jellege mellett az adatbázis jellege is fontos kérdés; illetve, pontosabban megfogalmazva, inkább a vizsgálat jellegéről kéne beszélnünk (az adatbázis ennek csak következménye). Beszélhetünk kísérletekről és megfigyeléses vizsgálatokról, ez utóbbiak adatbázisain belül beszélhetünk \emph{keresztmetszeti} adatbázisról (ha több megfigyelési egység ugyanazon időpontra vonatkozó adait tartalmazza), \emph{longitudinális} adatbázisról (ha több időszakot fog át), a vizsgálatok lehetséges konkrét elrendezéseiről pedig egyenesen könyveket lehet írni; de ezzel most nem foglalkozunk. -->
 </div>
-<div id="alapokvelhatarolas" class="section level2">
+<div id="alapokvelhatarolas" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> A biostatisztika kapcsolódó tudományai és elhatárolása</h2>
 <p>A biostatisztika az alkalmazott statisztika egyik ága, hasonlóan a pszichometriához, agrometriához stb. Látni kell, hogy a statisztika többé-kevésbé egységes tudomány, így végső soron hasonló módszereket alkalmaz az összes felsorolt ág, különbség inkább a részletekben (partikuláris problémákhoz testreszabott vagy kifejlesztett módszerek) és a az eljárások prezentációjában van.</p>
 <p>Mint minden alkalmazott ágnak, a biostatisztikának is a statisztika, matematikai statisztika adja az alapját. Az e fejezetben bemutatott módszerek jó részéhez ugyan nincs szükség mélyebb matematikai statisztikai ismeretekre, de a manapság kifejlesztett új módszerek egyre komolyabb matematikai eszköztárat használnak.</p>
@@ -271,7 +281,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A valószínűségszámításon, matematikai statisztikán kívül természetesen orvosi ismeretekre is szükség van a biostatisztika műveléséhez. Ha nem is feltétlenül létkérdés, de a biostatisztikus munkáját megkönnyíti, ha legalább érti az orvosok szóhasználatát, valamint tisztában van az emberi test működésének élettani és a betegségek kórélettani alapjaival.</p>
 <p>Ezt a szakaszt azzal zárjuk, hogy kísérletet teszünk a biostatisztika elhatárolására két olyan területtől, amellyel gyakran keveredik a fogalma. Az egyik a <em>bioinformatika</em>: ez a manapság rendkívül népszerű terület azonban inkább számítástechnikai, algoritmikus kérdésekkel foglalkozik (melyekkel nagy orvosbiológiai adatbázisokon is hatékonyan végezhetőek bizonyos műveletek, megválaszolhatóvá válnak bizonyos orvosilag releváns kérdések). A másik a <em>biomatematika</em>, ez alatt azonban inkább olyan területet értünk, mely jellemzően nem statisztikai, hanem más matematikai (elsősorban analízisbeli) eszközöket, például differenciálegyenleteket használ, és a modellek adatokból történő becslése csak másodlagos kérdés.</p>
 </div>
-<div id="alapokszamtech" class="section level2">
+<div id="alapokszamtech" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> A biostatisztika számítástechnikai háttere</h2>
 <p>Modern biostatisztika szinte elképzelhetetlen számítógépek, számítástechnikai támogatás nélkül. Ennek legalább három konkrét aspektusa van.</p>
 <p>Először is, a leginkább ,,mechanikus’’ támogatás, amit a gépek adhatnak, hogy a szokásos számítási műveleteket (például egy átlag meghatározása vagy egy statisztikai próba kiszámítása) végrehajtják helyettünk. Bár sok statisztika kurzuson még ma is megtanítják a hallgatókat a kézi számításra (elsősorban azért, hogy jobban rögzüljenek a számítások részletei is), valójában már minden gyakorlati alkalmazásban számítógépek végzik a mechanikus kalkulációkat, érthető okokból kifolyólag.</p>
@@ -282,7 +292,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 * <em>SPSS</em> Az  egy általános célú statisztikai programcsomag (eredetileg szociológusoknak fejlesztették ki), funkcionalitása számos – egyenként megvásárolható – modullal állítható be a kívánt szintre. Grafikus kezelőfelülete rendkívül egyszerű és kényelmes (ráadásul nagyon sokan eleve ezt szokták meg), mellyel a beépített funkciók néhány kattintással végrehajthatóak. Cserében a bonyolultabb statisztikai problémák megoldása – noha van saját szkript-nyelve – nagyon nehézkes lehet. Összességében véve az alap dolgokat könnyű megcsinálni – a komplexebbeket viszont nagyon nehéz. Didaktikai hibái, gyatra adatvizualizációs lehetőségei, korlátozott bővíthetősége miatt nem ajánlható a használata.
 * <em>R</em> Az  a klasszikus ,,akadémiai’’ programcsomag. Alapváltozatában még csak érdemi grafikus felület sincs hozzá, minden utasítást parancsként kell beírnunk; cserébe hihetetlen mennyiségű kiegészítő érhető el hozzá a legkülönfélébb alkalmazásokhoz, a legkönnyebből a legbonyolultabbig, továbbá egy sor szakterülethez célirányosan is. (2018 elején több mint 13 ezer csomag érhető el, nem ritka, hogy napi 5-10 új jelenik meg!) Egy sor újonnan kifejlesztett statisztikai módszert elsőként  alatt implementálnak. Összességében elmondható, hogy itt az alap dolgokat sem könnyű megcsinálni – a komplexebbeket cserébe viszont lehet. Az  ingyenes és nyílt forráskódú, a  címről indulva tölthető le. Használatához feltétlenül ajánlott az  (szintén ingyenes és nyílt forráskódú) integrált fejlesztőkörnyezet () alkalmazása. E kiegészítő csomagokkal az R ereje hatalmas: rendkívül komplex feladat is végre hajthatóak egysoros hívásokkal (néha szó szerint).</p>
 </div>
-<div id="alapokfutopelda" class="section level2">
+<div id="alapokfutopelda" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Futó példa</h2>
 <p>A jegyzet hátralevő részében szereplő példák didaktikai okokból mind ugyanarra az adatbázisra vonatkoznak; ebben a szakaszban ezt mutatjuk be.</p>
 <p>Az adatbázis egy klasszikus demonstrációs adatbázis, általánosan használt neve Low Infant Birth Weight (LOWBWT vagy BIRTHWT); a Baystate Medical Center (Springfield, Massachusetts, Egyesült Államok) kórházban végrehajtott kutatásból (1986) származik. A kutatás célja annak vizsgálata volt, hogy milyen tényezők befolyásolják, hogy egy világra jövő újszülött kis születési tömegű lesz-e.</p>
@@ -307,8 +317,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--    \end{tabular} -->
 <!-- \end{table} -->
 <p>Szemléltetésként az adatbázis első néhány megfigyelési egysége (az adatbázis megtalálható az  statisztikai környezet  nevű könyvtárában  néven):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">data</span>(birthwt, <span class="dt">package =</span> <span class="st">&quot;MASS&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">head</span>(birthwt, <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="a-statisztika-alapjai.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(birthwt, <span class="at">package =</span> <span class="st">&quot;MASS&quot;</span>)</span>
+<span id="cb1-2"><a href="a-statisztika-alapjai.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(birthwt, <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##    low age lwt race smoke ptl ht ui ftv  bwt
 ## 85   0  19 182    2     0   0  0  1   0 2523
 ## 86   0  33 155    3     0   0  0  0   3 2551
@@ -323,21 +333,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<!-- Default Statcounter code for Physcon Research
-http://research.physcon.uni-obuda.hu/ -->
+<!-- Default Statcounter code for Ferenci Tamás
+elektronikus jegy https://tamas-ferenci.github.io/ -->
 <script type="text/javascript">
-var sc_project=11601191; 
-var sc_invisible=1; 
-var sc_security="5a06c22d"; 
+var sc_project=12422840;
+var sc_invisible=1;
+var sc_security="d32cce24";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
 async></script>
-<noscript><div class="statcounter"><a title="ingyen
-webstatisztika" href="https://www.statcounter.hu/"
+<noscript><div class="statcounter"><a title="látogató
+számláló" href="https://www.statcounter.hu/"
 target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/11601191/0/5a06c22d/1/"
-alt="ingyen webstatisztika"></a></div></noscript>
+src="https://c.statcounter.com/12422840/0/d32cce24/1/"
+alt="látogató számláló"></a></div></noscript>
 <!-- End of Statcounter Code -->
             </section>
 
