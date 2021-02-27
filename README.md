@@ -1,1 +1,1 @@
-Új cím. [Ferenci Tamás: Bevezetés a biostatisztikába (jegyzet).](https://tamas-ferenci.github.io/bevbiostat/)
+Új cím: [https://github.com/tamas-ferenci/FerenciTamas_BevezetesABiostatisztikaba](https://github.com/tamas-ferenci/FerenciTamas_BevezetesABiostatisztikaba).
